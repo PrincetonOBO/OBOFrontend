@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #OBO
 
 Revolutionizing buying and selling on college campuses.
@@ -191,3 +192,7 @@ git pull origin master
 
 ##Stable Branch
 We will also have a stable branch, which nobody should touch! This is the branch that is currently in production on live, so we know exactly what's running on our servers.
+=======
+# OBOFrontend
+Objective-C code for our iOS app.
+>>>>>>> 3fe2ec6953df1117ae9b867beffcf397dd2edda1
