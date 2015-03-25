@@ -1,16 +1,18 @@
 //
 //  main.m
-//  OBO
+//  RSSreader
 //
-//  Created by Catherine Wu on 3/22/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
+//  Created by Rafael Garcia Leiva on 08/04/13.
+//  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 
-int main(int argc, char * argv[]) {
+#import "APPAppDelegate.h"
+
+int main(int argc, char *argv[])
+{
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([APPAppDelegate class]));
     }
 }
