@@ -28,6 +28,10 @@
     self.itemNameTextField.text = @"";
     self.itemPriceTextField.text = @"";
     self.itemSizeTextField.text = @"";
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;
+    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
 
 -(void) viewDidLoad
@@ -50,13 +54,13 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)chooseImage:(id)sender
-{
-    self.imagePicker = [[UIImagePickerController alloc] init];
-    self.imagePicker.delegate = self;
-    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:self.imagePicker animated:YES completion:nil];
-}
+//-(IBAction)chooseImage:(id)sender
+//{
+//    self.imagePicker = [[UIImagePickerController alloc] init];
+//    self.imagePicker.delegate = self;
+//    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//    [self presentViewController:self.imagePicker animated:YES completion:nil];
+//}
 
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
