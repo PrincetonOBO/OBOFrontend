@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OBOSellThingViewController : UIViewController
+@interface OBOSellThingViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @end

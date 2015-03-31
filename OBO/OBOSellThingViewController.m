@@ -8,12 +8,14 @@
 
 #import "OBOSellThingViewController.h"
 @interface OBOSellThingViewController()
+{
+    NSMutableArray *_pickerData;
+}
 @property (weak, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemPriceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
-
 @end
 
 @implementation OBOSellThingViewController
@@ -28,4 +30,43 @@
     self.itemSizeTextField.text = @"";
 }
 
+-(void) viewDidLoad
+{
+    [super viewDidLoad];
+    _pickerData = [NSMutableArray array];
+    
+    for (NSInteger x = 1; x <= 50; x++)
+    {
+        [_pickerData addObject:[NSString stringWithFormat:@"$%li",(long)x]];
+    }
+
+    self.itemPricePickerView.dataSource = self;
+    self.itemPricePickerView.delegate = self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return _pickerData.count;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return _pickerData[row];
+}
+
 @end
+
