@@ -50,6 +50,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)chooseImage:(id)sender
+{
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;
+    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+-(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.chosenImage = info[UIImagePickerControllerOriginalImage];
+    [self.itemPicImageView setImage:self.chosenImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 // The number of columns of data
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
