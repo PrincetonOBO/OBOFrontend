@@ -1,17 +1,9 @@
-//
-//  APPItemDetailsTableViewCell.h
-//  RSSreader
-//
-//  Created by Christine Li on 3/22/15.
-//  Copyright (c) 2015 Appcoda. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
-@class APPItemObject;
+@class OBOItemObject;
 
-@interface APPItemDetailsTableViewCell : UITableViewCell
+@interface OBOItemDetailsTableViewCell : UITableViewCell
 
-- (void)prepareWithItem:(APPItemObject *)item;
+- (void)prepareWithItem:(OBOItemObject *)item;
 
 @end

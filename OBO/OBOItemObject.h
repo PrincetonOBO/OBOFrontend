@@ -1,14 +1,6 @@
-//
-//  APPItemObject.h
-//  RSSreader
-//
-//  Created by Christine Li on 3/22/15.
-//  Copyright (c) 2015 Appcoda. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@interface APPItemObject : NSObject
+@interface OBOItemObject : NSObject
 
 - (instancetype)initWithInfo:(NSDictionary *)info;
 

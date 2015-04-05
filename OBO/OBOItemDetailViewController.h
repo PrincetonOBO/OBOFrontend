@@ -1,17 +1,9 @@
-//
-//  APPItemDetailViewController.h
-//  RSSreader
-//
-//  Created by Catherine Wu on 3/24/15.
-//  Copyright (c) 2015 Appcoda. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
-@class APPItemObject;
+@class OBOItemObject;
 
-@interface APPItemDetailViewController : UIViewController
-@property (strong, nonatomic) APPItemObject *object;
+@interface OBOItemDetailViewController : UIViewController
+@property (strong, nonatomic) OBOItemObject *object;
 
 
 @end

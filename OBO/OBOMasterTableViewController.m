@@ -1,17 +1,17 @@
-#import "APPItemDetailsTableViewCell.h"
-#import "APPItemDetailViewController.h"
-#import "APPItemObject.h"
-#import "APPMasterViewController.h"
+#import "OBOItemDetailsTableViewCell.h"
+#import "OBOItemDetailViewController.h"
+#import "OBOItemObject.h"
+#import "OBOMasterTableViewController.h"
 
 
-@interface APPMasterViewController ()
+@interface OBOMasterTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation APPMasterViewController
+@implementation OBOMasterTableViewController
 
 - (NSArray *)items {
     if (!_items) {
@@ -31,7 +31,7 @@
                                                            error:&error];
     NSArray *itemsJSON = json[@"items"];
     for (NSDictionary *itemJSON in itemsJSON) {
-        APPItemObject *item = [[APPItemObject alloc] initWithInfo:itemJSON];
+        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         self.items = [self.items arrayByAddingObject:item];
     }
     self.tableView.delegate = self;
@@ -55,7 +55,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    APPItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
     
     [cell prepareWithItem:self.items[indexPath.row]];
     return cell;
@@ -64,7 +64,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
-        APPItemDetailViewController *dest = segue.destinationViewController;
+        OBOItemDetailViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         dest.object = self.items[indexPath.row];
 
