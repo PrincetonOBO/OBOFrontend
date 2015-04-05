@@ -28,6 +28,7 @@
     self.itemNameTextField.text = @"";
     self.itemPriceTextField.text = @"";
     self.itemSizeTextField.text = @"";
+    [self.itemPicImageView setImage:nil];
 
 }
 - (IBAction)choosePhoto:(id)sender {
