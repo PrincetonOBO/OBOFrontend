@@ -22,6 +22,7 @@
 		5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0921AC25915003BEF47 /* red-dress.jpg */; };
 		5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0A41AC25A4C003BEF47 /* Info.plist */; };
 		537AD9D61ABF0BDD0007CDAD /* OBOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 537AD9D51ABF0BDD0007CDAD /* OBOTests.m */; };
+		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
 		8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,8 @@
 		537AD9CF1ABF0BDD0007CDAD /* OBOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		537AD9D41ABF0BDD0007CDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		537AD9D51ABF0BDD0007CDAD /* OBOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBOTests.m; sourceTree = "<group>"; };
+		8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewCell.h; sourceTree = "<group>"; };
+		8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewCell.m; sourceTree = "<group>"; };
 		8A875D7B1AD1D7750033D1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewController.h; sourceTree = "<group>"; };
 		8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewController.m; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 		5311E0891AC25915003BEF47 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
 				5311E08A1AC25915003BEF47 /* InfoPlist.strings */,
 			);
 			path = en.lproj;
@@ -115,11 +117,14 @@
 		537AD9B81ABF0BDD0007CDAD /* OBO */ = {
 			isa = PBXGroup;
 			children = (
+				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
 				5311E0A41AC25A4C003BEF47 /* Info.plist */,
 				5311E07C1AC25915003BEF47 /* OBOAppDelegate.h */,
 				5311E07D1AC25915003BEF47 /* OBOAppDelegate.m */,
 				5311E07E1AC25915003BEF47 /* OBOItemDetailsTableViewCell.h */,
 				5311E07F1AC25915003BEF47 /* OBOItemDetailsTableViewCell.m */,
+				8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */,
+				8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */,
 				5311E0801AC25915003BEF47 /* OBOItemDetailViewController.h */,
 				5311E0811AC25915003BEF47 /* OBOItemDetailViewController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
@@ -275,6 +280,7 @@
 				5311E0951AC25915003BEF47 /* OBOAppDelegate.m in Sources */,
 				5311E0981AC25915003BEF47 /* OBOItemObject.m in Sources */,
 				5311E0961AC25915003BEF47 /* OBOItemDetailsTableViewCell.m in Sources */,
+				8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */,
 				5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */,
 				5311E0991AC25915003BEF47 /* OBOMasterTableViewController.m in Sources */,
 				5311E0A01AC25915003BEF47 /* main.m in Sources */,
@@ -316,6 +322,7 @@
 				8A875D7B1AD1D7750033D1B7 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="LCD-3A-aOv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCD-3A-aOv" id="2g8-s4-Krp">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -42,6 +42,12 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deleteButton" destination="wkN-5R-ffn" id="aV6-wc-bEj"/>
+                                    <outlet property="editButton" destination="u62-9M-taG" id="NpO-MY-hog"/>
+                                    <outlet property="name" destination="NJO-Tc-YPV" id="928-hm-ALY"/>
+                                    <outlet property="nameLabel" destination="NJO-Tc-YPV" id="2hO-P8-k49"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,11 +61,11 @@
             </objects>
             <point key="canvasLocation" x="513" y="-1384"/>
         </scene>
-        <!--Your Items-->
+        <!--Account-->
         <scene sceneID="p8R-TT-uLP">
             <objects>
                 <navigationController id="uhs-B6-c6t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Items" id="Taw-z9-wfP"/>
+                    <tabBarItem key="tabBarItem" title="Account" id="Taw-z9-wfP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AP-Li-fbs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -205,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="223" y="44"/>
         </scene>
-        <!--Master-->
+        <!--For Sale-->
         <scene sceneID="18">
             <objects>
-                <tableViewController title="Master" id="12" customClass="OBOMasterTableViewController" sceneMemberID="viewController">
+                <tableViewController title="For Sale" id="12" customClass="OBOMasterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
