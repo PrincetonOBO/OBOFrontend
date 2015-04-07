@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 
-@class OBOItemObject;
+@class OBOYourItemsObject;
 
 @interface OBOAccountTableViewCell : UITableViewCell
 
-- (void)prepareWithItem:(OBOItemObject *)item;
+- (void)prepareWithItem:(OBOYourItemsObject *)item;
 
 @end

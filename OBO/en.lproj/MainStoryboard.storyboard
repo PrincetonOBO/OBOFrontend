@@ -8,13 +8,13 @@
         <!--Your Items-->
         <scene sceneID="cN3-gB-CLR">
             <objects>
-                <tableViewController id="vWV-VF-PGR" sceneMemberID="viewController">
+                <tableViewController id="vWV-VF-PGR" customClass="OBOAccountTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="53r-3s-Mxf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell2" rowHeight="50" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCD-3A-aOv" id="2g8-s4-Krp">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -56,6 +56,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Items" id="XlV-je-r7t"/>
+                    <connections>
+                        <outlet property="tableView" destination="53r-3s-Mxf" id="xq6-aL-chs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TB-qT-ko3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
