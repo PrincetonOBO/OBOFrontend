@@ -1,0 +1,39 @@
+{
+    "items":[
+             {
+             "name": "Red Dress",
+             "size": "S",
+             "price": 10,
+             "imageUrl": "http://localhost:8000/red-dress.jpg",
+             "details": "Cute red dress from JCrew."
+             },
+             {
+             "name": "Black Dress",
+             "size": "XS",
+             "price": 5,
+             "imageUrl": "http://localhost:8000/black-dress.jpg",
+             "details": "Cute black dress from JCrew."
+             },
+             {
+             "name": "Blue Dress",
+             "size": "XS",
+             "price": 5,
+             "imageUrl": "http://localhost:8000/black-dress.jpg",
+             "details": "Cute black dress from JCrew."
+             },
+             {
+             "name": "Gold Dress",
+             "size": "XS",
+             "price": 5,
+             "imageUrl": "http://localhost:8000/black-dress.jpg",
+             "details": "Cute black dress from JCrew."
+             },
+             {
+             "name": "White Dress",
+             "size": "XS",
+             "price": 5,
+             "imageUrl": "http://localhost:8000/black-dress.jpg",
+             "details": "Cute black dress from JCrew."
+             }
+             ]
+}

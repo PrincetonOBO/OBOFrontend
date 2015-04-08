@@ -3,7 +3,6 @@
 #import "OBOItemObject.h"
 #import "OBOMasterTableViewController.h"
 
-
 @interface OBOMasterTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;

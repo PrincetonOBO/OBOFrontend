@@ -1,5 +1,5 @@
 #import "OBOAccountTableViewCell.h"
-#import "OBOYourItemsObject.h"
+#import "OBOItemObject.h"
 
 @interface OBOAccountTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -9,7 +9,7 @@
 @end
 @implementation OBOAccountTableViewCell
 
-- (void)prepareWithItem:(OBOYourItemsObject *)item {
+- (void)prepareWithItem:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
 }
 

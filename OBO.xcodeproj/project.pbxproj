@@ -22,6 +22,8 @@
 		5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0921AC25915003BEF47 /* red-dress.jpg */; };
 		5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0A41AC25A4C003BEF47 /* Info.plist */; };
 		537AD9D61ABF0BDD0007CDAD /* OBOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 537AD9D51ABF0BDD0007CDAD /* OBOTests.m */; };
+		53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E3461AD482E600196755 /* OBOItemEditViewController.m */; };
+		53D7E34B1AD4A6DF00196755 /* items2.json in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E34A1AD4A6DF00196755 /* items2.json */; };
 		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
 		8A273F9E1AD4360100FBA4F3 /* OBOYourItemsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9D1AD4360100FBA4F3 /* OBOYourItemsObject.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
@@ -64,6 +66,9 @@
 		537AD9CF1ABF0BDD0007CDAD /* OBOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		537AD9D41ABF0BDD0007CDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		537AD9D51ABF0BDD0007CDAD /* OBOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBOTests.m; sourceTree = "<group>"; };
+		53D7E3451AD482E600196755 /* OBOItemEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOItemEditViewController.h; sourceTree = "<group>"; };
+		53D7E3461AD482E600196755 /* OBOItemEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOItemEditViewController.m; sourceTree = "<group>"; };
+		53D7E34A1AD4A6DF00196755 /* items2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items2.json; sourceTree = "<group>"; };
 		8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewCell.h; sourceTree = "<group>"; };
 		8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewCell.m; sourceTree = "<group>"; };
 		8A273F9C1AD4360100FBA4F3 /* OBOYourItemsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOYourItemsObject.h; sourceTree = "<group>"; };
@@ -129,6 +134,8 @@
 				8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */,
 				8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */,
 				5311E0801AC25915003BEF47 /* OBOItemDetailViewController.h */,
+				53D7E3451AD482E600196755 /* OBOItemEditViewController.h */,
+				53D7E3461AD482E600196755 /* OBOItemEditViewController.m */,
 				5311E0811AC25915003BEF47 /* OBOItemDetailViewController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
 				5311E0831AC25915003BEF47 /* OBOItemObject.m */,
@@ -141,6 +148,7 @@
 				5311E0881AC25915003BEF47 /* Default@2x.png */,
 				5311E0891AC25915003BEF47 /* en.lproj */,
 				5311E08E1AC25915003BEF47 /* items.json */,
+				53D7E34A1AD4A6DF00196755 /* items2.json */,
 				5311E08F1AC25915003BEF47 /* main.m */,
 				5311E0901AC25915003BEF47 /* OBOSellThingViewController.h */,
 				5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */,
@@ -265,6 +273,7 @@
 				5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */,
 				8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */,
 				5311E09B1AC25915003BEF47 /* Default.png in Resources */,
+				53D7E34B1AD4A6DF00196755 /* items2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +301,7 @@
 				5311E0A01AC25915003BEF47 /* main.m in Sources */,
 				8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */,
 				5311E0971AC25915003BEF47 /* OBOItemDetailViewController.m in Sources */,
+				53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
