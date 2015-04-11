@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface OBOSellThingViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *itemPicImageView;
+@interface OBOSellThingViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) UIImage *chosenImage;
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 

@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
 @implementation OBOSellThingViewController
@@ -17,7 +18,7 @@
     self.itemDescriptionTextField.text = @"";
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
-    [self.itemPicImageView setImage:nil];
+    [self.itemImageView setImage:nil];
 }
 - (IBAction)choosePhoto:(id)sender {
     self.imagePicker = [[UIImagePickerController alloc] init];
@@ -39,8 +40,22 @@
 
     self.itemPricePickerView.dataSource = self;
     self.itemPricePickerView.delegate = self;
+    self.itemDescriptionTextField.delegate = self;
+    self.itemNameTextField.delegate = self;
+    self.itemSizeTextField.delegate = self;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
+- (bool)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    return YES;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -50,7 +65,7 @@
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.chosenImage = info[UIImagePickerControllerOriginalImage];
-    [self.itemPicImageView setImage:self.chosenImage];
+    [self.itemImageView setImage:self.chosenImage];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
