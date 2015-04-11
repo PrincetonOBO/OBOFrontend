@@ -12,6 +12,7 @@
     self.itemLabel.text = item.name;
     UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
     self.itemImageView.image = image;
+    NSLog(@"hi");
 }
 
 @end

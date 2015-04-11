@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"hello");
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -28,26 +29,27 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
-    NSArray *itemsJSON = json[@"items2"];
+    NSArray *itemsJSON = json[@"items"];
     for (NSDictionary *itemJSON in itemsJSON) {
         OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         self.items = [self.items arrayByAddingObject:item];
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[OBOAccountTableViewCell class] forCellReuseIdentifier:@"NameCell2"];
+    [self.tableView registerClass:[OBOAccountTableViewCell class] forCellReuseIdentifier:@"NameCell"];
 }
 
 #pragma mark - Table View
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
+    OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
     
-    [cell prepareWithItem:self.items[indexPath.row]];
+    [cell prepareWithItem2:self.items[indexPath.row]];
     return cell;
 }
 

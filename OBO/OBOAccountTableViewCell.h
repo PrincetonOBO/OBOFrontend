@@ -4,6 +4,6 @@
 
 @interface OBOAccountTableViewCell : UITableViewCell
 
-- (void)prepareWithItem:(OBOItemObject *)item;
+- (void)prepareWithItem2:(OBOItemObject *)item;
 
 @end

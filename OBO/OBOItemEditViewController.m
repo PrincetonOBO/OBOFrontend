@@ -14,13 +14,15 @@
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemSizeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemLocationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 
 @end
 
 @implementation OBOItemEditViewController
+- (IBAction)editItemPrice:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
