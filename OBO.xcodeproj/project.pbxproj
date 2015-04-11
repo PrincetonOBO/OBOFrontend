@@ -20,7 +20,6 @@
 		5311E0A01AC25915003BEF47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E08F1AC25915003BEF47 /* main.m */; };
 		5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */; };
 		5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0921AC25915003BEF47 /* red-dress.jpg */; };
-		5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0A41AC25A4C003BEF47 /* Info.plist */; };
 		53148F641AD9AD6E008D3901 /* items3.json in Resources */ = {isa = PBXBuildFile; fileRef = 53148F631AD9AD6E008D3901 /* items3.json */; };
 		537AD9D61ABF0BDD0007CDAD /* OBOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 537AD9D51ABF0BDD0007CDAD /* OBOTests.m */; };
 		53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E3461AD482E600196755 /* OBOItemEditViewController.m */; };
@@ -232,7 +231,7 @@
 		537AD9AE1ABF0BDD0007CDAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = teamOBO;
 				TargetAttributes = {
 					537AD9B51ABF0BDD0007CDAD = {
@@ -268,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */,
 				5311E09C1AC25915003BEF47 /* Default@2x.png in Resources */,
 				53148F641AD9AD6E008D3901 /* items3.json in Resources */,
 				5311E09F1AC25915003BEF47 /* items.json in Resources */,

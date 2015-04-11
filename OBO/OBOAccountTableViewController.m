@@ -6,7 +6,7 @@
 @interface OBOAccountTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"hello");
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
@@ -36,7 +36,6 @@
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[OBOAccountTableViewCell class] forCellReuseIdentifier:@"NameCell"];
 }
 
 #pragma mark - Table View
@@ -47,7 +46,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+    OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
     
     [cell prepareWithItem2:self.items[indexPath.row]];
     return cell;
