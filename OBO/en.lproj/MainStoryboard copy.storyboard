@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cl4-da-wBL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cl4-da-wBL">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Your Items-->
@@ -14,11 +14,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell2" rowHeight="58" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="58"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell" rowHeight="58" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCD-3A-aOv" id="2g8-s4-Krp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u62-9M-taG">
@@ -28,7 +26,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="2eq-WZ-7XP" kind="push" id="x1v-3x-Y80"/>
+                                                <segue destination="2eq-WZ-7XP" kind="modal" id="MLH-UF-gVg"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wkN-5R-ffn">
@@ -41,9 +39,10 @@
                                                 <action selector="showDeleteAlert:" destination="LCD-3A-aOv" eventType="touchUpInside" id="Yga-ux-QU7"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJO-Tc-YPV">
-                                            <rect key="frame" x="46" y="14" width="160" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJO-Tc-YPV">
+                                            <rect key="frame" x="46" y="14" width="46" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.60525672159999999" blue="0.55582782829999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -53,7 +52,7 @@
                                 <connections>
                                     <outlet property="deleteButton" destination="wkN-5R-ffn" id="aV6-wc-bEj"/>
                                     <outlet property="editButton" destination="u62-9M-taG" id="NpO-MY-hog"/>
-                                    <outlet property="nameLabel" destination="NJO-Tc-YPV" id="MVG-Hs-hMB"/>
+                                    <outlet property="nameLabel" destination="NJO-Tc-YPV" id="zT3-CB-sE7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="513" y="-1384"/>
         </scene>
-        <!--Edit Item-->
+        <!--Item Edit View Controller-->
         <scene sceneID="Edb-rU-wup">
             <objects>
                 <viewController id="2eq-WZ-7XP" customClass="OBOItemEditViewController" sceneMemberID="viewController">
@@ -80,38 +79,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="YAY" borderStyle="roundedRect" minimumFontSize="17" id="waZ-pe-pAn">
-                                <rect key="frame" x="90" y="137" width="97" height="30"/>
+                                <rect key="frame" x="160" y="181" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mBe-FB-vWG">
-                                <rect key="frame" x="16" y="103" width="46" height="21"/>
+                                <rect key="frame" x="129" y="107" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Cok-pA-5GK">
-                                <rect key="frame" x="16" y="220" width="150" height="150"/>
+                                <rect key="frame" x="5" y="254" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdO-6c-6T4">
-                                <rect key="frame" x="16" y="140" width="40" height="21"/>
+                                <rect key="frame" x="74" y="69" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUF-f4-jcW">
-                                <rect key="frame" x="16" y="398" width="88" height="21"/>
+                                <rect key="frame" x="99" y="422" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ug-aH-0Gg">
-                                <rect key="frame" x="16" y="180" width="33" height="21"/>
+                                <rect key="frame" x="40" y="199" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iU8-8o-B7g">
+                                <rect key="frame" x="56" y="484" width="67" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -127,22 +133,14 @@
                                     <action selector="editItemPrice:" destination="2eq-WZ-7XP" eventType="touchUpInside" id="JkP-lc-MeY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iU8-8o-B7g">
-                                <rect key="frame" x="16" y="437" width="67" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Item" id="JOA-gr-7Fb"/>
                     <connections>
                         <outlet property="itemDescriptionLabel" destination="eUF-f4-jcW" id="hCC-DN-wUC"/>
                         <outlet property="itemImageView" destination="Cok-pA-5GK" id="r5j-IN-ksU"/>
                         <outlet property="itemLocationLabel" destination="iU8-8o-B7g" id="nyT-lr-Ty0"/>
-                        <outlet property="itemNameLabel" destination="mBe-FB-vWG" id="kDE-Og-2V5"/>
+                        <outlet property="itemNameLabel" destination="KdO-6c-6T4" id="QD3-sA-k72"/>
                         <outlet property="itemPriceLabel" destination="KdO-6c-6T4" id="G9J-RF-yxl"/>
                         <outlet property="itemSizeLabel" destination="6ug-aH-0Gg" id="swV-TB-SXw"/>
                     </connections>
@@ -203,6 +201,13 @@
                                     <action selector="submit:" destination="c9l-PB-aqg" eventType="touchUpInside" id="7Yx-Ip-IUz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UvU-lh-z2d">
+                                <rect key="frame" x="96" y="77" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xhb-zY-9do">
                                 <rect key="frame" x="20" y="106" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -262,24 +267,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UvU-lh-z2d">
-                                <rect key="frame" x="20" y="77" width="278" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Submit Item To Sell" id="UjK-tz-Y5n"/>
                     <connections>
                         <outlet property="itemDescriptionTextField" destination="odP-ka-ffz" id="vkU-K0-hXm"/>
-                        <outlet property="itemImageView" destination="F9S-nC-CGP" id="qLc-4O-Dpa"/>
                         <outlet property="itemNameTextField" destination="xhb-zY-9do" id="egc-ky-Ohd"/>
+                        <outlet property="itemPicImageView" destination="F9S-nC-CGP" id="Lib-Hq-gux"/>
                         <outlet property="itemPricePickerView" destination="IDZ-7d-8xf" id="44k-8X-nTo"/>
                         <outlet property="itemSizeTextField" destination="XXh-as-46f" id="26p-x4-ue3"/>
-                        <outlet property="scrollView" destination="XgS-nb-jrm" id="4L0-TV-pJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKa-iJ-LqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,10 +310,10 @@
                         <color key="sectionIndexBackgroundColor" red="1" green="0.60525672160031208" blue="0.55582782830064259" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="150" id="lJ0-d7-vTF" customClass="OBOItemDetailsTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJD-uj-BVA">

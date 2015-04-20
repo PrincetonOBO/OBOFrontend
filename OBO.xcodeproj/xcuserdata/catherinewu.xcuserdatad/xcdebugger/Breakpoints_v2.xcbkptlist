@@ -34,6 +34,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[OBOAccountTableViewCell nameLabel]"
                   moduleName = "OBO"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/catherinewu/COS333/finalProject/OBOFrontend/OBO/OBOAccountTableViewCell.m"
                   timestampString = "450472942.582782"
                   startingColumnNumber = "9223372036854775807"
@@ -48,6 +49,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[OBOAccountTableViewCell setNameLabel:]"
                   moduleName = "OBO"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/catherinewu/COS333/finalProject/OBOFrontend/OBO/OBOAccountTableViewCell.m"
                   timestampString = "450472942.582983"
                   startingColumnNumber = "9223372036854775807"
@@ -57,6 +59,22 @@
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OBO/OBOSellThingViewController.m"
+            timestampString = "451186542.137482"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-textFieldShouldBeginEditing:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
