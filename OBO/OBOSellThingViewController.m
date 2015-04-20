@@ -136,7 +136,7 @@ CGFloat originalY;
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     CGRect frameRect = textField.frame;
-    NSLog(@"%f", self.view.frame.origin.y);
+    //NSLog(@"%f", self.view.frame.origin.y);
     if (frameRect.origin.y > self.view.frame.size.height/2) {
     CGRect frame = CGRectMake(self.view.frame.origin.x,
                             -frameRect.origin.y/2.0,
@@ -144,7 +144,7 @@ CGFloat originalY;
                             self.view.frame.size.height);
     self.view.frame = frame;
     }
-    NSLog(@"%f", frameRect.origin.y);
+    //NSLog(@"%f", frameRect.origin.y);
     return YES;
 }
 
