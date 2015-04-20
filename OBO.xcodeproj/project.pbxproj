@@ -20,7 +20,6 @@
 		5311E0A01AC25915003BEF47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E08F1AC25915003BEF47 /* main.m */; };
 		5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */; };
 		5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0921AC25915003BEF47 /* red-dress.jpg */; };
-		53148F641AD9AD6E008D3901 /* items3.json in Resources */ = {isa = PBXBuildFile; fileRef = 53148F631AD9AD6E008D3901 /* items3.json */; };
 		537AD9D61ABF0BDD0007CDAD /* OBOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 537AD9D51ABF0BDD0007CDAD /* OBOTests.m */; };
 		53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E3461AD482E600196755 /* OBOItemEditViewController.m */; };
 		53D7E34B1AD4A6DF00196755 /* items2.json in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E34A1AD4A6DF00196755 /* items2.json */; };
@@ -61,7 +60,6 @@
 		5311E0921AC25915003BEF47 /* red-dress.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "red-dress.jpg"; sourceTree = "<group>"; };
 		5311E0941AC25915003BEF47 /* OBO-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OBO-Prefix.pch"; sourceTree = "<group>"; };
 		5311E0A41AC25A4C003BEF47 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53148F631AD9AD6E008D3901 /* items3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items3.json; sourceTree = "<group>"; };
 		537AD9B61ABF0BDD0007CDAD /* OBO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537AD9CF1ABF0BDD0007CDAD /* OBOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		537AD9D41ABF0BDD0007CDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				5311E0891AC25915003BEF47 /* en.lproj */,
 				5311E08E1AC25915003BEF47 /* items.json */,
 				53D7E34A1AD4A6DF00196755 /* items2.json */,
-				53148F631AD9AD6E008D3901 /* items3.json */,
 				5311E08F1AC25915003BEF47 /* main.m */,
 				5311E0901AC25915003BEF47 /* OBOSellThingViewController.h */,
 				5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */,
@@ -263,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5311E09C1AC25915003BEF47 /* Default@2x.png in Resources */,
-				53148F641AD9AD6E008D3901 /* items3.json in Resources */,
 				5311E09F1AC25915003BEF47 /* items.json in Resources */,
 				5311E09D1AC25915003BEF47 /* InfoPlist.strings in Resources */,
 				5311E09A1AC25915003BEF47 /* Default-568h@2x.png in Resources */,
