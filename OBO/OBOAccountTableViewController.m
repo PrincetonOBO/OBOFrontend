@@ -22,14 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"hello");
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
-    NSArray *itemsJSON = json[@"items"];
+    NSArray *itemsJSON = json[@"items2"];
     for (NSDictionary *itemJSON in itemsJSON) {
         OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         self.items = [self.items arrayByAddingObject:item];
