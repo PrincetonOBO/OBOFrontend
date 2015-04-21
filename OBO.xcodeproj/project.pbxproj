@@ -20,8 +20,8 @@
 		5311E0A01AC25915003BEF47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E08F1AC25915003BEF47 /* main.m */; };
 		5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */; };
 		5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0921AC25915003BEF47 /* red-dress.jpg */; };
-		5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5311E0A41AC25A4C003BEF47 /* Info.plist */; };
 		537AD9D61ABF0BDD0007CDAD /* OBOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 537AD9D51ABF0BDD0007CDAD /* OBOTests.m */; };
+		5DBF30C91AD57648003C38C8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBF30C81AD57647003C38C8 /* CoreLocation.framework */; };
 		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
 		8A273F9E1AD4360100FBA4F3 /* OBOYourItemsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9D1AD4360100FBA4F3 /* OBOYourItemsObject.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
@@ -64,6 +64,7 @@
 		537AD9CF1ABF0BDD0007CDAD /* OBOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		537AD9D41ABF0BDD0007CDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		537AD9D51ABF0BDD0007CDAD /* OBOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBOTests.m; sourceTree = "<group>"; };
+		5DBF30C81AD57647003C38C8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewCell.h; sourceTree = "<group>"; };
 		8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewCell.m; sourceTree = "<group>"; };
 		8A273F9C1AD4360100FBA4F3 /* OBOYourItemsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOYourItemsObject.h; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBF30C91AD57648003C38C8 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 		537AD9AD1ABF0BDD0007CDAD = {
 			isa = PBXGroup;
 			children = (
+				5DBF30C81AD57647003C38C8 /* CoreLocation.framework */,
 				537AD9B81ABF0BDD0007CDAD /* OBO */,
 				537AD9D21ABF0BDD0007CDAD /* OBOTests */,
 				537AD9B71ABF0BDD0007CDAD /* Products */,
@@ -221,7 +224,7 @@
 		537AD9AE1ABF0BDD0007CDAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = teamOBO;
 				TargetAttributes = {
 					537AD9B51ABF0BDD0007CDAD = {
@@ -257,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5311E0A51AC25A4C003BEF47 /* Info.plist in Resources */,
 				5311E09C1AC25915003BEF47 /* Default@2x.png in Resources */,
 				5311E09F1AC25915003BEF47 /* items.json in Resources */,
 				5311E09D1AC25915003BEF47 /* InfoPlist.strings in Resources */,

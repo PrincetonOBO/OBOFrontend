@@ -1,5 +1,6 @@
 #import "OBOItemObject.h"
 
+
 @implementation OBOItemObject
 
 - (instancetype)initWithInfo:(NSDictionary *)info {
@@ -10,6 +11,9 @@
         self.size = info[@"size"];
         self.details = info[@"details"];
         self.imageUrl = info[@"imageUrl"];
+        //self.longitude = info[@"longitude"];
+        //self.latitude = info[@"latitude"];
+        
     }
     return self;
 }
