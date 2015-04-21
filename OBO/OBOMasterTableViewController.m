@@ -45,6 +45,16 @@
      forControlEvents:UIControlEventValueChanged];
      
      */
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+}
+
+-(void)refresh {
+    NSLog(@"refreshing");
+    
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - Table View
