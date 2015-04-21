@@ -9,6 +9,8 @@
 #import "OBOEditUserProfileViewController.h"
 
 @interface OBOEditUserProfileViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
+@property (weak, nonatomic) IBOutlet UITextField *userContactInfoField;
 
 @end
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userNameField.text = @"name here";
+    self.userContactInfoField.text = @"netid@princeton.edu";
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +28,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
+- (bool)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    return YES;
+}
 /*
 #pragma mark - Navigation
 
