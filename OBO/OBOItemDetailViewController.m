@@ -24,6 +24,14 @@
     self.itemDescriptionLabel.text = self.object.details;
     
 }
+- (IBAction)getContactInfo:(id)sender {
+//    UIAlertView *alertView = [[UIAlertView alloc]
+//                              initWithTitle:@"Delete" message:@"Are you sure you want to contact this seller? The seller will be notified" delegate:self cancelButtonTitle:@"No, I am not interested" otherButtonTitles:@"Yes, I am interested", nil];
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Seller Contact Information" message:@"[Insert Contact Information here]" delegate:self cancelButtonTitle:@"Return to Item View" otherButtonTitles:nil];
+    [alertView show];
+    
+}
 
 
 @end

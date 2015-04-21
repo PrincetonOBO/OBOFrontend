@@ -36,15 +36,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
-    // Initialize the refresh control.
-    /*self.refreshControl = [[UIRefreshControl alloc] init];
-     self.refreshControl.backgroundColor = [UIColor purpleColor];
-     self.refreshControl.tintColor = [UIColor whiteColor];
-     [self.refreshControl addTarget:self
-     action:@selector(getLatestLoans)
-     forControlEvents:UIControlEventValueChanged];
-     
-     */
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh)
              forControlEvents:UIControlEventValueChanged];
@@ -53,7 +44,7 @@
 
 -(void)refresh {
     NSLog(@"refreshing");
-    
+    // add data pull here!! //
     [self.refreshControl endRefreshing];
 }
 

@@ -36,8 +36,18 @@
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
 
+-(void)refresh {
+    NSLog(@"refreshing");
+    // add data pull here!! //
+    [self.refreshControl endRefreshing];
+}
 #pragma mark - Table View
 
 
