@@ -9,8 +9,8 @@
 #import "OBOUserProfileViewController.h"
 
 @interface OBOUserProfileViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contactInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userContactInfoLabel;
 
 @end
 
@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nameLabel.text = @"name here";
-    self.contactInfoLabel.text = @"netid@princeton.edu";
+    self.userNameLabel.text = @"name here";
+    self.userContactInfoLabel.text = @"netid@princeton.edu";
     // Do any additional setup after loading the view.
 }
 
