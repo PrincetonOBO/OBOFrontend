@@ -24,6 +24,8 @@ CGFloat originalY;
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
     [self.itemImageView setImage:nil];
+    [self.itemPricePickerView reloadAllComponents];
+    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
 }
 - (IBAction)choosePhoto:(id)sender {
     self.imagePicker = [[UIImagePickerController alloc] init];
