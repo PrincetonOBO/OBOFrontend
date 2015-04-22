@@ -1,17 +1,20 @@
-#import "OBOItemDetailViewController.h"
+#import "OBOItemEditViewController.h"
 #import "OBOItemObject.h"
 
-@interface OBOItemDetailViewController()
+@interface OBOItemEditViewController()
+
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemSizeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemLocationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 
 @end
 
-@implementation OBOItemDetailViewController
+@implementation OBOItemEditViewController
+- (IBAction)editItemPrice:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,14 +27,5 @@
     self.itemDescriptionLabel.text = self.object.details;
     
 }
-- (IBAction)getContactInfo:(id)sender {
-//    UIAlertView *alertView = [[UIAlertView alloc]
-//                              initWithTitle:@"Delete" message:@"Are you sure you want to contact this seller? The seller will be notified" delegate:self cancelButtonTitle:@"No, I am not interested" otherButtonTitles:@"Yes, I am interested", nil];
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Seller Contact Information" message:@"[Insert Contact Information here]" delegate:self cancelButtonTitle:@"Return to Item View" otherButtonTitles:nil];
-    [alertView show];
-    
-}
-
 
 @end

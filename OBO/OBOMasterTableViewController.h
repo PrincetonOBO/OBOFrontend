@@ -2,5 +2,4 @@
 
 @interface OBOMasterTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-
 @end

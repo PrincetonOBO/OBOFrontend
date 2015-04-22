@@ -1,10 +1,14 @@
 #import "OBOSellThingViewController.h"
 
+
 @interface OBOSellThingViewController()
 {
     NSMutableArray *_pickerData;
     NSURLConnection *currentConnection;
     NSJSONSerialization *jsonParser;
+    CGFloat originalY;
+    //CGFloat name;
+
 }
 @property (weak, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
@@ -13,11 +17,9 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) NSString *longitude;
 @property (weak, nonatomic) NSString *latitude;
-
-//temp
-@property (copy, nonatomic) NSString *enteredEmailAddress;
 @property (retain, nonatomic) NSMutableData *apiReturnJSONData;
-
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
 @implementation OBOSellThingViewController
@@ -69,6 +71,10 @@
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
     [self.itemPicImageView setImage:nil];
+    [self.itemImageView setImage:nil];
+    [self.itemPricePickerView reloadAllComponents];
+    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
+
 
 }
 
@@ -121,8 +127,24 @@
 
     self.itemPricePickerView.dataSource = self;
     self.itemPricePickerView.delegate = self;
+    self.itemDescriptionTextField.delegate = self;
+    self.itemNameTextField.delegate = self;
+    self.itemSizeTextField.delegate = self;
+    
+    originalY = self.view.frame.origin.y;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
+- (bool)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    return YES;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -132,7 +154,7 @@
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.chosenImage = info[UIImagePickerControllerOriginalImage];
-    [self.itemPicImageView setImage:self.chosenImage];
+    [self.itemImageView setImage:self.chosenImage];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -159,13 +181,64 @@
     return _pickerData[row];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)itemNameTextField {
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //Be informed of keyboard
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+#pragma mark keyboard
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    //NSDictionary *userInfo = [notification userInfo];
+    //CGSize size = [[userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     
-    [itemNameTextField resignFirstResponder];
-    return YES;
+//    CGRect frame = CGRectMake(self.view.frame.origin.x,
+//                              self.view.frame.origin.y  - size.height,
+//                              self.view.frame.size.width,
+//                              self.view.frame.size.height);
+    //self.view.frame = frame;
     
 }
 
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+//    NSDictionary *userInfo = [notification userInfo];
+//    CGSize size = [[userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+//    self.view.frame = CGRectMake(self.view.frame.origin.x,
+//                                 self.view.frame.origin.y - size.height,
+//                                 self.view.frame.size.width,
+//                                 self.view.frame.size.height);
+//    
+//    NSLog(@"%f", size.height);
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    CGRect frameRect = textField.frame;
+    //NSLog(@"%f", self.view.frame.origin.y);
+    if (frameRect.origin.y > self.view.frame.size.height/2) {
+    CGRect frame = CGRectMake(self.view.frame.origin.x,
+                            -frameRect.origin.y/2.0,
+                            self.view.frame.size.width,
+                            self.view.frame.size.height);
+    self.view.frame = frame;
+    }
+    //NSLog(@"%f", frameRect.origin.y);
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    CGRect frame = CGRectMake(self.view.frame.origin.x,
+                              originalY,
+                              self.view.frame.size.width,
+                              self.view.frame.size.height);
+    self.view.frame = frame;
+    return YES;
+}
 
 @end
 

@@ -1,11 +1,12 @@
 #import "OBOAccountTableViewCell.h"
-#import "OBOYourItemsObject.h"
+#import "OBOItemEditViewController.h"
+#import "OBOItemObject.h"
 #import "OBOAccountTableViewController.h"
 
 @interface OBOAccountTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,23 +21,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
+    //NSLog(@"hello");
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
-    NSArray *itemsJSON = json[@"items"];
+    NSArray *itemsJSON = json[@"items2"];
     for (NSDictionary *itemJSON in itemsJSON) {
-        OBOYourItemsObject *item = [[OBOYourItemsObject alloc] initWithInfo:itemJSON];
+        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         self.items = [self.items arrayByAddingObject:item];
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
 
+-(void)refresh {
+    NSLog(@"refreshing");
+    // add data pull here!! //
+    [self.refreshControl endRefreshing];
+}
 #pragma mark - Table View
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
@@ -45,8 +58,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
     
-    [cell prepareWithItem:self.items[indexPath.row]];
+    [cell prepareWithItem2:self.items[indexPath.row]];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toItemEdit"]) {
+        OBOItemEditViewController *dest = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        dest.object = self.items[indexPath.row];
+        
+    }
 }
 
 @end

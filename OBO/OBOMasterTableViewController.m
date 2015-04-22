@@ -3,11 +3,10 @@
 #import "OBOItemObject.h"
 #import "OBOMasterTableViewController.h"
 
-
 @interface OBOMasterTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -37,15 +36,16 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
-    // Initialize the refresh control.
-    /*self.refreshControl = [[UIRefreshControl alloc] init];
-     self.refreshControl.backgroundColor = [UIColor purpleColor];
-     self.refreshControl.tintColor = [UIColor whiteColor];
-     [self.refreshControl addTarget:self
-     action:@selector(getLatestLoans)
-     forControlEvents:UIControlEventValueChanged];
-     
-     */
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+}
+
+-(void)refresh {
+    NSLog(@"refreshing");
+    // add data pull here!! //
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - Table View
