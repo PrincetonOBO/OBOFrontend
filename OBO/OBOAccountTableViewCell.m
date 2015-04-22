@@ -5,12 +5,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *interestedBuyers;
 
 @end
 @implementation OBOAccountTableViewCell
 
 - (void)prepareWithItem2:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
+    [_interestedBuyers setTitle:@"#" forState:UIControlStateNormal];
 }
 
 - (IBAction)showDeleteAlert:(id)sender {
