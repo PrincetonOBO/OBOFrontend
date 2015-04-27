@@ -1,15 +1,9 @@
-//
-//  OBOInterestedBuyersTableViewCell.h
-//  OBO
-//
-//  Created by Catherine Wu on 4/21/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+
+@class OBOItemOfferObject;
 
 @interface OBOInterestedBuyersTableViewCell : UITableViewCell
 
+- (void)prepareWithItem3:(OBOItemOfferObject *)offer;
+
 @end
-
-

@@ -23,7 +23,6 @@
 		5344C6611AE5537B001691DC /* OBOUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C6601AE5537B001691DC /* OBOUserProfileViewController.m */; };
 		5344C6631AE58D5A001691DC /* prof.json in Resources */ = {isa = PBXBuildFile; fileRef = 5344C6621AE58D5A001691DC /* prof.json */; };
 		5344C6661AE593C2001691DC /* OBOEditUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C6651AE593C2001691DC /* OBOEditUserProfileViewController.m */; };
-		5344C6681AE6CFD6001691DC /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5344C6671AE6CFD6001691DC /* star.jpg */; };
 		5344C66B1AE70309001691DC /* OBOInterestedBuyersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C66A1AE70309001691DC /* OBOInterestedBuyersTableViewController.m */; };
 		5344C66E1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C66D1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.m */; };
 		5344C6711AE704FB001691DC /* OBOUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C6701AE704FB001691DC /* OBOUserProfile.m */; };
@@ -31,8 +30,11 @@
 		53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E3461AD482E600196755 /* OBOItemEditViewController.m */; };
 		53D7E34B1AD4A6DF00196755 /* items2.json in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E34A1AD4A6DF00196755 /* items2.json */; };
 		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
+		8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A64DAFE1AED60BF005D5482 /* contacts.json */; };
+		8A64DB051AED7E8E005D5482 /* OBOItemOfferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
 		8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */; };
+		8AFB2E641AEEC56D004E7E55 /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB2E631AEEC56D004E7E55 /* star.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,6 @@
 		5344C6621AE58D5A001691DC /* prof.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = prof.json; sourceTree = "<group>"; };
 		5344C6641AE593C2001691DC /* OBOEditUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOEditUserProfileViewController.h; sourceTree = "<group>"; };
 		5344C6651AE593C2001691DC /* OBOEditUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOEditUserProfileViewController.m; sourceTree = "<group>"; };
-		5344C6671AE6CFD6001691DC /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
 		5344C6691AE70309001691DC /* OBOInterestedBuyersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOInterestedBuyersTableViewController.h; sourceTree = "<group>"; };
 		5344C66A1AE70309001691DC /* OBOInterestedBuyersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOInterestedBuyersTableViewController.m; sourceTree = "<group>"; };
 		5344C66C1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOInterestedBuyersTableViewCell.h; sourceTree = "<group>"; };
@@ -88,9 +89,13 @@
 		53D7E34A1AD4A6DF00196755 /* items2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items2.json; sourceTree = "<group>"; };
 		8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewCell.h; sourceTree = "<group>"; };
 		8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewCell.m; sourceTree = "<group>"; };
+		8A64DAFE1AED60BF005D5482 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOItemOfferObject.h; sourceTree = "<group>"; };
+		8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOItemOfferObject.m; sourceTree = "<group>"; };
 		8A875D7B1AD1D7750033D1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewController.h; sourceTree = "<group>"; };
 		8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewController.m; sourceTree = "<group>"; };
+		8AFB2E631AEEC56D004E7E55 /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +146,12 @@
 			isa = PBXGroup;
 			children = (
 				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
+				8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */,
+				8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */,
 				5344C66C1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.h */,
 				5344C66D1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.m */,
 				5344C6691AE70309001691DC /* OBOInterestedBuyersTableViewController.h */,
 				5344C66A1AE70309001691DC /* OBOInterestedBuyersTableViewController.m */,
-				5344C6671AE6CFD6001691DC /* star.jpg */,
 				5344C6641AE593C2001691DC /* OBOEditUserProfileViewController.h */,
 				5344C6651AE593C2001691DC /* OBOEditUserProfileViewController.m */,
 				5344C65F1AE5537B001691DC /* OBOUserProfileViewController.h */,
@@ -170,9 +176,11 @@
 				5311E0861AC25915003BEF47 /* Default-568h@2x.png */,
 				5311E0871AC25915003BEF47 /* Default.png */,
 				5311E0881AC25915003BEF47 /* Default@2x.png */,
+				8AFB2E631AEEC56D004E7E55 /* star.jpg */,
 				5311E0891AC25915003BEF47 /* en.lproj */,
 				5311E08E1AC25915003BEF47 /* items.json */,
 				53D7E34A1AD4A6DF00196755 /* items2.json */,
+				8A64DAFE1AED60BF005D5482 /* contacts.json */,
 				5344C6621AE58D5A001691DC /* prof.json */,
 				5311E08F1AC25915003BEF47 /* main.m */,
 				5311E0901AC25915003BEF47 /* OBOSellThingViewController.h */,
@@ -259,6 +267,7 @@
 				TargetAttributes = {
 					537AD9B51ABF0BDD0007CDAD = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = WKRZ8G7B5R;
 					};
 					537AD9CE1ABF0BDD0007CDAD = {
 						CreatedOnToolsVersion = 6.2;
@@ -291,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5311E09C1AC25915003BEF47 /* Default@2x.png in Resources */,
-				5344C6681AE6CFD6001691DC /* star.jpg in Resources */,
 				5311E09F1AC25915003BEF47 /* items.json in Resources */,
 				5311E09D1AC25915003BEF47 /* InfoPlist.strings in Resources */,
 				5311E09A1AC25915003BEF47 /* Default-568h@2x.png in Resources */,
@@ -299,6 +307,8 @@
 				5344C6631AE58D5A001691DC /* prof.json in Resources */,
 				8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */,
 				5311E09B1AC25915003BEF47 /* Default.png in Resources */,
+				8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */,
+				8AFB2E641AEEC56D004E7E55 /* star.jpg in Resources */,
 				53D7E34B1AD4A6DF00196755 /* items2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +334,7 @@
 				5344C6661AE593C2001691DC /* OBOEditUserProfileViewController.m in Sources */,
 				5311E0961AC25915003BEF47 /* OBOItemDetailsTableViewCell.m in Sources */,
 				8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */,
+				8A64DB051AED7E8E005D5482 /* OBOItemOfferObject.m in Sources */,
 				5344C6611AE5537B001691DC /* OBOUserProfileViewController.m in Sources */,
 				5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */,
 				5311E0991AC25915003BEF47 /* OBOMasterTableViewController.m in Sources */,
@@ -454,9 +465,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OBO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -464,9 +478,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OBO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

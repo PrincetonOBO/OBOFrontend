@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OBOInterestedBuyersTableViewController : UITableViewController
-
+@interface OBOInterestedBuyersTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 @end

@@ -1,12 +1,5 @@
-//
-//  OBOInterestedBuyersTableViewCell.m
-//  OBO
-//
-//  Created by Catherine Wu on 4/21/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
 #import "OBOInterestedBuyersTableViewCell.h"
+#import "OBOItemOfferObject.h"
 
 @interface OBOInterestedBuyersTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -15,6 +8,11 @@
 @end
 
 @implementation OBOInterestedBuyersTableViewCell
+
+- (void)prepareWithItem3:(OBOItemOfferObject *)offer {
+    self.nameLabel.text = offer.name;
+    self.contactInfoLabel.text = offer.contactInfo;
+}
 
 - (void)awakeFromNib {
     // Initialization code

@@ -1,28 +1,50 @@
-//
-//  OBOInterestedBuyersTableViewController.m
-//  OBO
-//
-//  Created by Catherine Wu on 4/21/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
+#import "OBOInterestedBuyersTableViewCell.h"
+#import "OBOAccountTableViewController.h"
+#import "OBOItemOfferObject.h"
 #import "OBOInterestedBuyersTableViewController.h"
 
 @interface OBOInterestedBuyersTableViewController ()
+@property (strong, nonatomic) NSArray *offers;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation OBOInterestedBuyersTableViewController
 
+- (NSArray *)offers {
+    if (!_offers) {
+        _offers = [[NSArray alloc]init];
+    }
+    return _offers;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
+                                                         ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
+    NSError *error = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSArray *itemsJSON = json[@"items2"];
+    for (NSDictionary *itemJSON in itemsJSON) {
+//        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
+        id value = [itemJSON objectForKey:@"offers"];
+        for (NSDictionary *offerJSON in value) {
+            OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
+            self.offers = [self.offers arrayByAddingObject:offer];
+        }
+    }
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -31,70 +53,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+-(void)refresh {
+    NSLog(@"refreshing");
+    // add data pull here!! //
+    [self.refreshControl endRefreshing];
 }
+#pragma mark - Table View
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.offers.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    OBOInterestedBuyersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell3" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    [cell prepareWithItem3:self.offers[indexPath.row]];
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

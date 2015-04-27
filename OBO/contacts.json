@@ -1,0 +1,13 @@
+{
+	"contacts":[
+		{
+			"name": "Christine Li",
+			"contactInfo": "csli@princeton.edu"
+		},
+        {
+            "name": "Catherine Wu",
+            "contactInfo": "cathwu@princeton.edu"
+        },
+	]
+}
+

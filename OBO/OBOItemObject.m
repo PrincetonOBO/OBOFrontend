@@ -10,6 +10,7 @@
         self.size = info[@"size"];
         self.details = info[@"details"];
         self.imageUrl = info[@"imageUrl"];
+        self.offers = info[@"offers"];
     }
     return self;
 }
