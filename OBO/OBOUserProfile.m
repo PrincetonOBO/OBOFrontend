@@ -15,6 +15,7 @@
     if (self) {
         self.name = info[@"name"];
         self.contactInfo = info[@"contactInfo"];
+        self.location = info[@"location"];
     }
     return self;
 }

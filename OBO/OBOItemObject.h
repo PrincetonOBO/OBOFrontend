@@ -10,5 +10,6 @@
 @property (strong, nonatomic) NSString *details;
 @property (strong, nonatomic) NSString *imageUrl;
 @property (strong, nonatomic) NSArray *offers;
+@property (nonatomic, assign) BOOL *sold;
 
 @end

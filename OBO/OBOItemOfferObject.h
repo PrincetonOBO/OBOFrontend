@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *contactInfo;
+@property (strong, nonatomic) NSString *price;
 
 @end

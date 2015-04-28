@@ -4,6 +4,7 @@
 @interface OBOInterestedBuyersTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 
@@ -12,6 +13,8 @@
 - (void)prepareWithItem3:(OBOItemOfferObject *)offer {
     self.nameLabel.text = offer.name;
     self.contactInfoLabel.text = offer.contactInfo;
+    self.priceLabel.text = offer.price;
+
 }
 
 - (void)awakeFromNib {

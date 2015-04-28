@@ -34,7 +34,7 @@
 		8A64DB051AED7E8E005D5482 /* OBOItemOfferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
 		8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */; };
-		8AFB2E641AEEC56D004E7E55 /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AFB2E631AEEC56D004E7E55 /* star.jpg */; };
+		8AC318BE1AEFFD67001291AB /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AC318BD1AEFFD67001291AB /* star.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 		8A875D7B1AD1D7750033D1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewController.h; sourceTree = "<group>"; };
 		8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewController.m; sourceTree = "<group>"; };
-		8AFB2E631AEEC56D004E7E55 /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
+		8AC318BD1AEFFD67001291AB /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +163,8 @@
 				5311E07F1AC25915003BEF47 /* OBOItemDetailsTableViewCell.m */,
 				8A273F991AD42EF000FBA4F3 /* OBOAccountTableViewCell.h */,
 				8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */,
+				8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */,
+				8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */,
 				53D7E3451AD482E600196755 /* OBOItemEditViewController.h */,
 				53D7E3461AD482E600196755 /* OBOItemEditViewController.m */,
 				5311E0801AC25915003BEF47 /* OBOItemDetailViewController.h */,
@@ -176,7 +178,7 @@
 				5311E0861AC25915003BEF47 /* Default-568h@2x.png */,
 				5311E0871AC25915003BEF47 /* Default.png */,
 				5311E0881AC25915003BEF47 /* Default@2x.png */,
-				8AFB2E631AEEC56D004E7E55 /* star.jpg */,
+				8AC318BD1AEFFD67001291AB /* star.jpg */,
 				5311E0891AC25915003BEF47 /* en.lproj */,
 				5311E08E1AC25915003BEF47 /* items.json */,
 				53D7E34A1AD4A6DF00196755 /* items2.json */,
@@ -185,8 +187,6 @@
 				5311E08F1AC25915003BEF47 /* main.m */,
 				5311E0901AC25915003BEF47 /* OBOSellThingViewController.h */,
 				5311E0911AC25915003BEF47 /* OBOSellThingViewController.m */,
-				8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */,
-				8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */,
 				5311E0921AC25915003BEF47 /* red-dress.jpg */,
 				5311E0941AC25915003BEF47 /* OBO-Prefix.pch */,
 				537AD9B91ABF0BDD0007CDAD /* Supporting Files */,
@@ -308,7 +308,7 @@
 				8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */,
 				5311E09B1AC25915003BEF47 /* Default.png in Resources */,
 				8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */,
-				8AFB2E641AEEC56D004E7E55 /* star.jpg in Resources */,
+				8AC318BE1AEFFD67001291AB /* star.jpg in Resources */,
 				53D7E34B1AD4A6DF00196755 /* items2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

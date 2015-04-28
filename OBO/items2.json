@@ -9,11 +9,13 @@
              "offers":[
                           {
                           "name": "Christine Li",
-                          "contactInfo": "csli@princeton.edu"
+                          "contactInfo": "csli@princeton.edu",
+                          "price": "10"
                           },
                           {
                           "name": "Catherine Wu",
-                          "contactInfo": "cathwu@princeton.edu"
+                          "contactInfo": "cathwu@princeton.edu",
+                          "price": "5"
                           },
                           ]
              },
