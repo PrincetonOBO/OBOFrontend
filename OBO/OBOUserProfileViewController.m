@@ -5,17 +5,11 @@
 @property (strong, nonatomic) OBOUserProfile *profile;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userContactInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userLocationLabel;
 
 @end
 
 @implementation OBOUserProfileViewController
-
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    self.userNameLabel.text = @"name here";
-//    self.userContactInfoLabel.text = @"netid@princeton.edu";
-//    // Do any additional setup after loading the view.
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,10 +20,11 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
-    NSDictionary *profJSON = [json[@"prof"] objectAtIndex:0];
-    self.profile = [[OBOUserProfile alloc] initWithInfo:profJSON];
+    self.profile = [[OBOUserProfile alloc] initWithInfo:json];
+    NSLog(@"%@",self.profile.name);
     self.userNameLabel.text = self.profile.name;
     self.userContactInfoLabel.text = self.profile.contactInfo;
+    self.userLocationLabel.text = self.profile.location;
 }
 
 

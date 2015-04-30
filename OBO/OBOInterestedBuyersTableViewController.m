@@ -29,7 +29,6 @@
                                                            error:&error];
     NSArray *itemsJSON = json[@"items2"];
     for (NSDictionary *itemJSON in itemsJSON) {
-//        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         id value = [itemJSON objectForKey:@"offers"];
         for (NSDictionary *offerJSON in value) {
             OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
