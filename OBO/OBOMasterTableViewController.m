@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];

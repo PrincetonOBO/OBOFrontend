@@ -6,11 +6,12 @@
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {
-        self.name = info[@"name"];
+        self.name = info[@"description"];
         self.price = [info[@"price"] integerValue];
         self.size = info[@"size"];
-        self.details = info[@"details"];
+        self.details = info[@"description"];
         self.imageUrl = info[@"imageUrl"];
+        self.item_id = info[@"id"];
         //self.longitude = info[@"longitude"];
         //self.latitude = info[@"latitude"];
         
