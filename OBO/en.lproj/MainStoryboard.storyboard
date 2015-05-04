@@ -335,10 +335,6 @@
                                     <action selector="choosePhoto:" destination="c9l-PB-aqg" eventType="touchUpInside" id="HRh-Df-h8F"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" id="IDZ-7d-8xf">
-                                <rect key="frame" x="16" y="156" width="131" height="141"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="odP-ka-ffz">
                                 <rect key="frame" x="20" y="401" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,7 +356,6 @@
                         <outlet property="itemDescriptionTextField" destination="odP-ka-ffz" id="vkU-K0-hXm"/>
                         <outlet property="itemImageView" destination="F9S-nC-CGP" id="qLc-4O-Dpa"/>
                         <outlet property="itemNameTextField" destination="xhb-zY-9do" id="egc-ky-Ohd"/>
-                        <outlet property="itemPricePickerView" destination="IDZ-7d-8xf" id="44k-8X-nTo"/>
                         <outlet property="itemSizeTextField" destination="XXh-as-46f" id="26p-x4-ue3"/>
                         <outlet property="scrollView" destination="XgS-nb-jrm" id="4L0-TV-pJg"/>
                     </connections>
@@ -699,7 +694,7 @@
                                 <rect key="frame" x="29" y="356" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
@@ -707,7 +702,7 @@
                                 <rect key="frame" x="29" y="385" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pf5-h6-BKO">
@@ -766,7 +761,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cKh-mY-m8N" kind="push" id="u8y-Dk-iCf"/>
+                                    <action selector="submit:" destination="hD1-0f-DSk" eventType="touchUpInside" id="Xja-SZ-GIa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="lsJ-CL-mXF">

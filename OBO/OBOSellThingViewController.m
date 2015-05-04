@@ -1,28 +1,107 @@
 #import "OBOSellThingViewController.h"
 
-CGFloat originalY;
-//CGFloat name;
 
 @interface OBOSellThingViewController()
 {
     NSMutableArray *_pickerData;
+    NSURLConnection *currentConnection;
+    NSJSONSerialization *jsonParser;
+    CGFloat originalY;
+    
+    //CGFloat name;
+
 }
 @property (weak, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) double longitude;
+@property (nonatomic) double latitude;
+@property (retain, nonatomic) NSMutableData *apiReturnJSONData;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
 @implementation OBOSellThingViewController
 - (IBAction)submit:(id)sender {
+    NSString *name = self.itemNameTextField.text;
+    NSString *size = self.itemSizeTextField.text;
+    NSString *text = self.itemDescriptionTextField.text;
+    
+
+    // Make RESTful URL
+    NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
+    NSLog(@"making rest: %f", self.latitude);
+    
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"latitude\": %lf, \"longitude\": %lf, \"price\": %f }", text, self.latitude, self.longitude, 10.0];
+
+
+    //NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.7) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    //NSLog(encodedImage);
+
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSLog(json);
+
+    [restRequest setHTTPBody:jsonData];
+    [restRequest setHTTPMethod:@"POST"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+
+    
+    // Cancel previous call if we run a bunch at once
+    if( currentConnection)
+    {
+        [currentConnection cancel];
+        currentConnection = nil;
+        self.apiReturnJSONData = nil;
+    }
+    
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    
+    NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"response: %@", itemResponse);
+
+
+    //Clear entry fields
     self.itemDescriptionTextField.text = @"";
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
+    [self.itemPicImageView setImage:nil];
     [self.itemImageView setImage:nil];
     [self.itemPricePickerView reloadAllComponents];
     [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
+
+
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        self.latitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].latitude] doubleValue];
+        self.longitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].longitude] doubleValue];
+
+        NSLog(@"string: %@", [NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].latitude]);
+        NSLog(@"float: %f", self.latitude);
+    }
+    [self.locationManager stopUpdatingLocation];
+    NSLog(@"location successfully updated");
 }
 
 - (IBAction)choosePhoto:(id)sender {
@@ -30,11 +109,18 @@ CGFloat originalY;
     self.imagePicker.delegate = self;
     [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:self.imagePicker animated:YES completion:nil];
+    
 }
 
 -(void) viewDidLoad
 {
     [super viewDidLoad];
+    self.locationManager = [[CLLocationManager alloc] init];
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+
     _pickerData = [NSMutableArray array];
     [_pickerData addObject:[NSString stringWithFormat:@" "]];
     
@@ -50,6 +136,13 @@ CGFloat originalY;
     self.itemSizeTextField.delegate = self;
     
     originalY = self.view.frame.origin.y;
+    
+    // Get the location!
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    NSLog(@"set location updating");
+
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
