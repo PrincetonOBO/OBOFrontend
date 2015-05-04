@@ -150,16 +150,6 @@
                                 <rect key="frame" x="85" y="227" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zXK-gM-bdM">
-                                <rect key="frame" x="128" y="38" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="edit Price">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="editItemPrice:" destination="2eq-WZ-7XP" eventType="touchUpInside" id="JkP-lc-MeY"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mBe-FB-vWG">
                                 <rect key="frame" x="40" y="95" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -220,6 +210,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitChanges:" destination="2eq-WZ-7XP" eventType="touchUpInside" id="ZOg-8v-ZdS"/>
+                                    <segue destination="vWV-VF-PGR" kind="push" id="fA5-Xq-gTl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,13 +231,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3y-B1-rIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="-1398"/>
+            <point key="canvasLocation" x="1245" y="-1492"/>
         </scene>
-        <!--Account-->
+        <!--Your Items-->
         <scene sceneID="p8R-TT-uLP">
             <objects>
                 <navigationController id="uhs-B6-c6t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="Taw-z9-wfP"/>
+                    <tabBarItem key="tabBarItem" title="Your Items" id="Taw-z9-wfP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AP-Li-fbs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -259,11 +250,11 @@
             </objects>
             <point key="canvasLocation" x="223" y="-1716"/>
         </scene>
-        <!--Sell-->
+        <!--Sell an Item-->
         <scene sceneID="cqD-y5-Vlv">
             <objects>
                 <navigationController id="YSE-t5-STK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sell" id="rwk-br-Cvj"/>
+                    <tabBarItem key="tabBarItem" title="Sell an Item" id="rwk-br-Cvj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkX-ZB-XlM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -292,6 +283,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submit:" destination="c9l-PB-aqg" eventType="touchUpInside" id="7Yx-Ip-IUz"/>
+                                    <segue destination="vWV-VF-PGR" kind="push" id="1qX-mK-cYD"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xhb-zY-9do">
@@ -377,11 +369,11 @@
             </objects>
             <point key="canvasLocation" x="763" y="-1096"/>
         </scene>
-        <!--Buy-->
+        <!--Buy Items-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Buy" id="NRw-s6-G15"/>
+                    <tabBarItem key="tabBarItem" title="Buy Items" id="NRw-s6-G15"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -773,6 +765,9 @@
                                 <state key="normal" title="Submit Changes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="cKh-mY-m8N" kind="push" id="u8y-Dk-iCf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="lsJ-CL-mXF">
                                 <rect key="frame" x="39" y="241" width="243" height="30"/>
@@ -809,11 +804,11 @@
             </objects>
             <point key="canvasLocation" x="1271" y="150"/>
         </scene>
-        <!--Item-->
+        <!--Your Profile-->
         <scene sceneID="Qtx-es-gHH">
             <objects>
                 <navigationController id="YpQ-yx-UCJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="x1O-dQ-UxB"/>
+                    <tabBarItem key="tabBarItem" title="Your Profile" id="x1O-dQ-UxB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTU-MP-bjL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -832,4 +827,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WMs-We-Cd8"/>
+        <segue reference="9HR-JR-6rm"/>
+    </inferredMetricsTieBreakers>
 </document>

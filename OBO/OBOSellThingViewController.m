@@ -17,9 +17,6 @@ CGFloat originalY;
 
 @implementation OBOSellThingViewController
 - (IBAction)submit:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Item Submitted" message:@"Click the 'Your Items' tab to see your newly added item." delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil];
-    [alertView show];
     self.itemDescriptionTextField.text = @"";
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";

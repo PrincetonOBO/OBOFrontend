@@ -34,7 +34,7 @@
 }
 - (IBAction)submitChanges:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Item Updated" message:@"YAY" delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil];
+                              initWithTitle:@"Item Update Successful" message:nil delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
     [alertView show];
     self.object.name = self.itemNameTextField.text;
     self.object.price = self.itemPriceTextField.text;
