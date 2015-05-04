@@ -1,5 +1,6 @@
 #import "OBOUserProfile.h"
 #import "OBOUserProfileViewController.h"
+#import "OBOEditUserProfileViewController.h"
 
 @interface OBOUserProfileViewController ()
 @property (strong, nonatomic) OBOUserProfile *profile;
@@ -32,6 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToUserProfileEdit"]) {
+        OBOEditUserProfileViewController *dest = segue.destinationViewController;
+        dest.user = self.profile;
+    }
 }
 
 /*

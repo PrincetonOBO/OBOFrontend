@@ -1,8 +1,10 @@
 #import "OBOEditUserProfileViewController.h"
+#import "OBOUserProfile.h"
 
 @interface OBOEditUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userContactInfoField;
+@property (weak, nonatomic) IBOutlet UITextField *userLocationField;
 
 @end
 
@@ -10,8 +12,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.userNameField.text = @"name here";
-    self.userContactInfoField.text = @"netid@princeton.edu";
+    self.userNameField.text = self.user.name;
+    self.userContactInfoField.text = self.user.contactInfo;
+    self.userLocationField.text = self.user.location;
     // Do any additional setup after loading the view.
 }
 
