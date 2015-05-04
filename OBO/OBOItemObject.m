@@ -12,8 +12,8 @@
         self.details = info[@"description"];
         self.imageUrl = info[@"imageUrl"];
         self.item_id = info[@"id"];
-        //self.longitude = info[@"longitude"];
-        //self.latitude = info[@"latitude"];
+        self.longitude = info[@"longitude"];
+        self.latitude = info[@"latitude"];
         
     }
     return self;
