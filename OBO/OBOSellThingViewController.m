@@ -17,9 +17,9 @@ CGFloat originalY;
 
 @implementation OBOSellThingViewController
 - (IBAction)submit:(id)sender {
-    NSString *name = self.itemNameTextField.text;
-    NSString *size = self.itemSizeTextField.text;
-    NSString *text = self.itemDescriptionTextField.text;
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Item Submitted" message:@"Click the 'Your Items' tab to see your newly added item." delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil];
+    [alertView show];
     self.itemDescriptionTextField.text = @"";
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
@@ -27,6 +27,7 @@ CGFloat originalY;
     [self.itemPricePickerView reloadAllComponents];
     [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
 }
+
 - (IBAction)choosePhoto:(id)sender {
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
