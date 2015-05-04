@@ -1,8 +1,5 @@
 {
-    "profile": [
-        {
             "name": "Catherine",
-            "contact information": "cathwu@princeton.edu"
-        }
-    ]
+            "contactInfo": "cathwu@princeton.edu",
+            "location": "Yoseloff"
 }

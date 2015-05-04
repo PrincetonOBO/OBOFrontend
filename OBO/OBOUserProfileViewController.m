@@ -1,16 +1,12 @@
-//
-//  OBOUserProfileViewController.m
-//  OBO
-//
-//  Created by Catherine Wu on 4/20/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
+#import "OBOUserProfile.h"
 #import "OBOUserProfileViewController.h"
+#import "OBOEditUserProfileViewController.h"
 
 @interface OBOUserProfileViewController ()
+@property (strong, nonatomic) OBOUserProfile *profile;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userContactInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userLocationLabel;
 
 @end
 
@@ -48,14 +44,25 @@
     // Populate with results of GET request
     NSString *first_name = [jsonDict objectForKey:@"first_name"];
     NSString *last_name = [jsonDict objectForKey:@"last_name"];
+    self.profile = [[OBOUserProfile alloc] initWithInfo:json];
     self.userNameLabel.text = [NSString stringWithFormat: @"%@ %@", first_name, last_name];
     self.userContactInfoLabel.text = [jsonDict objectForKey:@"net_id"];
+    self.userLocationLabel.text = self.profile.location;
     // Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToUserProfileEdit"]) {
+        OBOEditUserProfileViewController *dest = segue.destinationViewController;
+        dest.user = self.profile;
+    }
 }
 
 /*

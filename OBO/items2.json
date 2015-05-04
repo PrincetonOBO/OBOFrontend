@@ -5,7 +5,19 @@
              "size": "S",
              "price": 10,
              "imageUrl": "http://localhost:8000/red-dress.jpg",
-             "details": "Cute red dress from JCrew."
+             "details": "Cute red dress from JCrew.",
+             "offers":[
+                          {
+                          "name": "Christine Li",
+                          "contactInfo": "csli@princeton.edu",
+                          "price": "10"
+                          },
+                          {
+                          "name": "Catherine Wu",
+                          "contactInfo": "cathwu@princeton.edu",
+                          "price": "5"
+                          },
+                          ]
              },
              {
              "name": "Black Dress",

@@ -1,16 +1,10 @@
-//
-//  OBOEditUserProfileViewController.m
-//  OBO
-//
-//  Created by Catherine Wu on 4/20/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
 #import "OBOEditUserProfileViewController.h"
+#import "OBOUserProfile.h"
 
 @interface OBOEditUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userContactInfoField;
+@property (weak, nonatomic) IBOutlet UITextField *userLocationField;
 
 @end
 
@@ -51,9 +45,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.userNameField.text = @"Name here";
-    self.userContactInfoField.text = @"netid@princeton.edu";
-    
+    self.userNameField.text = self.user.name;
+    self.userContactInfoField.text = self.user.contactInfo;
+    self.userLocationField.text = self.user.location;
+    // Do any additional setup after loading the view.
 }
 
 

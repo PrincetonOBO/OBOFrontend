@@ -6,14 +6,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) NSString *item_id;
-
-
+@property (weak, nonatomic) IBOutlet UIButton *interestedBuyers;
 @end
+
 @implementation OBOAccountTableViewCell
 
 - (void)prepareWithItem2:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
     self.item_id = item.item_id;
+    [_interestedBuyers setTitle:@"#" forState:UIControlStateNormal];
 }
 
 - (IBAction)showDeleteAlert:(id)sender {
@@ -74,13 +75,6 @@
     NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
     
     //NSLog(@"Print from file: %@", fileContent);
-
-
-    
-    
-    
-
-    
 }
 
 
