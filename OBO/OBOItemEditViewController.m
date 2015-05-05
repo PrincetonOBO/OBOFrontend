@@ -54,7 +54,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"price\": \"%@\"}", self.itemDescriptionTextField.text, self.itemPriceTextField.text];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
     
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     

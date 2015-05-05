@@ -8,7 +8,7 @@
     if (self) {
         self.name = info[@"title"];
         self.price = [info[@"price"] integerValue];
-        self.size = info[@"size"];
+        self.size = info[@"thumbnail"][@"size"];
         self.details = info[@"description"];
         self.imageUrl = info[@"thumbnail"][@"image"];
         
@@ -23,8 +23,6 @@
         self.item_id = info[@"id"];
         self.longitude = info[@"longitude"];
         self.latitude = info[@"latitude"];
-        self.offers = info[@"offers"];
-        self.sold = [info[@"sold"] boolValue];
         self.offers = info[@"offers"];
         self.sold = [info[@"sold"] boolValue];
     }

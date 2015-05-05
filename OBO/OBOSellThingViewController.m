@@ -30,7 +30,7 @@
 - (IBAction)submit:(id)sender {
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
-    NSString *text = self.itemDescriptionTextField.text;
+    NSString *description = self.itemDescriptionTextField.text;
     NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
 
     
@@ -42,7 +42,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %f}", text, self.longitude, self.latitude, 10.0];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"size\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %f}", name, description, size, self.longitude, self.latitude, 10.0];
 
 
     //NSLog(encodedImage);
