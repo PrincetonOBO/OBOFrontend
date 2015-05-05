@@ -9,6 +9,7 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) NSUInteger price;
+
 @property (strong, nonatomic) NSString *size;
 @property (strong, nonatomic) NSString *details;
 @property (strong, nonatomic) NSString *imageUrl;

@@ -18,7 +18,7 @@
     UIImage *image = self.object.image;
     self.itemImageView.image = image;
     self.itemNameLabel.text = self.object.name;
-    self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.object.price];
+    self.itemPriceLabel.text = [NSString stringWithFormat:@"%d",self.object.price];
     self.itemSizeLabel.text = self.object.size;
 //    self.itemLocationLabel.text = self.object.size;
     self.itemDescriptionLabel.text = self.object.details;

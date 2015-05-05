@@ -7,6 +7,7 @@
     self = [super init];
     if (self) {
         self.name = info[@"title"];
+//        self.price = info[@"price"];
         self.price = [info[@"price"] integerValue];
         self.size = info[@"size"];
         self.details = info[@"description"];

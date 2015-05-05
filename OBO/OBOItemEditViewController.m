@@ -28,7 +28,7 @@
     self.itemImageView.image = image;
     
     self.itemNameTextField.text = self.object.name;
-    self.itemPriceTextField.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.object.price];
+    self.itemPriceTextField.text =[NSString stringWithFormat:@"%d",self.object.price];
     self.itemSizeTextField.text = self.object.size;
     self.itemDescriptionTextField.text = self.object.details;
     self.item_id = self.object.item_id;
@@ -54,7 +54,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"size\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField, self.itemSizeTextField.text, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
     
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     

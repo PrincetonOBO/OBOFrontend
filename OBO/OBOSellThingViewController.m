@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemPriceTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
+//@property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) double longitude;
 @property (nonatomic) double latitude;
@@ -31,6 +31,7 @@
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
     NSString *description = self.itemDescriptionTextField.text;
+    NSString *price = self.itemPriceTextField.text;
     NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
 
     
@@ -42,7 +43,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"size\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %f}", name, description, size, self.longitude, self.latitude, 10.0];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"size\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %@}", name, description, size, self.longitude, self.latitude, price];
 
 
     //NSLog(encodedImage);
@@ -106,8 +107,8 @@
     self.itemPriceTextField.text = @"";
     [self.itemPicImageView setImage:nil];
     [self.itemImageView setImage:nil];
-    [self.itemPricePickerView reloadAllComponents];
-    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
+//    [self.itemPricePickerView reloadAllComponents];
+//    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
 
 
 }

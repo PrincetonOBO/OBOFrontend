@@ -15,7 +15,7 @@
 //    self.itemNameLabel.text = item.name;
     UIImage *image = item.image;
     self.itemNameLabel.text = item.name;
-    self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.price];
+    self.itemPriceLabel.text = [NSString stringWithFormat:@"%d", item.price];
 //    self.itemTimeLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.time];
     self.itemImageView.image = image;
     UIImage *soldimage = [UIImage imageNamed:@"sold-overlay.png"];
