@@ -16,11 +16,8 @@
     UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
     self.itemImageView.image = image;
     // check to see if item is sold and print correct thing
-    if (item.sold) {
+    if (!item.sold) {
         self.itemSoldLabel.text = @"";
-    }
-    else {
-        self.itemSoldLabel.text = @"Sold";
     }
     //check to see if user contacted regarding
 //    UIImage *starImage = [UIImage imageNamed:@"star.jpg"];
