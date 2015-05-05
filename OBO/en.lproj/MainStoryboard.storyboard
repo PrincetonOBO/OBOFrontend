@@ -453,31 +453,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-<<<<<<< HEAD
                         <outlet property="searchDisplayController" destination="71h-OE-JRW" id="Tdr-eN-IYF"/>
-=======
-                        <outlet property="searchDisplayController" destination="XVM-PF-aHB" id="O9m-5k-IFv"/>
->>>>>>> 52af2211641ea3df3a3084a5a67c2c7d59d70a10
                         <outlet property="tableView" destination="13" id="Rvr-U5-hsH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
-<<<<<<< HEAD
                 <searchDisplayController id="71h-OE-JRW">
                     <connections>
                         <outlet property="delegate" destination="12" id="X2h-U7-CL5"/>
                         <outlet property="searchContentsController" destination="12" id="0t0-d6-puL"/>
                         <outlet property="searchResultsDataSource" destination="12" id="edl-JQ-dJI"/>
                         <outlet property="searchResultsDelegate" destination="12" id="tns-DN-UuL"/>
-=======
-                <searchDisplayController id="XVM-PF-aHB">
-                    <connections>
-                        <outlet property="delegate" destination="12" id="PMB-Ce-lqa"/>
-                        <outlet property="searchBar" destination="fdA-wl-1r7" id="cyI-V0-cV4"/>
-                        <outlet property="searchContentsController" destination="12" id="rIy-aG-hWE"/>
-                        <outlet property="searchResultsDataSource" destination="12" id="LD7-Ou-Xte"/>
-                        <outlet property="searchResultsDelegate" destination="12" id="eck-So-8t3"/>
->>>>>>> 52af2211641ea3df3a3084a5a67c2c7d59d70a10
                     </connections>
                 </searchDisplayController>
             </objects>

@@ -175,11 +175,8 @@
 				538041BA1AF86F4400EABB75 /* sell.png */,
 				53CBC5FC1AF869DF00555E77 /* OBOhomescreen_xtine1.jpg */,
 				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
-<<<<<<< HEAD
 				53CBC5ED1AF824A700555E77 /* OBOHomeScreenViewController.h */,
 				53CBC5EE1AF824A700555E77 /* OBOHomeScreenViewController.m */,
-=======
->>>>>>> 52af2211641ea3df3a3084a5a67c2c7d59d70a10
 				8A7436FD1AF821F80054C365 /* OBOLoginViewController.h */,
 				8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
