@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *itemPriceTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) double longitude;
@@ -74,6 +75,7 @@
     self.itemDescriptionTextField.text = @"";
     self.itemNameTextField.text = @"";
     self.itemSizeTextField.text = @"";
+    self.itemPriceTextField.text = @"";
     [self.itemPicImageView setImage:nil];
     [self.itemImageView setImage:nil];
     [self.itemPricePickerView reloadAllComponents];
@@ -135,7 +137,9 @@
     self.itemDescriptionTextField.delegate = self;
     self.itemNameTextField.delegate = self;
     self.itemSizeTextField.delegate = self;
+    self.itemPriceTextField.delegate = self;
     
+    self.itemPriceTextField.keyboardType = UIKeyboardTypeNumberPad;
     originalY = self.view.frame.origin.y;
     
     // Get the location!
