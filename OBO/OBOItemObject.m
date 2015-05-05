@@ -8,7 +8,7 @@
     if (self) {
         self.name = info[@"title"];
         self.price = [info[@"price"] integerValue];
-        self.size = info[@"thumbnail"][@"size"];
+        self.size = info[@"size"];
         self.details = info[@"description"];
         self.imageUrl = info[@"thumbnail"][@"image"];
         

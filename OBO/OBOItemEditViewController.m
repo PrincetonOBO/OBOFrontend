@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
+    UIImage *image = [UIImage imageNamed:@"jeans.jpg"];
     self.itemImageView.image = image;
     
     self.itemNameTextField.text = self.object.name;

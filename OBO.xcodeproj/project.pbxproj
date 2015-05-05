@@ -51,6 +51,7 @@
 		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
 		8A3373651AF9164A00E0C17A /* belt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A3373641AF9164A00E0C17A /* belt.jpg */; };
 		8A3373671AF9164E00E0C17A /* shoes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A3373661AF9164E00E0C17A /* shoes.jpg */; };
+		8A3373691AF9283700E0C17A /* jeans.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A3373681AF9283700E0C17A /* jeans.jpg */; };
 		8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A64DAFE1AED60BF005D5482 /* contacts.json */; };
 		8A64DB051AED7E8E005D5482 /* OBOItemOfferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */; };
 		8A7436FF1AF821F80054C365 /* OBOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */; };
@@ -135,6 +136,7 @@
 		8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewCell.m; sourceTree = "<group>"; };
 		8A3373641AF9164A00E0C17A /* belt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = belt.jpg; sourceTree = "<group>"; };
 		8A3373661AF9164E00E0C17A /* shoes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoes.jpg; sourceTree = "<group>"; };
+		8A3373681AF9283700E0C17A /* jeans.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jeans.jpg; sourceTree = "<group>"; };
 		8A64DAFE1AED60BF005D5482 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOItemOfferObject.h; sourceTree = "<group>"; };
 		8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOItemOfferObject.m; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				5311E0861AC25915003BEF47 /* Default-568h@2x.png */,
 				5311E0871AC25915003BEF47 /* Default.png */,
 				5311E0881AC25915003BEF47 /* Default@2x.png */,
+				8A3373681AF9283700E0C17A /* jeans.jpg */,
 				8AC318BD1AEFFD67001291AB /* star.jpg */,
 				8A3373641AF9164A00E0C17A /* belt.jpg */,
 				8A3373661AF9164E00E0C17A /* shoes.jpg */,
@@ -406,6 +409,7 @@
 				8AB844DD1AF8757A007012C0 /* OBOhomescreen_xtine1.png in Resources */,
 				5328B5411AF8AAE500F97388 /* login.png in Resources */,
 				8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */,
+				8A3373691AF9283700E0C17A /* jeans.jpg in Resources */,
 				5328B53B1AF8A43500F97388 /* blueButton@2x.png in Resources */,
 				53CBC5EC1AF8217F00555E77 /* Images.xcassets in Resources */,
 				8AC318BE1AEFFD67001291AB /* star.jpg in Resources */,
