@@ -61,6 +61,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NameCell"];
     OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
     
     [cell prepareWithItem:self.items[indexPath.row]];

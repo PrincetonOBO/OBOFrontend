@@ -389,45 +389,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.60525672160031208" blue="0.55582782830064259" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="fdA-wl-1r7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="12" id="0kb-Ft-2Rh"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="107" id="lJ0-d7-vTF" customClass="OBOItemDetailsTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="107"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJD-uj-BVA">
-                                            <rect key="frame" x="168" y="60" width="149" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold x min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KV8-Qb-RAb">
-                                            <rect key="frame" x="164" y="19" width="115" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="REy-aC-fOw">
                                             <rect key="frame" x="29" y="13" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qWw-S2-DMr">
-                                            <rect key="frame" x="8" y="13" width="26" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KV8-Qb-RAb">
+                                            <rect key="frame" x="233" y="13" width="54" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                            <attributedString key="attributedText">
+                                                <fragment content="SOLD">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        <font key="NSOriginalFont" size="17" name="Phosphate-Inline"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJD-uj-BVA">
+                                            <rect key="frame" x="138" y="38" width="149" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="ItemSoldLabel" destination="KV8-Qb-RAb" id="lsC-9b-KSM"/>
                                     <outlet property="itemImageView" destination="REy-aC-fOw" id="JBO-0R-LCf"/>
-                                    <outlet property="itemLabel" destination="KV8-Qb-RAb" id="FZt-Ub-izp"/>
+                                    <outlet property="itemNameLabel" destination="hJD-uj-BVA" id="sls-kv-Mus"/>
                                     <outlet property="itemSoldLabel" destination="KV8-Qb-RAb" id="Efh-El-ZOM"/>
-                                    <outlet property="starImage" destination="qWw-S2-DMr" id="i8G-Yu-7qL"/>
                                     <segue destination="7oS-NK-OnC" kind="push" identifier="ToItemDescription" id="pYK-XK-PLy"/>
                                 </connections>
                             </tableViewCell>
@@ -443,17 +453,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="searchDisplayController" destination="71h-OE-JRW" id="Tdr-eN-IYF"/>
+=======
+                        <outlet property="searchDisplayController" destination="XVM-PF-aHB" id="O9m-5k-IFv"/>
+>>>>>>> 52af2211641ea3df3a3084a5a67c2c7d59d70a10
                         <outlet property="tableView" destination="13" id="Rvr-U5-hsH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
+<<<<<<< HEAD
                 <searchDisplayController id="71h-OE-JRW">
                     <connections>
                         <outlet property="delegate" destination="12" id="X2h-U7-CL5"/>
                         <outlet property="searchContentsController" destination="12" id="0t0-d6-puL"/>
                         <outlet property="searchResultsDataSource" destination="12" id="edl-JQ-dJI"/>
                         <outlet property="searchResultsDelegate" destination="12" id="tns-DN-UuL"/>
+=======
+                <searchDisplayController id="XVM-PF-aHB">
+                    <connections>
+                        <outlet property="delegate" destination="12" id="PMB-Ce-lqa"/>
+                        <outlet property="searchBar" destination="fdA-wl-1r7" id="cyI-V0-cV4"/>
+                        <outlet property="searchContentsController" destination="12" id="rIy-aG-hWE"/>
+                        <outlet property="searchResultsDataSource" destination="12" id="LD7-Ou-Xte"/>
+                        <outlet property="searchResultsDelegate" destination="12" id="eck-So-8t3"/>
+>>>>>>> 52af2211641ea3df3a3084a5a67c2c7d59d70a10
                     </connections>
                 </searchDisplayController>
             </objects>
