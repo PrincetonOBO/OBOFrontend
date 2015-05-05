@@ -13,8 +13,9 @@
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {
-        self.name = info[@"name"];
-        self.contactInfo = info[@"contactInfo"];
+        self.name = info[@"user"][@"name"];
+        
+        self.contactInfo = info[@"user"][@"net_id"];
         self.price = info[@"price"];
     }
     return self;

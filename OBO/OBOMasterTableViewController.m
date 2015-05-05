@@ -133,12 +133,14 @@
                                                                error:&err];
     */
     
-    NSArray *new = [NSArray array];
-    self.items = new;
-    NSArray *itemsJSON = json[@"items"];
-    for (NSDictionary *itemJSON in itemsJSON) {
-        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
-        self.items = [self.items arrayByAddingObject:item];
+    if (json != nil) {
+        NSArray *new = [NSArray array];
+        self.items = new;
+        NSArray *itemsJSON = json[@"items"];
+        for (NSDictionary *itemJSON in itemsJSON) {
+            OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
+            self.items = [self.items arrayByAddingObject:item];
+        }
     }
 
     self.tableView.delegate = self;
