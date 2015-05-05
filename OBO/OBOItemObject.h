@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 
 @interface OBOItemObject : NSObject
@@ -14,6 +16,7 @@
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *item_id;
 @property (strong, nonatomic) NSArray *offers;
+@property (nonatomic) UIImage *image;
 @property (nonatomic, assign) BOOL *sold;
 
 @end

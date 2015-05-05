@@ -10,7 +10,16 @@
         self.price = [info[@"price"] integerValue];
         self.size = info[@"size"];
         self.details = info[@"description"];
-        self.imageUrl = info[@"imageUrl"];
+        self.imageUrl = info[@"thumbnail"][@"image"];
+        
+        if (self.imageUrl != nil)
+        {
+            NSData *data = [[NSData alloc]initWithBase64EncodedString:self.imageUrl
+                        options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            self.image = [UIImage imageWithData:data];
+        }
+        
+
         self.item_id = info[@"id"];
         self.longitude = info[@"longitude"];
         self.latitude = info[@"latitude"];

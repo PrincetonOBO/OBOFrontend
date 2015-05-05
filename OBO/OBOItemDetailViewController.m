@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
+    UIImage *image = self.object.image;
     self.itemImageView.image = image;
     self.itemNameLabel.text = self.object.name;
     self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.object.price];

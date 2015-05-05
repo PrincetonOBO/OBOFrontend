@@ -6,6 +6,12 @@
 {
     // Override point for customization after application launch.
     NSLog(@"Application opened!");
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [dirPaths objectAtIndex:0];
+    NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"items2.json"]];
+    NSString *writeString = [NSString stringWithFormat:@"{ \"items2\": }"];
+    [writeString writeToFile:databasePath atomically:YES];
+
     
     return YES;
 }

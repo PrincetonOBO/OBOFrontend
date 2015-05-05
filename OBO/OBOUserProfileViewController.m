@@ -44,7 +44,7 @@
     // Populate with results of GET request
     NSString *first_name = [jsonDict objectForKey:@"first_name"];
     NSString *last_name = [jsonDict objectForKey:@"last_name"];
-    self.profile = [[OBOUserProfile alloc] initWithInfo:json];
+    //self.profile = [[OBOUserProfile alloc] initWithInfo:json];
     self.userNameLabel.text = [NSString stringWithFormat: @"%@ %@", first_name, last_name];
     self.userContactInfoLabel.text = [jsonDict objectForKey:@"net_id"];
     self.userLocationLabel.text = self.profile.location;

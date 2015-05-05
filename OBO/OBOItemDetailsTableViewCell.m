@@ -13,14 +13,14 @@
 
 - (void)prepareWithItem:(OBOItemObject *)item {
     self.itemLabel.text = item.name;
-    UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
+    UIImage *image = item.image;
     self.itemImageView.image = image;
     // check to see if item is sold and print correct thing
     self.itemSoldLabel.text = @"sold x min ago";
     
     //check to see if user contacted regarding
-    UIImage *starImage = [UIImage imageNamed:@"star.jpg"];
-    self.starImage.image = starImage;
+    //UIImage *starImage = [UIImage imageNamed:@"star.jpg"];
+    //self.starImage.image = starImage;
 }
 
 @end

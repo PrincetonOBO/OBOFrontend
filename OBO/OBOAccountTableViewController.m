@@ -21,12 +21,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
+    
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    
+    NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"User's items:%@", itemResponse);
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items3.json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSError *error = nil;
+    
+    NSString *writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];
+    [writeString writeToFile:filePath atomically:YES];
+
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
@@ -37,6 +57,8 @@
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView reloadData];
+
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh)
@@ -59,25 +81,25 @@
     [restRequest setHTTPMethod:@"GET"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
 
-    
     NSURLResponse *resp = nil;
     NSError *err = nil;
     
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
     
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-
+    NSLog(@"User's items:%@", itemResponse);
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items3.json"];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSError *error = nil;
 
     NSString *writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];
     [writeString writeToFile:filePath atomically:YES];
     
-    NSLog(@"Wrote refreshed filefile");
-    NSLog(@"%@", writeString);
+    NSLog(@"Wrote refreshed file");
+    //NSLog(@"%@", writeString);
 
 
     
