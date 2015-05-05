@@ -52,6 +52,7 @@
         NSLog(@"Error parsing JSON.");
     }
     else {
+        self.profile = [[OBOUserProfile alloc] initWithInfo:jsonDict];
         NSLog(@"Dictionary: %@", jsonDict);
     }
 

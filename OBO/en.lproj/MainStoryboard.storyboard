@@ -368,7 +368,7 @@
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Buy Items" selectedImage="red-dress.jpg" id="NRw-s6-G15"/>
+                    <tabBarItem key="tabBarItem" title="Buy Items" id="NRw-s6-G15"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -389,9 +389,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.60525672160031208" blue="0.55582782830064259" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="fdA-wl-1r7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="12" id="0kb-Ft-2Rh"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="107" id="lJ0-d7-vTF" customClass="OBOItemDetailsTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="107"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="106"/>
@@ -423,11 +431,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="ItemSoldLabel" destination="KV8-Qb-RAb" id="lsC-9b-KSM"/>
                                     <outlet property="itemImageView" destination="REy-aC-fOw" id="JBO-0R-LCf"/>
-                                    <outlet property="itemLabel" destination="KV8-Qb-RAb" id="FZt-Ub-izp"/>
+                                    <outlet property="itemNameLabel" destination="hJD-uj-BVA" id="sls-kv-Mus"/>
                                     <outlet property="itemSoldLabel" destination="KV8-Qb-RAb" id="Efh-El-ZOM"/>
-                                    <outlet property="starImage" destination="qWw-S2-DMr" id="i8G-Yu-7qL"/>
                                     <segue destination="7oS-NK-OnC" kind="push" identifier="ToItemDescription" id="pYK-XK-PLy"/>
                                 </connections>
                             </tableViewCell>
@@ -443,10 +449,20 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="searchDisplayController" destination="XVM-PF-aHB" id="O9m-5k-IFv"/>
                         <outlet property="tableView" destination="13" id="Rvr-U5-hsH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="XVM-PF-aHB">
+                    <connections>
+                        <outlet property="delegate" destination="12" id="PMB-Ce-lqa"/>
+                        <outlet property="searchBar" destination="fdA-wl-1r7" id="cyI-V0-cV4"/>
+                        <outlet property="searchContentsController" destination="12" id="rIy-aG-hWE"/>
+                        <outlet property="searchResultsDataSource" destination="12" id="LD7-Ou-Xte"/>
+                        <outlet property="searchResultsDelegate" destination="12" id="eck-So-8t3"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="763" y="-472"/>
         </scene>
@@ -821,15 +837,12 @@
             <point key="canvasLocation" x="223" y="150"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="red-dress.jpg" width="100" height="100"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1qX-mK-cYD"/>
+        <segue reference="9HR-JR-6rm"/>
     </inferredMetricsTieBreakers>
 </document>
