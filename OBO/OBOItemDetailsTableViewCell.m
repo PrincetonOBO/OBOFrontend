@@ -13,9 +13,10 @@
 
 - (void)prepareWithItem:(OBOItemObject *)item {
     self.itemNameLabel.text = item.name;
+    UIImage *image = item.image;
+    self.itemNameLabel.text = item.name;
     self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.price];
     self.itemTimeLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.time];
-    UIImage *image = [UIImage imageNamed:@"red-dress.jpg"];
     self.itemImageView.image = image;
     UIImage *soldimage = [UIImage imageNamed:@"sold-overlay.png"];
     // check to see if item is sold and print correct thing

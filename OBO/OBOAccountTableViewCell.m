@@ -5,23 +5,22 @@
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *interestedBuyers;
 @property (strong, nonatomic) NSString *item_id;
-
-
+@property (weak, nonatomic) IBOutlet UIButton *interestedBuyers;
 @end
+
 @implementation OBOAccountTableViewCell
 
 - (void)prepareWithItem2:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
-    [_interestedBuyers setTitle:@"#" forState:UIControlStateNormal];
     self.item_id = item.item_id;
+    [_interestedBuyers setTitle:@"#" forState:UIControlStateNormal];
 }
 
 - (IBAction)showDeleteAlert:(id)sender {
 
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Delete" message:@"Are you sure you want to delete this item? This action cannot be undone" delegate:self cancelButtonTitle:@"No, keep this item" otherButtonTitles:@"Yes, delete this item", nil];
+                              initWithTitle:@"Delete" message:@"Are you sure you want to delist this item? This action cannot be undone" delegate:self cancelButtonTitle:@"No, keep this item" otherButtonTitles:@"Yes, delist this item", nil];
     [alertView show];
     
     // Make RESTful URL
@@ -60,7 +59,7 @@
     itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsDir = [dirPaths objectAtIndex:0];
-    NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"items3.json"]];
+    NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"items2.json"]];
     NSLog(@"path: %@", databasePath);
     NSString *writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];
     NSLog(@"%@", writeString);
@@ -72,17 +71,10 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items3.json"];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
     
     //NSLog(@"Print from file: %@", fileContent);
-
-
-    
-    
-    
-
-    
 }
 
 

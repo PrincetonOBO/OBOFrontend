@@ -48,7 +48,7 @@
     self.userNameField.text = self.user.name;
     self.userContactInfoField.text = self.user.contactInfo;
     self.userLocationField.text = self.user.location;
-    // Do any additional setup after loading the view
+    // Do any additional setup after loading the view.
 }
 
 

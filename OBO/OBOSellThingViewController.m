@@ -7,6 +7,7 @@
     NSURLConnection *currentConnection;
     NSJSONSerialization *jsonParser;
     CGFloat originalY;
+    NSString *item_id;
     
     //CGFloat name;
 
@@ -30,6 +31,8 @@
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
     NSString *text = self.itemDescriptionTextField.text;
+    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
+
     
 
     // Make RESTful URL
@@ -39,10 +42,9 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[ %lf, %lf]}, \"price\": %f }", text, self.longitude, self.latitude, 10.0];
+    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %f}", text, self.longitude, self.latitude, 10.0];
 
 
-    //NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.7) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     //NSLog(encodedImage);
 
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
@@ -59,7 +61,6 @@
     {
         [currentConnection cancel];
         currentConnection = nil;
-        self.apiReturnJSONData = nil;
     }
     
     NSURLResponse *resp = nil;
@@ -69,7 +70,34 @@
     
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"response: %@", itemResponse);
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+    item_id = [jsonDict objectForKey:@"id"];
+    NSLog(@"item id: %@", item_id);
+    
+    
+    restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items/%@/pic", user_id, item_id];
 
+    restURL = [NSURL URLWithString:restCallString];
+    restRequest = [NSMutableURLRequest requestWithURL:restURL];
+
+    json = [NSString stringWithFormat:@"{\"image\": \"%@\", \"item_id\": \"%@\", \"size\": \"full\"}",
+            encodedImage, item_id];
+    NSLog(@"Photo post: %@",json);
+    jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    [restRequest setHTTPBody:jsonData];
+    [restRequest setHTTPMethod:@"POST"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"response: %@", itemResponse);
+
+
+
+
+    
+    
 
     //Clear entry fields
     self.itemDescriptionTextField.text = @"";
