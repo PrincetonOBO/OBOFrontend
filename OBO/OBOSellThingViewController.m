@@ -37,7 +37,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"latitude\": %lf, \"longitude\": %lf, \"price\": %f }", text, self.latitude, self.longitude, 10.0];
+    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[ %lf, %lf]}, \"price\": %f }", text, self.longitude, self.latitude, 10.0];
 
 
     //NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.7) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];

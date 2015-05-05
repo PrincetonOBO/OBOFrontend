@@ -368,7 +368,7 @@
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Buy Items" id="NRw-s6-G15"/>
+                    <tabBarItem key="tabBarItem" title="Buy Items" selectedImage="red-dress.jpg" id="NRw-s6-G15"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -821,6 +821,9 @@
             <point key="canvasLocation" x="223" y="150"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="red-dress.jpg" width="100" height="100"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
