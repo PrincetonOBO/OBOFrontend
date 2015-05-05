@@ -160,8 +160,8 @@
         [_pickerData addObject:[NSString stringWithFormat:@"$%li",(long)x]];
     }
 
-    self.itemPricePickerView.dataSource = self;
-    self.itemPricePickerView.delegate = self;
+//    self.itemPricePickerView.dataSource = self;
+//    self.itemPricePickerView.delegate = self;
     self.itemDescriptionTextField.delegate = self;
     self.itemNameTextField.delegate = self;
     self.itemSizeTextField.delegate = self;
