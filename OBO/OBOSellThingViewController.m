@@ -20,6 +20,7 @@
 @property (nonatomic) double latitude;
 @property (retain, nonatomic) NSMutableData *apiReturnJSONData;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
@@ -142,6 +143,11 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     NSLog(@"set location updating");
+    
+//    self.submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    self.submitButton.frame = CGRectMake(40, 140, 240, 30);
+//    UIImage *btnImage = [UIImage imageNamed:@"sell.png"];
+//    [self.submitButton setImage:btnImage forState:UIControlStateNormal];
 
 }
 
