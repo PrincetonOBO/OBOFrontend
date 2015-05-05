@@ -148,6 +148,10 @@
 //    self.submitButton.frame = CGRectMake(40, 140, 240, 30);
 //    UIImage *btnImage = [UIImage imageNamed:@"sell.png"];
 //    [self.submitButton setImage:btnImage forState:UIControlStateNormal];
+    
+    //UIImage *image = [UIImage imageNamed:@"sell.png"];
+    //self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"string"
+                                                     //image:image];
 
 }
 

@@ -242,7 +242,7 @@
         <scene sceneID="p8R-TT-uLP">
             <objects>
                 <navigationController id="uhs-B6-c6t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Items" id="Taw-z9-wfP"/>
+                    <tabBarItem key="tabBarItem" title="Your Items" image="filing-7.png" id="Taw-z9-wfP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AP-Li-fbs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -255,11 +255,11 @@
             </objects>
             <point key="canvasLocation" x="223" y="-1716"/>
         </scene>
-        <!--Sell an Item-->
+        <!--Sell-->
         <scene sceneID="cqD-y5-Vlv">
             <objects>
                 <navigationController id="YSE-t5-STK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sell an Item" id="rwk-br-Cvj"/>
+                    <tabBarItem key="tabBarItem" title="Sell" image="shirt-7.png" id="rwk-br-Cvj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkX-ZB-XlM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -372,11 +372,11 @@
             </objects>
             <point key="canvasLocation" x="763" y="-1096"/>
         </scene>
-        <!--Buy Items-->
+        <!--Buy-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Buy Items" id="NRw-s6-G15"/>
+                    <tabBarItem key="tabBarItem" title="Buy" image="shopping-cart-7.png" id="NRw-s6-G15"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -839,11 +839,11 @@
             </objects>
             <point key="canvasLocation" x="1271" y="150"/>
         </scene>
-        <!--Your Profile-->
+        <!--Profile-->
         <scene sceneID="Qtx-es-gHH">
             <objects>
                 <navigationController id="YpQ-yx-UCJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Profile" id="x1O-dQ-UxB"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="circle-user-7.png" id="x1O-dQ-UxB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTU-MP-bjL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -859,6 +859,10 @@
     </scenes>
     <resources>
         <image name="blueButton2.png" width="72" height="72"/>
+        <image name="circle-user-7.png" width="30" height="30"/>
+        <image name="filing-7.png" width="30" height="30"/>
+        <image name="shirt-7.png" width="30" height="30"/>
+        <image name="shopping-cart-7.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -866,6 +870,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fA5-Xq-gTl"/>
+        <segue reference="9HR-JR-6rm"/>
     </inferredMetricsTieBreakers>
 </document>

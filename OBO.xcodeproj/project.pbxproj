@@ -24,6 +24,12 @@
 		5328B53B1AF8A43500F97388 /* blueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B53A1AF8A43500F97388 /* blueButton@2x.png */; };
 		5328B53D1AF8A49A00F97388 /* blueButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B53C1AF8A49A00F97388 /* blueButton2.png */; };
 		5328B5411AF8AAE500F97388 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5401AF8AAE500F97388 /* login.png */; };
+		5328B5431AF8AFED00F97388 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5421AF8AFED00F97388 /* profile.png */; };
+		5328B5451AF8B46000F97388 /* pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5441AF8B46000F97388 /* pro.png */; };
+		5328B5471AF8B72E00F97388 /* circle-user-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5461AF8B72E00F97388 /* circle-user-7.png */; };
+		5328B5491AF8B7D500F97388 /* shopping-cart-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5481AF8B7D500F97388 /* shopping-cart-7.png */; };
+		5328B5521AF8B8D600F97388 /* shirt-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5501AF8B8D600F97388 /* shirt-7.png */; };
+		5328B5531AF8B8D600F97388 /* filing-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5328B5511AF8B8D600F97388 /* filing-7.png */; };
 		5344C6611AE5537B001691DC /* OBOUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C6601AE5537B001691DC /* OBOUserProfileViewController.m */; };
 		5344C6631AE58D5A001691DC /* prof.json in Resources */ = {isa = PBXBuildFile; fileRef = 5344C6621AE58D5A001691DC /* prof.json */; };
 		5344C6661AE593C2001691DC /* OBOEditUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344C6651AE593C2001691DC /* OBOEditUserProfileViewController.m */; };
@@ -88,6 +94,12 @@
 		5328B53A1AF8A43500F97388 /* blueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButton@2x.png"; sourceTree = "<group>"; };
 		5328B53C1AF8A49A00F97388 /* blueButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton2.png; sourceTree = "<group>"; };
 		5328B5401AF8AAE500F97388 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		5328B5421AF8AFED00F97388 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		5328B5441AF8B46000F97388 /* pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pro.png; sourceTree = "<group>"; };
+		5328B5461AF8B72E00F97388 /* circle-user-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-user-7.png"; sourceTree = "<group>"; };
+		5328B5481AF8B7D500F97388 /* shopping-cart-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopping-cart-7.png"; sourceTree = "<group>"; };
+		5328B5501AF8B8D600F97388 /* shirt-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shirt-7.png"; sourceTree = "<group>"; };
+		5328B5511AF8B8D600F97388 /* filing-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filing-7.png"; sourceTree = "<group>"; };
 		5344C65F1AE5537B001691DC /* OBOUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOUserProfileViewController.h; sourceTree = "<group>"; };
 		5344C6601AE5537B001691DC /* OBOUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOUserProfileViewController.m; sourceTree = "<group>"; };
 		5344C6621AE58D5A001691DC /* prof.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = prof.json; sourceTree = "<group>"; };
@@ -181,14 +193,19 @@
 			children = (
 				5328B5381AF8A37C00F97388 /* blueButton.png */,
 				5328B5401AF8AAE500F97388 /* login.png */,
+				5328B5501AF8B8D600F97388 /* shirt-7.png */,
+				5328B5511AF8B8D600F97388 /* filing-7.png */,
+				5328B5481AF8B7D500F97388 /* shopping-cart-7.png */,
 				53CBC5F61AF82E9A00555E77 /* OBOhomescreen4.png */,
 				5328B53C1AF8A49A00F97388 /* blueButton2.png */,
 				538041BA1AF86F4400EABB75 /* sell.png */,
 				53CBC5FC1AF869DF00555E77 /* OBOhomescreen_xtine1.jpg */,
+				5328B5461AF8B72E00F97388 /* circle-user-7.png */,
 				5328B53A1AF8A43500F97388 /* blueButton@2x.png */,
 				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
 				53CBC5ED1AF824A700555E77 /* OBOHomeScreenViewController.h */,
 				53CBC5EE1AF824A700555E77 /* OBOHomeScreenViewController.m */,
+				5328B5441AF8B46000F97388 /* pro.png */,
 				8A7436FD1AF821F80054C365 /* OBOLoginViewController.h */,
 				8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
@@ -212,6 +229,7 @@
 				8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */,
 				53CBC5F21AF8274100555E77 /* OBOhomescreen2.png */,
 				53D7E3451AD482E600196755 /* OBOItemEditViewController.h */,
+				5328B5421AF8AFED00F97388 /* profile.png */,
 				53D7E3461AD482E600196755 /* OBOItemEditViewController.m */,
 				5311E0841AC25915003BEF47 /* OBOMasterTableViewController.h */,
 				5311E0851AC25915003BEF47 /* OBOMasterTableViewController.m */,
@@ -352,16 +370,22 @@
 				53CBC5F51AF8279900555E77 /* OBOhomescreen3.png in Resources */,
 				53CBC5F11AF8263D00555E77 /* OBOhomescreen.png in Resources */,
 				53CBC5F71AF82E9A00555E77 /* OBOhomescreen4.png in Resources */,
+				5328B5491AF8B7D500F97388 /* shopping-cart-7.png in Resources */,
 				5311E09C1AC25915003BEF47 /* Default@2x.png in Resources */,
+				5328B5471AF8B72E00F97388 /* circle-user-7.png in Resources */,
 				53CBC5F31AF8274100555E77 /* OBOhomescreen2.png in Resources */,
 				5328B5391AF8A37C00F97388 /* blueButton.png in Resources */,
 				5311E09F1AC25915003BEF47 /* items.json in Resources */,
+				5328B5431AF8AFED00F97388 /* profile.png in Resources */,
 				5311E09D1AC25915003BEF47 /* InfoPlist.strings in Resources */,
 				53CBC5FD1AF869DF00555E77 /* OBOhomescreen_xtine1.jpg in Resources */,
 				538041B91AF86BAA00EABB75 /* OBOhomescreen_xtine1.png in Resources */,
 				5311E09A1AC25915003BEF47 /* Default-568h@2x.png in Resources */,
 				5311E0A21AC25915003BEF47 /* red-dress.jpg in Resources */,
 				5344C6631AE58D5A001691DC /* prof.json in Resources */,
+				5328B5521AF8B8D600F97388 /* shirt-7.png in Resources */,
+				5328B5451AF8B46000F97388 /* pro.png in Resources */,
+				5328B5531AF8B8D600F97388 /* filing-7.png in Resources */,
 				538041BB1AF86F4400EABB75 /* sell.png in Resources */,
 				8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */,
 				5311E09B1AC25915003BEF47 /* Default.png in Resources */,
