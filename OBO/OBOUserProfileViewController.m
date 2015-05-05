@@ -14,6 +14,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//<<<<<<< HEAD
+//    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"prof"
+//                                                         ofType:@"json"];
+//    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
+//    NSError *error = nil;
+//    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+//                                                         options:kNilOptions
+//                                                           error:&error];
+//    self.profile = [[OBOUserProfile alloc] initWithInfo:json];
+//    NSLog(@"%@",self.profile.name);
+//    self.userNameLabel.text = self.profile.name;
+//    self.userContactInfoLabel.text = self.profile.contactInfo;
+//    self.userLocationLabel.text = self.profile.location;
+//=======
     NSLog(@"Profile view did load");
     
     // Make RESTful URL
@@ -38,6 +52,7 @@
         NSLog(@"Error parsing JSON.");
     }
     else {
+        self.profile = [[OBOUserProfile alloc] initWithInfo:jsonDict];
         NSLog(@"Dictionary: %@", jsonDict);
     }
 

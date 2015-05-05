@@ -5,23 +5,23 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>39E807EC-9325-4D0E-A8CF-4FB4F577A1E2</string>
+	<string>A27ADE46-98C7-4DC3-A910-849902E2036B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>OBO</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1F73FA10C63CDB19FBC29336E0C35D5F6B0F91A7</key>
-		<string>https://github.com/PrincetonOBO/OBOFrontend</string>
+		<string>https://github.com/PrincetonOBO/OBOFrontend.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>OBO.xcodeproj/project.xcworkspace</string>
+	<string>OBO.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1F73FA10C63CDB19FBC29336E0C35D5F6B0F91A7</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/PrincetonOBO/OBOFrontend</string>
+	<string>https://github.com/PrincetonOBO/OBOFrontend.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>1F73FA10C63CDB19FBC29336E0C35D5F6B0F91A7</string>
 			<key>IDESourceControlWCCName</key>
-			<string>OBO</string>
+			<string>OBOFrontend</string>
 		</dict>
 	</array>
 </dict>

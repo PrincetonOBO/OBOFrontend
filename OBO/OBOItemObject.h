@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSArray *offers;
 @property (nonatomic) UIImage *image;
 @property (nonatomic, assign) BOOL *sold;
+@property (nonatomic) NSUInteger time;
 
 @end

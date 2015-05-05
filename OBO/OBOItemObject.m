@@ -25,6 +25,8 @@
         self.latitude = info[@"latitude"];
         self.offers = info[@"offers"];
         self.sold = [info[@"sold"] boolValue];
+        self.offers = info[@"offers"];
+        self.sold = [info[@"sold"] boolValue];
     }
     return self;
 }
