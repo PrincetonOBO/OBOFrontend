@@ -577,7 +577,7 @@
         <!--Login-->
         <scene sceneID="rjO-gm-Oa5">
             <objects>
-                <viewController id="kZz-YL-UYS" sceneMemberID="viewController">
+                <viewController id="kZz-YL-UYS" customClass="OBOLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W6f-EF-LIj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -622,6 +622,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="FQ0-eS-OWG"/>
+                    <connections>
+                        <outlet property="userEmailField" destination="OKB-lW-Lud" id="v6J-Xe-7Gz"/>
+                        <outlet property="userPasswordField" destination="lqN-FE-76J" id="rdW-59-1h2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xt-yJ-I94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -823,6 +827,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9HR-JR-6rm"/>
+        <segue reference="1qX-mK-cYD"/>
     </inferredMetricsTieBreakers>
 </document>

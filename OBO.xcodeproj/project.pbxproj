@@ -39,6 +39,7 @@
 		8A273F9B1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A273F9A1AD42EF000FBA4F3 /* OBOAccountTableViewCell.m */; };
 		8A64DAFF1AED60BF005D5482 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A64DAFE1AED60BF005D5482 /* contacts.json */; };
 		8A64DB051AED7E8E005D5482 /* OBOItemOfferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */; };
+		8A7436FF1AF821F80054C365 /* OBOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
 		8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */; };
 		8AC318BE1AEFFD67001291AB /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AC318BD1AEFFD67001291AB /* star.jpg */; };
@@ -107,6 +108,8 @@
 		8A64DAFE1AED60BF005D5482 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOItemOfferObject.h; sourceTree = "<group>"; };
 		8A64DB041AED7E8E005D5482 /* OBOItemOfferObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOItemOfferObject.m; sourceTree = "<group>"; };
+		8A7436FD1AF821F80054C365 /* OBOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOLoginViewController.h; sourceTree = "<group>"; };
+		8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOLoginViewController.m; sourceTree = "<group>"; };
 		8A875D7B1AD1D7750033D1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8A875D7D1AD1E3280033D1B7 /* OBOAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOAccountTableViewController.h; sourceTree = "<group>"; };
 		8A875D7E1AD1E3280033D1B7 /* OBOAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOAccountTableViewController.m; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
 				53CBC5ED1AF824A700555E77 /* OBOHomeScreenViewController.h */,
 				53CBC5EE1AF824A700555E77 /* OBOHomeScreenViewController.m */,
+				8A7436FD1AF821F80054C365 /* OBOLoginViewController.h */,
+				8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
 				5311E0831AC25915003BEF47 /* OBOItemObject.m */,
 				8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */,
@@ -369,6 +374,7 @@
 				5311E0A11AC25915003BEF47 /* OBOSellThingViewController.m in Sources */,
 				5311E0991AC25915003BEF47 /* OBOMasterTableViewController.m in Sources */,
 				5311E0A01AC25915003BEF47 /* main.m in Sources */,
+				8A7436FF1AF821F80054C365 /* OBOLoginViewController.m in Sources */,
 				5344C6711AE704FB001691DC /* OBOUserProfile.m in Sources */,
 				8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */,
 				5311E0971AC25915003BEF47 /* OBOItemDetailViewController.m in Sources */,
