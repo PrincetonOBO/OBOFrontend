@@ -40,7 +40,6 @@
 		538041B91AF86BAA00EABB75 /* OBOhomescreen_xtine1.png in Resources */ = {isa = PBXBuildFile; fileRef = 538041B81AF86BAA00EABB75 /* OBOhomescreen_xtine1.png */; };
 		538041BB1AF86F4400EABB75 /* sell.png in Resources */ = {isa = PBXBuildFile; fileRef = 538041BA1AF86F4400EABB75 /* sell.png */; };
 		53CBC5EC1AF8217F00555E77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53CBC5EB1AF8217F00555E77 /* Images.xcassets */; };
-		53CBC5EF1AF824A700555E77 /* OBOHomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CBC5EE1AF824A700555E77 /* OBOHomeScreenViewController.m */; };
 		53CBC5F11AF8263D00555E77 /* OBOhomescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CBC5F01AF8263D00555E77 /* OBOhomescreen.png */; };
 		53CBC5F31AF8274100555E77 /* OBOhomescreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CBC5F21AF8274100555E77 /* OBOhomescreen2.png */; };
 		53CBC5F51AF8279900555E77 /* OBOhomescreen3.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CBC5F41AF8279900555E77 /* OBOhomescreen3.png */; };
@@ -121,7 +120,6 @@
 		538041B81AF86BAA00EABB75 /* OBOhomescreen_xtine1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OBOhomescreen_xtine1.png; sourceTree = "<group>"; };
 		538041BA1AF86F4400EABB75 /* sell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sell.png; sourceTree = "<group>"; };
 		53CBC5EB1AF8217F00555E77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		53CBC5EE1AF824A700555E77 /* OBOHomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOHomeScreenViewController.m; sourceTree = "<group>"; };
 		53CBC5F01AF8263D00555E77 /* OBOhomescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OBOhomescreen.png; sourceTree = "<group>"; };
 		53CBC5F21AF8274100555E77 /* OBOhomescreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OBOhomescreen2.png; sourceTree = "<group>"; };
 		53CBC5F41AF8279900555E77 /* OBOhomescreen3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OBOhomescreen3.png; sourceTree = "<group>"; };
@@ -425,7 +423,6 @@
 			files = (
 				5311E0951AC25915003BEF47 /* OBOAppDelegate.m in Sources */,
 				5344C66B1AE70309001691DC /* OBOInterestedBuyersTableViewController.m in Sources */,
-				53CBC5EF1AF824A700555E77 /* OBOHomeScreenViewController.m in Sources */,
 				8AB844E41AF8EB31007012C0 /* OBOHomeScreenViewController.m in Sources */,
 				5311E0981AC25915003BEF47 /* OBOItemObject.m in Sources */,
 				5344C66E1AE7032B001691DC /* OBOInterestedBuyersTableViewCell.m in Sources */,
