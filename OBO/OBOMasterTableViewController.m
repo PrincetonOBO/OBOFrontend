@@ -7,6 +7,8 @@
 
 @property (strong, nonatomic) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *itemSearchBar;
+@property (strong, nonatomic) NSMutableArray *searchResults;
 
 @end
 
@@ -21,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -40,6 +44,8 @@
     [refreshControl addTarget:self action:@selector(refresh)
              forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
+    
+    self.searchResults = [NSMutableArray arrayWithCapacity:[self.items count]];
 }
 
 -(void)refresh {
@@ -48,19 +54,65 @@
     [self.refreshControl endRefreshing];
 }
 
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    [self.searchResults removeAllObjects];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    
+    self.searchResults = [NSMutableArray arrayWithArray: [self.items filteredArrayUsingPredicate:resultPredicate]];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
 #pragma mark - Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.items.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.searchResults.count;
+        
+    } else {
+        return self.items.count;
+    }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NameCell"];
+//    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+//    
+//    if (tableView == self.searchDisplayController.searchResultsTableView) {
+//        [cell prepareWithItem:self.searchResults[indexPath.row]];
+//    } else {
+//        [cell prepareWithItem:self.items[indexPath.row]];
+//    }
+//    return cell;
+//}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"NameCell";
+    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [cell prepareWithItem:self.items[indexPath.row]];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        [cell prepareWithItem:self.searchResults[indexPath.row]];
+    }
+    else
+    {
+        [cell prepareWithItem:self.items[indexPath.row]];
+    }
+    
     return cell;
 }
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
