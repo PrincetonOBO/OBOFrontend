@@ -14,8 +14,9 @@
         self.offers = info[@"offers"];
         self.sold = [info[@"sold"] boolValue];
         self.item_id = info[@"id"];
-        //self.longitude = info[@"longitude"];
-        //self.latitude = info[@"latitude"];
+        self.longitude = info[@"longitude"];
+        self.latitude = info[@"latitude"];
+        self.price = [info[@"time"] integerValue];
     }
     return self;
 }
