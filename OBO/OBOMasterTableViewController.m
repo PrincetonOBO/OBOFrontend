@@ -77,11 +77,12 @@
     self.tableView.dataSource = self;
     [self.tableView reloadData];
 
-
+    //[self refresh];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh)
              forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
+
     
     //self.searchResults = [NSMutableArray arrayWithCapacity:[self.items count]];
 }
@@ -146,6 +147,7 @@
     [self.tableView reloadData];
 
     [self.refreshControl endRefreshing];
+    //[self refresh];
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
