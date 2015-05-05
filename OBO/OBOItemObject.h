@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *item_id;
+@property (nonatomic) NSUInteger time;
 
 @end

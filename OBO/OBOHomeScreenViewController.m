@@ -1,11 +1,3 @@
-//
-//  OBOHomeScreenViewController.m
-//  OBO
-//
-//  Created by Catherine Wu on 5/4/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
-//
-
 #import "OBOHomeScreenViewController.h"
 
 @interface OBOHomeScreenViewController ()
@@ -22,6 +14,7 @@
     backgroundImageView.image=backgroundImage;
     [self.view insertSubview:backgroundImageView atIndex:0];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
