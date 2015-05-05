@@ -10,6 +10,9 @@
     NSString *docsDir = [dirPaths objectAtIndex:0];
     NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"items3.json"]];
     [@"{\"items2\":}" writeToFile:databasePath atomically:YES];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:107.0/255.0 green:145.0/255.0 blue:35.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:190.0/255.0 green:240.0/255.0 blue:140.0/255.0 alpha:1.0]];
     return YES;
 }
 							

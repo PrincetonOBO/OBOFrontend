@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //UINavigationBar *bar = [self.navigationController navigationBar];
+    //[bar setTintColor:[UIColor redColor]];
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
@@ -42,6 +44,8 @@
     [refreshControl addTarget:self action:@selector(refresh)
              forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
+    
+    
 }
 
 -(void)refresh {
@@ -72,5 +76,6 @@
 
     }
 }
+
 
 @end

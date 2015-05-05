@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        UIImage *backgroundImage = [UIImage imageNamed:@"OBOhomescreen4.png"];
+        UIImage *backgroundImage = [UIImage imageNamed:@"OBOhomescreen_xtine1.png"];
     UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
     backgroundImageView.image=backgroundImage;
     [self.view insertSubview:backgroundImageView atIndex:0];
