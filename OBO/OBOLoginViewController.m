@@ -19,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _userPasswordField.secureTextEntry = YES;
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"login.png"];
+    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
 
 }
 
