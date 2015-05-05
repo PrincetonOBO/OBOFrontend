@@ -15,9 +15,12 @@
     databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:@"items3.json"]];
     [@"{\"items2\":}" writeToFile:databasePath atomically:YES];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:255.0/255.0 green:143.0/255.0 blue:0.0/255.0 alpha:1.0]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:182.0/255.0 green:230.0/255.0 blue:255.0/255.0 alpha:1.0]];
-    return YES;
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:40.0/255.0 green:120.0/255.0 blue:210.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance]
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8], nil]];
+     return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
