@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //UINavigationBar *bar = [self.navigationController navigationBar];
+    //[bar setTintColor:[UIColor redColor]];
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
@@ -122,5 +124,6 @@
 
     }
 }
+
 
 @end

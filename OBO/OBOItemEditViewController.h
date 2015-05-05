@@ -2,7 +2,7 @@
 
 @class OBOItemObject;
 
-@interface OBOItemEditViewController : UIViewController
+@interface OBOItemEditViewController : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) OBOItemObject *object;
 
 @end
