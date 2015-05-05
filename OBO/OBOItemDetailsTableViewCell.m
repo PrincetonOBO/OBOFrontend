@@ -20,7 +20,7 @@
     self.itemImageView.image = image;
     UIImage *soldimage = [UIImage imageNamed:@"sold-overlay.png"];
     // check to see if item is sold and print correct thing
-    if (!item.sold) {
+    if (item.sold) {
         self.itemSoldImageView.image = soldimage;
     }
     
