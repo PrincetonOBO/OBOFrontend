@@ -414,9 +414,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.60525672160031208" blue="0.55582782830064259" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Je2-T4-hl5">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="12" id="pJd-g0-s5i"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="107" id="lJ0-d7-vTF" customClass="OBOItemDetailsTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="107"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="106"/>
@@ -474,7 +482,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="searchDisplayController" destination="71h-OE-JRW" id="Tdr-eN-IYF"/>
+                        <outlet property="searchDisplayController" destination="8dC-kO-MwN" id="5b1-AF-17t"/>
                         <outlet property="tableView" destination="13" id="Rvr-U5-hsH"/>
                     </connections>
                 </tableViewController>
@@ -485,6 +493,15 @@
                         <outlet property="searchContentsController" destination="12" id="0t0-d6-puL"/>
                         <outlet property="searchResultsDataSource" destination="12" id="edl-JQ-dJI"/>
                         <outlet property="searchResultsDelegate" destination="12" id="tns-DN-UuL"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="8dC-kO-MwN">
+                    <connections>
+                        <outlet property="delegate" destination="12" id="Bz4-dS-GYG"/>
+                        <outlet property="searchBar" destination="Je2-T4-hl5" id="TPf-sf-8Ap"/>
+                        <outlet property="searchContentsController" destination="12" id="7hy-YY-HR5"/>
+                        <outlet property="searchResultsDataSource" destination="12" id="Fy2-69-BSq"/>
+                        <outlet property="searchResultsDelegate" destination="12" id="X15-0s-Ko3"/>
                     </connections>
                 </searchDisplayController>
             </objects>

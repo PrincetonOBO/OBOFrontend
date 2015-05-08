@@ -11,7 +11,7 @@
 @property (nonatomic) double latitude;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UISearchBar *itemSearchBar;
-@property (strong, nonatomic) NSMutableArray *searchResults;
+@property (strong, nonatomic) NSArray *searchResults;
 
 @end
 
@@ -153,32 +153,36 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     //[self.searchResults removeAllObjects];
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
     
-    //self.searchResults = [NSMutableArray arrayWithArray: [self.items filteredArrayUsingPredicate:resultPredicate]];
+    self.searchResults = [self.items filteredArrayUsingPredicate:resultPredicate];
 }
+
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
     
     return YES;
 }
 
 #pragma mark - Table View
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    /*
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return self.searchResults.count;
-        
-    } else {
-        
-    } 
-     */
-    return self.items.count;
-
-}
+//- (NSInteger)   :(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    /*
+//    if (tableView == self.searchDisplayController.searchResultsTableView) {
+//        return self.searchResults.count;
+//        
+//    } else {
+//        
+//    } 
+//     */
+//    return self.items.count;
+//
+//}
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NameCell"];
@@ -192,28 +196,60 @@
 //    return cell;
 //}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.searchResults count];
+        
+    } else {
+        return [self.items count];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NameCell";
-    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    OBOItemDetailsTableViewCell *cell = (OBOItemDetailsTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[OBOItemDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    /*
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        [cell prepareWithItem:self.searchResults[indexPath.row]];
+    
+    // Display item in the table cell
+    OBOItemObject *item = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        item = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        item = [self.items objectAtIndex:indexPath.row];
     }
-     */
-    else
-    {
-        [cell prepareWithItem:self.items[indexPath.row]];
-    }
+    [cell prepareWithItem:item];
     
     return cell;
 }
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"NameCell";
+//    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil)
+//    {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+//    /*
+//    if (tableView == self.searchDisplayController.searchResultsTableView)
+//    {
+//        [cell prepareWithItem:self.searchResults[indexPath.row]];
+//    }
+//     */
+//    else
+//    {
+//        [cell prepareWithItem:self.items[indexPath.row]];
+//    }
+//    
+//    return cell;
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {

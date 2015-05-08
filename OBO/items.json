@@ -3,37 +3,9 @@
 		{
 			"description": "AE Jeans",
 			"size": "S",
-			"price": 10,
+			"price": ,
 			"imageUrl": "http://localhost:8000/red-dress.jpg",
 			"details": "Cute red dress from JCrew."
-		},
-		{
-			"description": "Black Dress",
-			"size": "XS",
-			"price": 5,
-			"imageUrl": "http://localhost:8000/black-dress.jpg",
-			"details": "Cute black dress from JCrew."
-		},
-        {
-             "description": "Blue Dress",
-             "size": "XS",
-             "price": 5,
-             "imageUrl": "http://localhost:8000/black-dress.jpg",
-             "details": "Cute black dress from JCrew."
-        },
-        {
-             "description": "Gold Dress",
-             "size": "XS",
-             "price": 5,
-             "imageUrl": "http://localhost:8000/black-dress.jpg",
-             "details": "Cute black dress from JCrew."
-        },
-        {
-             "description": "White Dress",
-             "size": "XS",
-             "price": 5,
-             "imageUrl": "http://localhost:8000/black-dress.jpg",
-             "details": "Cute black dress from JCrew."
-        }
+		}
 	]
 }

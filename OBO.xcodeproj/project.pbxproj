@@ -61,6 +61,7 @@
 		8AB844E11AF87DF5007012C0 /* sold-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB844E01AF87DF5007012C0 /* sold-overlay.png */; };
 		8AB844E41AF8EB31007012C0 /* OBOHomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB844E31AF8EB31007012C0 /* OBOHomeScreenViewController.m */; };
 		8AC318BE1AEFFD67001291AB /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AC318BD1AEFFD67001291AB /* star.jpg */; };
+		8AD84A481AFD6C8300D72952 /* OBOItemSearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD84A471AFD6C8300D72952 /* OBOItemSearchDisplayController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,8 @@
 		8AB844E21AF8EB31007012C0 /* OBOHomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOHomeScreenViewController.h; sourceTree = "<group>"; };
 		8AB844E31AF8EB31007012C0 /* OBOHomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOHomeScreenViewController.m; sourceTree = "<group>"; };
 		8AC318BD1AEFFD67001291AB /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
+		8AD84A461AFD6C8300D72952 /* OBOItemSearchDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOItemSearchDisplayController.h; sourceTree = "<group>"; };
+		8AD84A471AFD6C8300D72952 /* OBOItemSearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOItemSearchDisplayController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */,
 				8A7436FD1AF821F80054C365 /* OBOLoginViewController.h */,
 				8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */,
+				8AD84A461AFD6C8300D72952 /* OBOItemSearchDisplayController.h */,
+				8AD84A471AFD6C8300D72952 /* OBOItemSearchDisplayController.m */,
 				5311E0821AC25915003BEF47 /* OBOItemObject.h */,
 				5311E0831AC25915003BEF47 /* OBOItemObject.m */,
 				8A64DB031AED7E8E005D5482 /* OBOItemOfferObject.h */,
@@ -449,6 +454,7 @@
 				8A7436FF1AF821F80054C365 /* OBOLoginViewController.m in Sources */,
 				5344C6711AE704FB001691DC /* OBOUserProfile.m in Sources */,
 				8A875D7F1AD1E3280033D1B7 /* OBOAccountTableViewController.m in Sources */,
+				8AD84A481AFD6C8300D72952 /* OBOItemSearchDisplayController.m in Sources */,
 				5311E0971AC25915003BEF47 /* OBOItemDetailViewController.m in Sources */,
 				53D7E3471AD482E600196755 /* OBOItemEditViewController.m in Sources */,
 			);
