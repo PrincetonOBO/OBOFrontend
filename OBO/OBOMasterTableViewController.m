@@ -206,6 +206,11 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NameCell";
@@ -251,12 +256,30 @@
 //    return cell;
 //}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
-        OBOItemDetailViewController *dest = segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        dest.object = self.items[indexPath.row];
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
+//        OBOItemDetailViewController *dest = segue.destinationViewController;
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        dest.object = self.items[indexPath.row];
+//
+//    }
+//}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ToItemDescription"]) {
+        NSIndexPath *indexPath = nil;
+        OBOItemObject *item = nil;
+        
+        if (self.searchDisplayController.active) {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            item = [self.searchResults objectAtIndex:indexPath.row];
+        } else {
+            indexPath = [self.tableView indexPathForSelectedRow];
+            item = [self.items objectAtIndex:indexPath.row];
+        }
+        
+        OBOItemDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.object = item;
     }
 }
 
