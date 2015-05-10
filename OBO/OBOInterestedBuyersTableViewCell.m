@@ -11,10 +11,15 @@
 @implementation OBOInterestedBuyersTableViewCell
 
 - (void)prepareWithItem3:(OBOItemOfferObject *)offer {
+    NSLog(@"PrepareWithItem3: %@", offer);
     self.nameLabel.text = offer.name;
+    NSLog(@"Offer name: %@", offer.name);
+
     self.contactInfoLabel.text = offer.contactInfo;
+    NSLog(@"Offer contact: %@", offer.contactInfo);
+    
     self.priceLabel.text = offer.price;
-    NSLog(@"Prepared an item's interested buyers");
+    NSLog(@"Offer price: %@", offer.price);
 }
 
 - (void)awakeFromNib {
