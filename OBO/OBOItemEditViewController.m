@@ -28,7 +28,7 @@
     self.itemImageView.image = image;
     
     self.itemNameTextField.text = self.object.name;
-    self.itemPriceTextField.text =[NSString stringWithFormat:@"%d",self.object.price];
+    self.itemPriceTextField.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.object.price];
     self.itemSizeTextField.text = self.object.size;
     self.itemDescriptionTextField.text = self.object.details;
     self.item_id = self.object.item_id;
