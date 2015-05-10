@@ -218,7 +218,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitChanges:" destination="2eq-WZ-7XP" eventType="touchUpInside" id="ZOg-8v-ZdS"/>
-                                    <segue destination="vWV-VF-PGR" kind="push" id="fA5-Xq-gTl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eUF-f4-jcW">
@@ -357,7 +356,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submit:" destination="c9l-PB-aqg" eventType="touchUpInside" id="7Yx-Ip-IUz"/>
-                                    <segue destination="vWV-VF-PGR" kind="push" id="1qX-mK-cYD"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Oj9-1l-W5K">
@@ -993,7 +991,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="1qX-mK-cYD"/>
-    </inferredMetricsTieBreakers>
 </document>

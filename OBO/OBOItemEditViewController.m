@@ -69,6 +69,8 @@
     
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"Edited item: %@", itemResponse);
+    [self.navigationController popViewControllerAnimated:TRUE];
+
     
 }
 

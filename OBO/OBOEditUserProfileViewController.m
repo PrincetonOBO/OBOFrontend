@@ -38,7 +38,7 @@
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"response: %@", itemResponse);
 
-
+    [self.navigationController popViewControllerAnimated:TRUE];
     // Do any additional setup after loading the view.
 
 }
@@ -50,6 +50,8 @@
     self.userLocationField.text = self.user.location;
     // Do any additional setup after loading the view.
 }
+
+
 
 
 

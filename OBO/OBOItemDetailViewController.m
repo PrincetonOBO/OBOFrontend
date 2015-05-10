@@ -26,23 +26,31 @@
     self.item_id = self.object.item_id;
     
 }
+
 - (IBAction)getContactInfo:(id)sender {
-//    UIAlertView *alertView = [[UIAlertView alloc]
-//                              initWithTitle:@"Delete" message:@"Are you sure you want to contact this seller? The seller will be notified" delegate:self cancelButtonTitle:@"No, I am not interested" otherButtonTitles:@"Yes, I am interested", nil];
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Submit Offer" message:@"Please enter offer amount in s" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Submit", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView show];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit Offer" message:@"Please enter offer amount in $" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"placeholder text";
+    }];
     
-    UITextField * alertTextField = [alertView textFieldAtIndex:0];
-    NSLog(@"Entered: %@",[alertTextField text]);
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Submit offer" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *priceField = alertController.textFields.firstObject;
+        NSUInteger price = [priceField.text integerValue];
+        [self networkStuff:price];
+    }];
+    [alertController addAction:alertAction];
+    [self presentViewController:alertController animated:YES completion:NULL ];
+}
+
+- (void)networkStuff:(NSUInteger)price {
+    NSLog(@"Offer price: %lu", price);
     
     NSString *user_id = @"5539c7e817aad86cf1000006";
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@/offer/users/%@", self.item_id, user_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"price\": 10 , \"user\": {\"name\": \"Walker Davis\", \"net_id\": \"wcdavis@princeton.edu\", \"pickup_loc\": \"Witherspoon Hall\"} }", [alertTextField text]];
+    NSString *json = [NSString stringWithFormat:@"{ \"price\": %ul , \"user\": {\"name\": \"Walker Davis\", \"net_id\": \"wcdavis@princeton.edu\", \"pickup_loc\": \"Witherspoon Hall\"} }", price];
     
     NSLog(@"offer json: %@", json);
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
@@ -60,12 +68,8 @@
     NSLog(@"Made offer:%@", itemResponse);
 
     
-    //[alertView release];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
-}
 
 
 @end
