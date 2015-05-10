@@ -14,7 +14,6 @@
 - (void)prepareWithItem:(OBOItemObject *)item {
     self.itemNameLabel.text = item.name;
     UIImage *image = item.image;
-    self.itemNameLabel.text = item.name;
     self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.price];
     self.itemTimeLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.time];
     self.itemImageView.image = image;

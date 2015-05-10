@@ -31,18 +31,17 @@
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
     NSString *text = self.itemDescriptionTextField.text;
-    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
+    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 1.0) base64EncodedStringWithOptions:0];
 
     
 
     // Make RESTful URL
     NSString *user_id = @"5539c7e817aad86cf1000006";
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
-    NSLog(@"making rest: %f", self.latitude);
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %f}", text, self.longitude, self.latitude, 10.0];
+    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %d, \"size\": \"%@\", \"title\": \"%@\"}", text, self.longitude, self.latitude, 10, size, name];
 
 
     //NSLog(encodedImage);
@@ -83,7 +82,7 @@
 
     json = [NSString stringWithFormat:@"{\"image\": \"%@\", \"item_id\": \"%@\", \"size\": \"full\"}",
             encodedImage, item_id];
-    NSLog(@"Photo post: %@",json);
+    //NSLog(@"Photo post: %@",json);
     jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     [restRequest setHTTPBody:jsonData];
     [restRequest setHTTPMethod:@"POST"];
@@ -91,7 +90,7 @@
     
     response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
     itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    NSLog(@"response: %@", itemResponse);
+    //NSLog(@"response: %@", itemResponse);
 
 
 

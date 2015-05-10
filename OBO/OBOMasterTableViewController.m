@@ -58,8 +58,32 @@
     
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"User's items:%@", itemResponse);
-
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
+    [writeString writeToFile:filePath atomically:YES];
     
+    NSLog(@"Write string:%@", writeString);
+    
+    
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&err];
+
+
+    /*
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -67,6 +91,7 @@
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
+     */
     NSArray *itemsJSON = jsonDict[@"items"];
     for (NSDictionary *itemJSON in itemsJSON) {
         OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
@@ -104,15 +129,25 @@
     NSError *err = nil;
     
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
-    
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    NSLog(@"User's items:%@", itemResponse);
+
+    NSLog(@"Response: %@", response);
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
-    NSString *writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
     [writeString writeToFile:filePath atomically:YES];
     
     NSLog(@"Write string:%@", writeString);
@@ -132,14 +167,17 @@
                                                              options:kNilOptions
                                                                error:&err];
     */
-    
+    NSLog(@"Json: %@", json);
     if (json != nil) {
         NSArray *new = [NSArray array];
         self.items = new;
         NSArray *itemsJSON = json[@"items"];
-        for (NSDictionary *itemJSON in itemsJSON) {
-            OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
-            self.items = [self.items arrayByAddingObject:item];
+        if (itemsJSON != nil) {
+    
+            for (NSDictionary *itemJSON in itemsJSON) {
+                OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
+                self.items = [self.items arrayByAddingObject:item];
+            }
         }
     }
 
@@ -220,6 +258,7 @@
         OBOItemDetailViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         dest.object = self.items[indexPath.row];
+        NSLog(@"Name: %@", dest.object.name);
 
     }
 }

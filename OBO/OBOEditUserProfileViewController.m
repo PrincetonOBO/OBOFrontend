@@ -22,7 +22,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"first_name\": \"%@\", \"last_name\": \"%@\", \"net_id\": \"%@\" }", self.userNameField.text, self.userNameField.text, self.userContactInfoField.text ];
+    NSString *json = [NSString stringWithFormat:@"{ \"name\": \"%@\", \"net_id\": \"%@\", \"pickup_loc\": \"%@\" }", self.userNameField.text, self.userContactInfoField.text, self.userLocationField ];
     
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     

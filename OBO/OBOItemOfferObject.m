@@ -14,9 +14,12 @@
     self = [super init];
     if (self) {
         self.name = info[@"user"][@"name"];
-        
+        NSLog(@"offer name: %@", self.name);
         self.contactInfo = info[@"user"][@"net_id"];
+        NSLog(@"offer contact: %@", self.contactInfo);
         self.price = info[@"price"];
+        NSLog(@"offer price: %@", self.price);
+
     }
     return self;
 }

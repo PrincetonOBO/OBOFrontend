@@ -14,7 +14,7 @@
     self.nameLabel.text = offer.name;
     self.contactInfoLabel.text = offer.contactInfo;
     self.priceLabel.text = offer.price;
-
+    NSLog(@"Prepared an item's interested buyers");
 }
 
 - (void)awakeFromNib {
