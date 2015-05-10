@@ -137,17 +137,34 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"INDEX PATH: %@", indexPath);
+
     OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
     
     [cell prepareWithItem2:self.items[indexPath.row]];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"INDEX PATH: %@", indexPath);
+    [self performSegueWithIdentifier:@"toItemEdit" sender:indexPath];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"sender: %@", sender);
     if ([[segue identifier] isEqualToString:@"toItemEdit"]) {
         OBOItemEditViewController *dest = segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath =
+        [self.tableView
+         indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        NSUInteger row = indexPath.row;
+        NSLog(@"Row: %d", row);
+
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //[self.tableView indexPathForSelectedRow];
         dest.object = self.items[indexPath.row];
+        NSLog(@"Name of item: %@", dest.object.name);
         
     }
 }

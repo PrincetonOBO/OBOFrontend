@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    /*
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items2"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -27,16 +29,44 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
-    NSArray *itemsJSON = json[@"items2"];
-    for (NSDictionary *itemJSON in itemsJSON) {
-        id value = [itemJSON objectForKey:@"offers"];
-        for (NSDictionary *offerJSON in value) {
-            OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
-            self.offers = [self.offers arrayByAddingObject:offer];
+     
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
+    
+    
+    NSError *err = nil;
+    
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&err];
+
+    //NSDictionary *offers = self.object.offers;
+    //NSLog(@"itemsJSON: %@", itemsJSON);
+    //for (NSDictionary *offer in offers) {
+    //    NSLog(@"Value: %@", value);
+            if ([value isEqualToString:@"I'm going to make an offer on this and see if it works"]){
+            NSLog(@"true");
+            id offers = [itemJSON objectForKey:@"offers"];
+                for (NSDictionary *offerJSON in offers) {
+                    NSLog(@"Offer JSON: %@", offerJSON);
+                    OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
+                    self.offers = [self.offers arrayByAddingObject:offer];
+                }
         }
-    }
+            }
+    
+    NSLog(@"offers for item: %@", self.offers);
+    
+    NSLog(@"done populating fields with offer data");
+*/
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    NSLog(@"Set tableview data source");
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh)
@@ -68,6 +98,7 @@
     OBOInterestedBuyersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell3" forIndexPath:indexPath];
     
     [cell prepareWithItem3:self.offers[indexPath.row]];
+    NSLog(@"Prepared cell");
     return cell;
 }
 

@@ -26,14 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 /* Get location for request to be made */
     self.locationManager = [[CLLocationManager alloc] init];
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-    
+
     // Get the location!
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -44,22 +44,46 @@
 /* Make request for feed items and save */
     NSString *user_id = @"5539c7e817aad86cf1000006";
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items?latitude=%f&longitude=%f&number=%d", self.latitude, self.longitude, 10];
-    
-    
+
+
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
     [restRequest setHTTPMethod:@"GET"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    
+
     NSURLResponse *resp = nil;
     NSError *err = nil;
-    
+
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
-    
+
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"User's items:%@", itemResponse);
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
+    [writeString writeToFile:filePath atomically:YES];
 
-    
+    NSLog(@"Write string:%@", writeString);
+
+
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&err];
+
+
+    /*
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"items"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -67,12 +91,13 @@
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:&error];
+     */
     NSArray *itemsJSON = jsonDict[@"items"];
     for (NSDictionary *itemJSON in itemsJSON) {
         OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
         self.items = [self.items arrayByAddingObject:item];
     }
-    
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
@@ -83,42 +108,52 @@
              forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
 
-    
+
     //self.searchResults = [NSMutableArray arrayWithCapacity:[self.items count]];
 }
 
 -(void)refresh {
     // add data pull here!! //
-    
+
     /* Make request for feed items and save */
     NSString *user_id = @"5539c7e817aad86cf1000006";
     [self.locationManager startUpdatingLocation];
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items?latitude=%f&longitude=%f&number=%d", self.latitude, self.longitude, 10];
-    
-    
+
+
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
     [restRequest setHTTPMethod:@"GET"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    
+
     NSURLResponse *resp = nil;
     NSError *err = nil;
-    
+
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
-    
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    NSLog(@"User's items:%@", itemResponse);
-    
+
+    NSLog(@"Response: %@", response);
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    
+
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
-    NSString *writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
     [writeString writeToFile:filePath atomically:YES];
-    
+
     NSLog(@"Write string:%@", writeString);
 
-    
+
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
@@ -133,13 +168,18 @@
                                                              options:kNilOptions
                                                                error:&err];
     */
-    
-    NSArray *new = [NSArray array];
-    self.items = new;
-    NSArray *itemsJSON = json[@"items"];
-    for (NSDictionary *itemJSON in itemsJSON) {
-        OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
-        self.items = [self.items arrayByAddingObject:item];
+    NSLog(@"Json: %@", json);
+    if (json != nil) {
+        NSArray *new = [NSArray array];
+        self.items = new;
+        NSArray *itemsJSON = json[@"items"];
+        if (itemsJSON != nil) {
+
+            for (NSDictionary *itemJSON in itemsJSON) {
+                OBOItemObject *item = [[OBOItemObject alloc] initWithInfo:itemJSON];
+                self.items = [self.items arrayByAddingObject:item];
+            }
+        }
     }
 
     self.tableView.delegate = self;
@@ -154,7 +194,7 @@
 {
     //[self.searchResults removeAllObjects];
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    
+
     self.searchResults = [self.items filteredArrayUsingPredicate:resultPredicate];
 }
 
@@ -165,7 +205,7 @@
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
                                                      selectedScopeButtonIndex]]];
-    
+
     return YES;
 }
 
@@ -175,10 +215,10 @@
 //    /*
 //    if (tableView == self.searchDisplayController.searchResultsTableView) {
 //        return self.searchResults.count;
-//        
+//
 //    } else {
-//        
-//    } 
+//
+//    }
 //     */
 //    return self.items.count;
 //
@@ -187,7 +227,7 @@
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NameCell"];
 //    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
-//    
+//
 //    if (tableView == self.searchDisplayController.searchResultsTableView) {
 //        [cell prepareWithItem:self.searchResults[indexPath.row]];
 //    } else {
@@ -200,7 +240,7 @@
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.searchResults count];
-        
+
     } else {
         return [self.items count];
     }
@@ -215,12 +255,12 @@
 {
     static NSString *CellIdentifier = @"NameCell";
     OBOItemDetailsTableViewCell *cell = (OBOItemDetailsTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+
     // Configure the cell...
     if (cell == nil) {
         cell = [[OBOItemDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     // Display item in the table cell
     OBOItemObject *item = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -229,15 +269,24 @@
         item = [self.items objectAtIndex:indexPath.row];
     }
     [cell prepareWithItem:item];
-    
+
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
+        OBOItemDetailViewController *dest = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        dest.object = self.items[indexPath.row];
+        NSLog(@"Name: %@", dest.object.name);
+    }
 }
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    static NSString *CellIdentifier = @"NameCell";
 //    OBOItemDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
+//
 //    if (cell == nil)
 //    {
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -252,24 +301,17 @@
 //    {
 //        [cell prepareWithItem:self.items[indexPath.row]];
 //    }
-//    
+//
 //    return cell;
 //}
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
-//        OBOItemDetailViewController *dest = segue.destinationViewController;
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        dest.object = self.items[indexPath.row];
-//
-//    }
-//}
 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ToItemDescription"]) {
         NSIndexPath *indexPath = nil;
         OBOItemObject *item = nil;
-        
+
         if (self.searchDisplayController.active) {
             indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
             item = [self.searchResults objectAtIndex:indexPath.row];
@@ -277,11 +319,12 @@
             indexPath = [self.tableView indexPathForSelectedRow];
             item = [self.items objectAtIndex:indexPath.row];
         }
-        
+
         OBOItemDetailViewController *destViewController = segue.destinationViewController;
         destViewController.object = item;
     }
 }
+*/
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -294,11 +337,11 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     CLLocation *currentLocation = newLocation;
-    
+
     if (currentLocation != nil) {
         self.latitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].latitude] doubleValue];
         self.longitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].longitude] doubleValue];
-        
+
     }
     [self.locationManager stopUpdatingLocation];
     NSLog(@"location successfully updated");
