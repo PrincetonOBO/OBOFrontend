@@ -14,8 +14,8 @@
     self = [super init];
     if (self) {
         self.name = info[@"name"];
-        self.contactInfo = info[@"contactInfo"];
-        self.location = info[@"location"];
+        self.contactInfo = info[@"net_id"];
+        self.location = info[@"pickup_loc"];
     }
     return self;
 }
