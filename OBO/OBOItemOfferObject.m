@@ -13,11 +13,12 @@
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {
+        NSLog(@"Making offer object with dict: %@", info);
         self.name = info[@"user"][@"name"];
         NSLog(@"offer name: %@", self.name);
         self.contactInfo = info[@"user"][@"net_id"];
         NSLog(@"offer contact: %@", self.contactInfo);
-        self.price = info[@"price"];
+        self.price = [NSString stringWithFormat:@"%@", info[@"price"]];
         NSLog(@"offer price: %@", self.price);
 
     }

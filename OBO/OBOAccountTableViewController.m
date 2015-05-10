@@ -2,6 +2,7 @@
 #import "OBOItemEditViewController.h"
 #import "OBOItemObject.h"
 #import "OBOAccountTableViewController.h"
+#import "OBOInterestedBuyersTableViewController.h"
 
 @interface OBOAccountTableViewController ()
 
@@ -161,12 +162,26 @@
         NSUInteger row = indexPath.row;
         NSLog(@"Row: %d", row);
 
-        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //[self.tableView indexPathForSelectedRow];
         dest.object = self.items[indexPath.row];
         NSLog(@"Name of item: %@", dest.object.name);
         
     }
+    
+    else if([[segue identifier] isEqualToString:@"toOffers"]) {
+        NSLog(@"segue: toOffers");
+        OBOInterestedBuyersTableViewController *dest = segue.destinationViewController;
+        NSIndexPath *indexPath =
+        [self.tableView
+         indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
+        NSUInteger row = indexPath.row;
+        NSLog(@"Row: %d", row);
+        
+        dest.object = self.items[indexPath.row];
+        NSLog(@"Name of item: %@", dest.object.name);
+
+        
+    }
+
 }
 
 @end

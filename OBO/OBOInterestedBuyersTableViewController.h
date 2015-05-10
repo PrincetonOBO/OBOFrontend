@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OBOItemObject.h"
 
 @interface OBOInterestedBuyersTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) OBOItemObject *object;
+
 @end
