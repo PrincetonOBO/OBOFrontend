@@ -1,7 +1,7 @@
-#import "OBOItemDetailsTableViewCell.h"
+#import "OBOBuyItemsDetailTableViewCell.h"
 #import "OBOItemObject.h"
 
-@interface OBOItemDetailsTableViewCell()
+@interface OBOBuyItemsDetailTableViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
@@ -9,7 +9,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *itemSoldImageView;
 
 @end
-@implementation OBOItemDetailsTableViewCell
+@implementation OBOBuyItemsDetailTableViewCell
 
 - (void)prepareWithItem:(OBOItemObject *)item {
 //    self.itemNameLabel.text = item.name;

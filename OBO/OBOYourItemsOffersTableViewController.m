@@ -1,15 +1,15 @@
-#import "OBOInterestedBuyersTableViewCell.h"
-#import "OBOAccountTableViewController.h"
+#import "OBOYourItemsOffersTableViewCell.h"
+#import "OBOYourItemsTableViewController.h"
 #import "OBOItemOfferObject.h"
-#import "OBOInterestedBuyersTableViewController.h"
+#import "OBOYourItemsOffersTableViewController.h"
 
-@interface OBOInterestedBuyersTableViewController ()
+@interface OBOYourItemsOffersTableViewController ()
 @property (strong, nonatomic) NSArray *offers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation OBOInterestedBuyersTableViewController
+@implementation OBOYourItemsOffersTableViewController
 
 - (NSArray *)offers {
     if (!_offers) {
@@ -71,7 +71,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    OBOInterestedBuyersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell3" forIndexPath:indexPath];
+    OBOYourItemsOffersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell3" forIndexPath:indexPath];
     
     NSLog(@"Cell number: %lu", indexPath.row);
     OBOItemOfferObject *offer = self.offers[indexPath.row];

@@ -1,7 +1,7 @@
-#import "OBOItemDetailViewController.h"
+#import "OBOBuyItemsDetailViewController.h"
 #import "OBOItemObject.h"
 
-@interface OBOItemDetailViewController()
+@interface OBOBuyItemsDetailViewController()
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
@@ -12,7 +12,7 @@
 
 @end
 
-@implementation OBOItemDetailViewController
+@implementation OBOBuyItemsDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

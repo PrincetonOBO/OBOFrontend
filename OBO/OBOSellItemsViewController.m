@@ -1,7 +1,7 @@
-#import "OBOSellThingViewController.h"
+#import "OBOSellItemsViewController.h"
 
 
-@interface OBOSellThingViewController()
+@interface OBOSellItemsViewController()
 {
     NSMutableArray *_pickerData;
     NSURLConnection *currentConnection;
@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
-@implementation OBOSellThingViewController
+@implementation OBOSellItemsViewController
 - (IBAction)submit:(id)sender {
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;

@@ -1,14 +1,14 @@
-#import "OBOEditUserProfileViewController.h"
+#import "OBOUserProfileEditViewController.h"
 #import "OBOUserProfile.h"
 
-@interface OBOEditUserProfileViewController ()
+@interface OBOUserProfileEditViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userContactInfoField;
 @property (weak, nonatomic) IBOutlet UITextField *userLocationField;
 
 @end
 
-@implementation OBOEditUserProfileViewController
+@implementation OBOUserProfileEditViewController
 
 
 - (IBAction)submit:(id)sender {

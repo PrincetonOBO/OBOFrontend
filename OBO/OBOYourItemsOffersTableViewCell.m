@@ -1,14 +1,14 @@
-#import "OBOInterestedBuyersTableViewCell.h"
+#import "OBOYourItemsOffersTableViewCell.h"
 #import "OBOItemOfferObject.h"
 
-@interface OBOInterestedBuyersTableViewCell()
+@interface OBOYourItemsOffersTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 
-@implementation OBOInterestedBuyersTableViewCell
+@implementation OBOYourItemsOffersTableViewCell
 
 - (void)prepareWithItem3:(OBOItemOfferObject *)offer {
     NSLog(@"PrepareWithItem3: %@", offer);

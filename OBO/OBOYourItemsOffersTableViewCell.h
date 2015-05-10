@@ -2,7 +2,7 @@
 
 @class OBOItemOfferObject;
 
-@interface OBOInterestedBuyersTableViewCell : UITableViewCell
+@interface OBOYourItemsOffersTableViewCell : UITableViewCell
 
 - (void)prepareWithItem3:(OBOItemOfferObject *)offer;
 

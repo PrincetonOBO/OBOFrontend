@@ -1,9 +1,9 @@
-#import "OBOItemDetailsTableViewCell.h"
-#import "OBOItemDetailViewController.h"
+#import "OBOBuyItemsDetailTableViewCell.h"
+#import "OBOBuyItemsDetailViewController.h"
 #import "OBOItemObject.h"
-#import "OBOMasterTableViewController.h"
+#import "OBOBuyItemsTableViewController.h"
 
-@interface OBOMasterTableViewController ()
+@interface OBOBuyItemsTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation OBOMasterTableViewController
+@implementation OBOBuyItemsTableViewController
 
 - (NSArray *)items {
     if (!_items) {
@@ -254,11 +254,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NameCell";
-    OBOItemDetailsTableViewCell *cell = (OBOItemDetailsTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    OBOBuyItemsDetailTableViewCell *cell = (OBOBuyItemsDetailTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     // Configure the cell...
     if (cell == nil) {
-        cell = [[OBOItemDetailsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[OBOBuyItemsDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
     // Display item in the table cell
@@ -275,7 +275,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
-        OBOItemDetailViewController *dest = segue.destinationViewController;
+        OBOBuyItemsDetailViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         dest.object = self.items[indexPath.row];
         NSLog(@"Name: %@", dest.object.name);

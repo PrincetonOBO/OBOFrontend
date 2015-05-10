@@ -2,7 +2,7 @@
 
 @class OBOItemObject;
 
-@interface OBOItemDetailsTableViewCell : UITableViewCell
+@interface OBOBuyItemsDetailTableViewCell : UITableViewCell
 
 - (void)prepareWithItem:(OBOItemObject *)item;
 

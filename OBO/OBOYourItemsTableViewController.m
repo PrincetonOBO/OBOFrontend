@@ -1,17 +1,17 @@
-#import "OBOAccountTableViewCell.h"
-#import "OBOItemEditViewController.h"
+#import "OBOYourItemsTableViewCell.h"
+#import "OBOYourItemsEditViewController.h"
 #import "OBOItemObject.h"
-#import "OBOAccountTableViewController.h"
-#import "OBOInterestedBuyersTableViewController.h"
+#import "OBOYourItemsTableViewController.h"
+#import "OBOYourItemsOffersTableViewController.h"
 
-@interface OBOAccountTableViewController ()
+@interface OBOYourItemsTableViewController ()
 
 @property (strong, nonatomic) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation OBOAccountTableViewController
+@implementation OBOYourItemsTableViewController
 
 - (NSArray *)items {
     if (!_items) {
@@ -140,7 +140,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"INDEX PATH: %@", indexPath);
 
-    OBOAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
+    OBOYourItemsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell2" forIndexPath:indexPath];
     
     [cell prepareWithItem2:self.items[indexPath.row]];
     return cell;
@@ -155,7 +155,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"sender: %@", sender);
     if ([[segue identifier] isEqualToString:@"toItemEdit"]) {
-        OBOItemEditViewController *dest = segue.destinationViewController;
+        OBOYourItemsEditViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath =
         [self.tableView
          indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
@@ -169,7 +169,7 @@
     
     else if([[segue identifier] isEqualToString:@"toOffers"]) {
         NSLog(@"segue: toOffers");
-        OBOInterestedBuyersTableViewController *dest = segue.destinationViewController;
+        OBOYourItemsOffersTableViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath =
         [self.tableView
          indexPathForCell:(UITableViewCell *)[[sender superview] superview]];

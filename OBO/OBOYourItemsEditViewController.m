@@ -1,7 +1,7 @@
-#import "OBOItemEditViewController.h"
+#import "OBOYourItemsEditViewController.h"
 #import "OBOItemObject.h"
 
-@interface OBOItemEditViewController()
+@interface OBOYourItemsEditViewController()
 {
     CGFloat originalY;
 }
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation OBOItemEditViewController
+@implementation OBOYourItemsEditViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

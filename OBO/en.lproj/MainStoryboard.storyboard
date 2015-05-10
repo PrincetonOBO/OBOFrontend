@@ -2,20 +2,20 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ryE-lS-Hwz">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Your Items-->
         <scene sceneID="cN3-gB-CLR">
             <objects>
-                <tableViewController id="vWV-VF-PGR" customClass="OBOAccountTableViewController" sceneMemberID="viewController">
+                <tableViewController id="vWV-VF-PGR" customClass="OBOYourItemsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="53r-3s-Mxf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell2" rowHeight="60" id="LCD-3A-aOv" customClass="OBOAccountTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell2" rowHeight="60" id="LCD-3A-aOv" customClass="OBOYourItemsTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCD-3A-aOv" id="2g8-s4-Krp">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -87,17 +87,17 @@
             </objects>
             <point key="canvasLocation" x="763" y="-1716"/>
         </scene>
-        <!--Interested Buyers Table View Controller-->
+        <!--Your Items Offers Table View Controller-->
         <scene sceneID="8ae-qF-YqX">
             <objects>
-                <tableViewController id="kFT-ZM-AeO" customClass="OBOInterestedBuyersTableViewController" sceneMemberID="viewController">
+                <tableViewController id="kFT-ZM-AeO" customClass="OBOYourItemsOffersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="6mU-WG-zqB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell3" rowHeight="100" id="JcY-Tk-S15" customClass="OBOInterestedBuyersTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell3" rowHeight="100" id="JcY-Tk-S15" customClass="OBOYourItemsOffersTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JcY-Tk-S15" id="XpC-8I-qTD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
@@ -154,7 +154,7 @@
         <!--Edit Item-->
         <scene sceneID="Edb-rU-wup">
             <objects>
-                <viewController id="2eq-WZ-7XP" customClass="OBOItemEditViewController" sceneMemberID="viewController">
+                <viewController id="2eq-WZ-7XP" customClass="OBOYourItemsEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nFS-k8-VAI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
         <!--Submit Item To Sell-->
         <scene sceneID="enT-5d-Un4">
             <objects>
-                <viewController id="c9l-PB-aqg" customClass="OBOSellThingViewController" sceneMemberID="viewController">
+                <viewController id="c9l-PB-aqg" customClass="OBOSellItemsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XgS-nb-jrm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +407,7 @@
         <!--For Sale-->
         <scene sceneID="18">
             <objects>
-                <tableViewController title="For Sale" id="12" customClass="OBOMasterTableViewController" sceneMemberID="viewController">
+                <tableViewController title="For Sale" id="12" customClass="OBOBuyItemsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,8 +422,8 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="100" id="lJ0-d7-vTF" customClass="OBOItemDetailsTableViewCell">
-                                <rect key="frame" x="0.0" y="130" width="320" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="100" id="lJ0-d7-vTF" customClass="OBOBuyItemsDetailTableViewCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -509,7 +509,7 @@
         <!--Item Description-->
         <scene sceneID="D33-sc-zBc">
             <objects>
-                <viewController id="7oS-NK-OnC" customClass="OBOItemDetailViewController" sceneMemberID="viewController">
+                <viewController id="7oS-NK-OnC" customClass="OBOBuyItemsDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b3t-Bk-SbB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -813,7 +813,7 @@
         <!--Edit Profile-->
         <scene sceneID="Bja-fn-IdU">
             <objects>
-                <viewController id="hD1-0f-DSk" customClass="OBOEditUserProfileViewController" sceneMemberID="viewController">
+                <viewController id="hD1-0f-DSk" customClass="OBOUserProfileEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="erP-27-R8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -912,7 +912,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="XyD-QC-8Q8">
-                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XyD-QC-8Q8" id="vta-RI-EVI">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>

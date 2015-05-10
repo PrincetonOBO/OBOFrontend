@@ -1,7 +1,7 @@
-#import "OBOAccountTableViewCell.h"
+#import "OBOYourItemsTableViewCell.h"
 #import "OBOItemObject.h"
 
-@interface OBOAccountTableViewCell()
+@interface OBOYourItemsTableViewCell()
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -9,7 +9,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *interestedBuyers;
 @end
 
-@implementation OBOAccountTableViewCell
+@implementation OBOYourItemsTableViewCell
 
 - (void)prepareWithItem2:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
