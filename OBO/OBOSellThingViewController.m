@@ -8,7 +8,7 @@
     NSJSONSerialization *jsonParser;
     CGFloat originalY;
     NSString *item_id;
-    
+
     //CGFloat name;
 
 }
@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *itemPriceTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
+//@property (weak, nonatomic) IBOutlet UIPickerView *itemPricePickerView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) double longitude;
 @property (nonatomic) double latitude;
@@ -30,51 +30,52 @@
 - (IBAction)submit:(id)sender {
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
-    NSString *text = self.itemDescriptionTextField.text;
-    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 1.0) base64EncodedStringWithOptions:0];
+    NSString *description = self.itemDescriptionTextField.text;
+    NSString *price = self.itemPriceTextField.text;
+    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
 
-    
+
 
     // Make RESTful URL
     NSString *user_id = @"5539c7e817aad86cf1000006";
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
-    
+
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"description\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %d, \"size\": \"%@\", \"title\": \"%@\"}", text, self.longitude, self.latitude, 10, size, name];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"description\": \"%@\", \"size\": \"%@\", \"location\": {\"coordinates\":[%lf, %lf]}, \"price\": %@}", name, description, size, self.longitude, self.latitude, price];
 
 
     //NSLog(encodedImage);
 
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
-    
+
     NSLog(json);
 
     [restRequest setHTTPBody:jsonData];
     [restRequest setHTTPMethod:@"POST"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
 
-    
+
     // Cancel previous call if we run a bunch at once
     if( currentConnection)
     {
         [currentConnection cancel];
         currentConnection = nil;
     }
-    
+
     NSURLResponse *resp = nil;
     NSError *err = nil;
-    
+
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
-    
+
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"response: %@", itemResponse);
-    
+
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
     item_id = [jsonDict objectForKey:@"id"];
     NSLog(@"item id: %@", item_id);
-    
-    
+
+
     restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items/%@/pic", user_id, item_id];
 
     restURL = [NSURL URLWithString:restCallString];
@@ -87,7 +88,7 @@
     [restRequest setHTTPBody:jsonData];
     [restRequest setHTTPMethod:@"POST"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    
+
     response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
     itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     //NSLog(@"response: %@", itemResponse);
@@ -95,8 +96,8 @@
 
 
 
-    
-    
+
+
 
     //Clear entry fields
     self.itemDescriptionTextField.text = @"";
@@ -105,8 +106,8 @@
     self.itemPriceTextField.text = @"";
     [self.itemPicImageView setImage:nil];
     [self.itemImageView setImage:nil];
-    [self.itemPricePickerView reloadAllComponents];
-    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
+//    [self.itemPricePickerView reloadAllComponents];
+//    [self.itemPricePickerView selectRow:0 inComponent:0 animated:YES];
 
 
 }
@@ -122,7 +123,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     CLLocation *currentLocation = newLocation;
-    
+
     if (currentLocation != nil) {
         self.latitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].latitude] doubleValue];
         self.longitude = [[NSString stringWithFormat:@"%.20lf", [currentLocation coordinate].longitude] doubleValue];
@@ -139,7 +140,7 @@
     self.imagePicker.delegate = self;
     [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:self.imagePicker animated:YES completion:nil];
-    
+
 }
 
 -(void) viewDidLoad
@@ -153,33 +154,33 @@
 
     _pickerData = [NSMutableArray array];
     [_pickerData addObject:[NSString stringWithFormat:@" "]];
-    
+
     for (NSInteger x = 1; x <= 50; x++)
     {
         [_pickerData addObject:[NSString stringWithFormat:@"$%li",(long)x]];
     }
 
-    self.itemPricePickerView.dataSource = self;
-    self.itemPricePickerView.delegate = self;
+//    self.itemPricePickerView.dataSource = self;
+//    self.itemPricePickerView.delegate = self;
     self.itemDescriptionTextField.delegate = self;
     self.itemNameTextField.delegate = self;
     self.itemSizeTextField.delegate = self;
     self.itemPriceTextField.delegate = self;
-    
+
     self.itemPriceTextField.keyboardType = UIKeyboardTypeNumberPad;
     originalY = self.view.frame.origin.y;
-    
+
     // Get the location!
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     NSLog(@"set location updating");
-    
+
 //    self.submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //    self.submitButton.frame = CGRectMake(40, 140, 240, 30);
 //    UIImage *btnImage = [UIImage imageNamed:@"sell.png"];
 //    [self.submitButton setImage:btnImage forState:UIControlStateNormal];
-    
+
     //UIImage *image = [UIImage imageNamed:@"sell.png"];
     //self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"string"
                                                      //image:image];
@@ -246,13 +247,13 @@
 {
     //NSDictionary *userInfo = [notification userInfo];
     //CGSize size = [[userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    
+
 //    CGRect frame = CGRectMake(self.view.frame.origin.x,
 //                              self.view.frame.origin.y  - size.height,
 //                              self.view.frame.size.width,
 //                              self.view.frame.size.height);
     //self.view.frame = frame;
-    
+
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
@@ -263,7 +264,7 @@
 //                                 self.view.frame.origin.y - size.height,
 //                                 self.view.frame.size.width,
 //                                 self.view.frame.size.height);
-//    
+//
 //    NSLog(@"%f", size.height);
 }
 

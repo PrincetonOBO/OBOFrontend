@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OBO/OBOItemObject.h"
-            timestampString = "452529717.526433"
+            timestampString = "452978491.05921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "offers"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "item_id"
             landmarkType = "19">
             <Locations>
                <Location
@@ -275,13 +275,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OBO/OBOInterestedBuyersTableViewController.m"
-            timestampString = "452932130.807389"
+            filePath = "OBO/OBOItemObject.m"
+            timestampString = "452977994.372817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-initWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

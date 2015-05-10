@@ -44,13 +44,11 @@
                                                          options:kNilOptions
                                                            error:&err];
 
-     */
-    NSDictionary *offers = self.object.offers;
+    //NSDictionary *offers = self.object.offers;
     //NSLog(@"itemsJSON: %@", itemsJSON);
-    for (NSDictionary *offer in offers) {
-        NSLog(@"Value: %@", value);
-        /*
-        if ([value isEqualToString:@"I'm going to make an offer on this and see if it works"]){
+    //for (NSDictionary *offer in offers) {
+    //    NSLog(@"Value: %@", value);
+            if ([value isEqualToString:@"I'm going to make an offer on this and see if it works"]){
             NSLog(@"true");
             id offers = [itemJSON objectForKey:@"offers"];
                 for (NSDictionary *offerJSON in offers) {
@@ -59,13 +57,12 @@
                     self.offers = [self.offers arrayByAddingObject:offer];
                 }
         }
-        */
-    }
+            }
     
     NSLog(@"offers for item: %@", self.offers);
     
     NSLog(@"done populating fields with offer data");
-
+*/
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     

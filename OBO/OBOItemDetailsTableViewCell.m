@@ -12,17 +12,18 @@
 @implementation OBOItemDetailsTableViewCell
 
 - (void)prepareWithItem:(OBOItemObject *)item {
-    self.itemNameLabel.text = item.name;
+//    self.itemNameLabel.text = item.name;
     UIImage *image = item.image;
-    self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.price];
+    self.itemNameLabel.text = item.name;
+    self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)item.price];
     self.itemTimeLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)item.time];
     self.itemImageView.image = image;
     UIImage *soldimage = [UIImage imageNamed:@"sold-overlay.png"];
     // check to see if item is sold and print correct thing
-    if (!item.sold) {
+    if (item.sold) {
         self.itemSoldImageView.image = soldimage;
     }
-    
+
     //check to see if user contacted regarding
 //    UIImage *starImage = [UIImage imageNamed:@"star.jpg"];
 //    self.starImage.image = starImage;
