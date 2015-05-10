@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameCell2" rowHeight="60" id="LCD-3A-aOv" customClass="OBOYourItemsTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCD-3A-aOv" id="2g8-s4-Krp">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -247,11 +247,11 @@
             </objects>
             <point key="canvasLocation" x="1245" y="-1492"/>
         </scene>
-        <!--Your Items-->
+        <!--Items-->
         <scene sceneID="p8R-TT-uLP">
             <objects>
                 <navigationController id="uhs-B6-c6t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Items" image="filing-7.png" id="Taw-z9-wfP"/>
+                    <tabBarItem key="tabBarItem" title="Items" image="filing-7.png" id="Taw-z9-wfP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AP-Li-fbs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -423,7 +423,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="100" id="lJ0-d7-vTF" customClass="OBOBuyItemsDetailTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -912,7 +912,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="XyD-QC-8Q8">
-                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XyD-QC-8Q8" id="vta-RI-EVI">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -961,11 +961,11 @@
             </objects>
             <point key="canvasLocation" x="763" y="774"/>
         </scene>
-        <!--Your Offers-->
+        <!--Offers-->
         <scene sceneID="z7Q-0x-9ub">
             <objects>
                 <navigationController id="fO0-w3-hMS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Offers" image="tag-7.png" id="8ds-fe-0jM"/>
+                    <tabBarItem key="tabBarItem" title="Offers" image="tag-7.png" id="8ds-fe-0jM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BXQ-th-RYD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
