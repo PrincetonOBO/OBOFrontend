@@ -157,8 +157,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"INDEX PATH: %@", indexPath);
-    [self performSegueWithIdentifier:@"toItemEdit" sender:indexPath];
+    //[self performSegueWithIdentifier:@"toItemEdit" sender:indexPath];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -189,6 +188,10 @@
         NSLog(@"Name of item: %@", dest.object.name);
 
         
+    }
+    
+    else {
+        return;
     }
 
 }
