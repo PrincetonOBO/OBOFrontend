@@ -19,6 +19,7 @@
 
 @implementation OBOYourItemsOffersTableViewController
 
+// array of offers user has made
 - (NSArray *)offers {
     if (!_offers) {
         _offers = [[NSArray alloc]init];
@@ -26,6 +27,7 @@
     return _offers;
 }
 
+// load all offers the user has made
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -65,6 +67,7 @@
 
 #pragma mark - Table view data source
 
+// refresh the table 
 -(void)refresh {
     NSLog(@"refreshing");
     // add data pull here!! //

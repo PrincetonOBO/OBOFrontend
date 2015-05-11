@@ -22,6 +22,7 @@
 
 @implementation OBOYourItemsTableViewController
 
+// array of your items
 - (NSArray *)items {
     if (!_items) {
         _items = [[NSArray alloc]init];
@@ -29,6 +30,7 @@
     return _items;
 }
 
+// load all of your items
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *user_id = @"5539c7e817aad86cf1000006";
@@ -160,6 +162,7 @@
     //[self performSegueWithIdentifier:@"toItemEdit" sender:indexPath];
 }
 
+// segue to either item edit or offers. If neither were intended, return.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"sender: %@", sender);
     if ([[segue identifier] isEqualToString:@"toItemEdit"]) {

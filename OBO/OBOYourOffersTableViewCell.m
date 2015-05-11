@@ -19,6 +19,7 @@
 
 @implementation OBOYourOffersTableViewCell
 
+// prepare the cells of the table view with offers
 - (void)prepareWithItem4:(OBOYourItemOfferObject *)offer {
     NSLog(@"PrepareWithItem4: %@", offer);
     self.nameLabel.text = offer.name;
@@ -31,6 +32,8 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+
+// delete an offer from the database
 - (IBAction)deleteOffer:(id)sender {
     //IMPLEMENT DELETE OFFER
     

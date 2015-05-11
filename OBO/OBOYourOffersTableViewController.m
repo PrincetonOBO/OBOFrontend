@@ -19,6 +19,7 @@
 
 @implementation OBOYourOffersTableViewController
 
+// array of offers
 - (NSArray *)offers {
     if (!_offers) {
         _offers = [[NSArray alloc]init];
@@ -26,7 +27,7 @@
     return _offers;
 }
 
-
+// Load a page with all offers that the user has made
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"YOUR OFFERS PANE LOADED");
@@ -61,6 +62,7 @@
                                                            error:&error];
     NSArray *offersJSON = json[@"offers"];
     for (NSDictionary *offerJSON in offersJSON) {
+        NSLog(@"Current offer:%@", offerJSON);
         OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
         self.offers = [self.offers arrayByAddingObject:offer];
     }
@@ -75,6 +77,7 @@
     self.refreshControl = refreshControl;
 }
 
+// refresh the offers made 
 -(void)refresh {
     NSLog(@"refreshing");
     // add data pull here!! //

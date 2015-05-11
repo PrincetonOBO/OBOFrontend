@@ -21,6 +21,8 @@
 
 @implementation OBOUserProfileViewController
 
+
+// load the user profile
 - (void)viewDidLoad {
     [super viewDidLoad];
 //<<<<<<< HEAD
@@ -80,6 +82,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// bring user to a new page that allows user to edit user's profile
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToUserProfileEdit"]) {
         OBOUserProfileEditViewController *dest = segue.destinationViewController;

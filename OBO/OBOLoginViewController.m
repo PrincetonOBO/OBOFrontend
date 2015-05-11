@@ -17,6 +17,7 @@
 
 @implementation OBOLoginViewController
 
+// load the login page
 - (void)viewDidLoad {
     [super viewDidLoad];
     _userPasswordField.secureTextEntry = YES;
@@ -33,6 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// following two methods control making sure the keyboard disappears when typing completes
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];

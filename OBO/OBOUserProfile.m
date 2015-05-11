@@ -13,6 +13,7 @@
 
 @implementation OBOUserProfile
 
+// object to save fields of a user profile
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {

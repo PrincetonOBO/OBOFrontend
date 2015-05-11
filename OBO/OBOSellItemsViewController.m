@@ -37,6 +37,8 @@
 @end
 
 @implementation OBOSellItemsViewController
+
+// Submit an item to sell by sending the information to the backend
 - (IBAction)submit:(id)sender {
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
@@ -122,6 +124,7 @@
 
 }
 
+// handle being unable to get user's location
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
@@ -130,6 +133,7 @@
     [errorAlert show];
 }
 
+// get the location of the user
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     CLLocation *currentLocation = newLocation;
@@ -145,6 +149,7 @@
     NSLog(@"location successfully updated");
 }
 
+// allow user to choose a photo from user's photo library
 - (IBAction)choosePhoto:(id)sender {
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
@@ -153,6 +158,7 @@
 
 }
 
+// load the form for user to fill out
 -(void) viewDidLoad
 {
     [super viewDidLoad];
@@ -214,6 +220,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// user picks an image
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.chosenImage = info[UIImagePickerControllerOriginalImage];
@@ -221,6 +228,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// user cancels picking an image
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -278,6 +286,7 @@
 //    NSLog(@"%f", size.height);
 }
 
+// shift up view so that keyboard does not block text field
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     CGRect frameRect = textField.frame;
@@ -293,6 +302,7 @@
     return YES;
 }
 
+// restore keyboard to original position
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     CGRect frame = CGRectMake(self.view.frame.origin.x,

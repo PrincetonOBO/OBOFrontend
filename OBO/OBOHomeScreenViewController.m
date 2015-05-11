@@ -16,6 +16,8 @@
 
 @implementation OBOHomeScreenViewController
 
+
+// load the home screen
 - (void)viewDidLoad {
     [super viewDidLoad];
         UIImage *backgroundImage = [UIImage imageNamed:@"OBOhomescreen_xtine1.png"];

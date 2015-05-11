@@ -19,6 +19,7 @@
 
 @implementation OBOYourItemsOffersTableViewCell
 
+// Load all offers made on your item
 - (void)prepareWithItem3:(OBOItemOfferObject *)offer {
     NSLog(@"PrepareWithItem3: %@", offer);
     self.nameLabel.text = offer.name;

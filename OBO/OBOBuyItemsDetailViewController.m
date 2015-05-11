@@ -23,6 +23,7 @@
 
 @implementation OBOBuyItemsDetailViewController
 
+// Display details of the item user is interested in
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImage *image = self.object.image;
@@ -36,6 +37,7 @@
     
 }
 
+// make an offer on the item
 - (IBAction)getContactInfo:(id)sender {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit Offer" message:@"Please enter offer amount in $" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -51,6 +53,7 @@
     [self presentViewController:alertController animated:YES completion:NULL ];
 }
 
+// send the offer information to the backend
 - (void)networkStuff:(NSUInteger)price {
     NSLog(@"Offer price: %lu", price);
     

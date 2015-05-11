@@ -20,12 +20,14 @@
 
 @implementation OBOYourItemsTableViewCell
 
+// prepare a cell with an item user wants to sell
 - (void)prepareWithItem2:(OBOItemObject *)item {
     self.nameLabel.text = item.name;
     self.item_id = item.item_id;
     [_interestedBuyers setTitle:@"#" forState:UIControlStateNormal];
 }
 
+// show warning to make sure user did not accidentally hit the delete button
 - (IBAction)showDeleteAlert:(id)sender {
 
     UIAlertView *alertView = [[UIAlertView alloc]

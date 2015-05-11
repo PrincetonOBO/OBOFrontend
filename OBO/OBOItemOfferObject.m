@@ -11,6 +11,7 @@
 
 @implementation OBOItemOfferObject
 
+// initialize object with offers received for items
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {

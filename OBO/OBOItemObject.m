@@ -12,6 +12,7 @@
 
 @implementation OBOItemObject
 
+// initialize an object with details and location
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {

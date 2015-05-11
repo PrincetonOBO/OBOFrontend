@@ -19,7 +19,7 @@
 
 @implementation OBOUserProfileEditViewController
 
-
+// submit an edited profile
 - (IBAction)submit:(id)sender {
     NSLog(@"Submit button pressed");
 
@@ -52,6 +52,7 @@
 
 }
 
+// load the current user's profile before changes
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.userNameField.text = self.user.name;

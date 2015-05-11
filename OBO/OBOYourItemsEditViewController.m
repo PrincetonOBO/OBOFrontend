@@ -30,6 +30,7 @@
 
 @implementation OBOYourItemsEditViewController
 
+// load page with the details from your item so that fields can be edited
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -49,6 +50,8 @@
     
     originalY = self.view.frame.origin.y;
 }
+
+// submit user changes to item details to backend for update
 - (IBAction)submitChanges:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:@"Item Update Successful" message:nil delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
@@ -83,7 +86,7 @@
     
 }
 
-
+// below methods handle keyboard
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     //Be informed of keyboard

@@ -20,6 +20,7 @@
 @end
 @implementation OBOBuyItemsDetailTableViewCell
 
+// Display a small picture, item name, and price of an item being sold
 - (void)prepareWithItem:(OBOItemObject *)item {
 //    self.itemNameLabel.text = item.name;
     UIImage *image = item.image;

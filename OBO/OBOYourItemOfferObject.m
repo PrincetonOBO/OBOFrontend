@@ -10,7 +10,7 @@
 
 @implementation OBOYourItemOfferObject
 
-
+// intialize object with name and offer amount 
 - (instancetype)initWithInfo:(NSDictionary *)info {
     self = [super init];
     if (self) {

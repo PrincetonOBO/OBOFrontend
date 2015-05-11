@@ -26,6 +26,7 @@
 
 @implementation OBOBuyItemsTableViewController
 
+// NSArray of items being sold within set radius
 - (NSArray *)items {
     if (!_items) {
         _items = [[NSArray alloc]init];
@@ -33,6 +34,7 @@
     return _items;
 }
 
+// display items without set radius
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -121,6 +123,7 @@
     //self.searchResults = [NSMutableArray arrayWithCapacity:[self.items count]];
 }
 
+// get most updated items for sale in certain radius and update newsfeed
 -(void)refresh {
     // add data pull here!! //
 
@@ -199,6 +202,7 @@
     //[self refresh];
 }
 
+// search items for searchText
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     //[self.searchResults removeAllObjects];
@@ -207,7 +211,7 @@
     self.searchResults = [self.items filteredArrayUsingPredicate:resultPredicate];
 }
 
-
+// reload table
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString
@@ -282,6 +286,7 @@
     return cell;
 }
 
+// switch pages to item description
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
         OBOBuyItemsDetailViewController *dest = segue.destinationViewController;
@@ -335,6 +340,7 @@
 }
 */
 
+// handle failure to get location
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
@@ -343,6 +349,7 @@
     [errorAlert show];
 }
 
+// get location of user
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     CLLocation *currentLocation = newLocation;
