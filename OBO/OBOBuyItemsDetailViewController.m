@@ -1,3 +1,12 @@
+//
+//  OBOBuyItemsDetailViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UIView where the details of the selected item are displayed. This includes a bigger image, the item name, price, size, and description. It also allows the user to make an offer on the item. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOBuyItemsDetailViewController.h"
 #import "OBOItemObject.h"
 

@@ -1,3 +1,12 @@
+//
+//  OBOYourItemsOffersTableViewCell.m
+//  Created by PrincetonOBO
+//
+//  A UITableViewCell that holds each offer that your item has received. The cell includes the name and contact information of the user who made an offer, along with the offer amount. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOYourItemsOffersTableViewCell.h"
 #import "OBOItemOfferObject.h"
 

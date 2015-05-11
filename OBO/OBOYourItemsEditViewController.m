@@ -1,3 +1,12 @@
+//
+//  OBOYourItemsEditViewController.m
+//  Created by PrincetonOBO
+//
+//  A UIView where the user can edit the information provided for the item he is selling
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOYourItemsEditViewController.h"
 #import "OBOItemObject.h"
 

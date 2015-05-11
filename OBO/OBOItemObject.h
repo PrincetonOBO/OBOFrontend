@@ -1,3 +1,12 @@
+//
+//  OBOItemObject.h
+//  Created by PrincetonOBO
+//
+//  Header file for OBOItemObject.m
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

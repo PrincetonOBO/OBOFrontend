@@ -1,3 +1,13 @@
+//
+//  OBOSellItemsViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UIView where the user can post an item to sell. The user can choose a photo from their photo library and can input a name, price, size, and description. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
+
 #import "OBOSellItemsViewController.h"
 
 

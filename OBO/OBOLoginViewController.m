@@ -1,9 +1,10 @@
 //
 //  OBOLoginViewController.m
-//  OBO
+//  Created by PrincetonOBO
 //
-//  Created by Christine Li on 5/4/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
+//  Creates a UIViewController where the user can login with email and password
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
 //
 
 #import "OBOLoginViewController.h"

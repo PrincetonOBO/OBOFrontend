@@ -1,3 +1,12 @@
+//
+//  OBOUserProfileEditViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UIView where the user will be able to edit any (and all) fields of his profile. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOUserProfileEditViewController.h"
 #import "OBOUserProfile.h"
 

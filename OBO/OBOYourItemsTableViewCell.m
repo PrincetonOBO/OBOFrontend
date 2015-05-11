@@ -1,3 +1,12 @@
+//
+//  OBOYourItemsTableViewCell.m
+//  Created by Princeton OBO
+//
+//  A UITableViewCell that holds an item that the user made. Displays item name and offer amount.
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOYourItemsTableViewCell.h"
 #import "OBOItemObject.h"
 

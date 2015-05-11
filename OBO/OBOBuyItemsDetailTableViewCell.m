@@ -1,3 +1,12 @@
+//
+//  OBOBuyItemsDetailTableViewCell.m
+//  Created by Princeton OBO
+//
+//  A UITableViewCell that holds an item that is being sold within a certain radius. Displays a small thumbnail photo, the name of the item, and the price. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOBuyItemsDetailTableViewCell.h"
 #import "OBOItemObject.h"
 

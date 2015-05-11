@@ -1,10 +1,12 @@
 //
 //  OBOYourOffersTableViewCell.m
-//  OBO
+//  Created by Princeton OBO
 //
-//  Created by Christine Li on 5/10/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
+//  A UITableViewCell that holds an offer that the user made. Displays item name and offer amount. 
 //
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 
 #import "OBOYourOffersTableViewCell.h"
 

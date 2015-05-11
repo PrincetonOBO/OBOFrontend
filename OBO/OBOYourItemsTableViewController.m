@@ -1,3 +1,12 @@
+//
+//  OBOYourItemsTableViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UITableView where all items the user is selling are listed
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOYourItemsTableViewCell.h"
 #import "OBOYourItemsEditViewController.h"
 #import "OBOItemObject.h"

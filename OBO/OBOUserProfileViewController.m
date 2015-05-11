@@ -1,3 +1,12 @@
+//
+//  OBOUserProfileViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UIView where the user's profile is displayed. This includes name, contact information, and pickup location. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOUserProfile.h"
 #import "OBOUserProfileViewController.h"
 #import "OBOUserProfileEditViewController.h"

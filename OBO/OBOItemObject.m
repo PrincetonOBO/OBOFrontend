@@ -1,3 +1,12 @@
+//
+//  OBOItemObject.m
+//  Created by PrincetonOBO
+//
+//  UIObject that holds the fields of the json representation of the items being sold that is returned by the database. The fields include the item name, price, size, description, and image. 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOItemObject.h"
 
 

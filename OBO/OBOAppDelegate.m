@@ -1,3 +1,13 @@
+//
+//  OBOAppDelegate.m
+//  Created by PrincetonOBO
+//
+//  Launches the application and brings the user to the first view controller
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
+
 #import "OBOAppDelegate.h"
 
 @implementation OBOAppDelegate

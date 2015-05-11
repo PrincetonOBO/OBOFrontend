@@ -1,3 +1,12 @@
+//
+//  OBOYourItemsOffersTableViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UITableView where each offer on the selected item will be listed
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOYourItemsOffersTableViewCell.h"
 #import "OBOYourItemsTableViewController.h"
 #import "OBOItemOfferObject.h"

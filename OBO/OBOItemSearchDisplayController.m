@@ -1,9 +1,10 @@
 //
 //  OBOItemSearchDisplayController.m
-//  OBO
+//  Created by PrincetonOBO
 //
-//  Created by Christine Li on 5/8/15.
-//  Copyright (c) 2015 teamOBO. All rights reserved.
+//  Creates a UISearchDisplayController that allows users to search all fields of the posted items 
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
 //
 
 #import "OBOItemSearchDisplayController.h"

@@ -1,3 +1,12 @@
+//
+//  OBOBuyItemsTableViewController.m
+//  Created by PrincetonOBO
+//
+//  Creates a UITableView where each item being sold within a certain radius is listed in a newsfeed style page
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOBuyItemsDetailTableViewCell.h"
 #import "OBOBuyItemsDetailViewController.h"
 #import "OBOItemObject.h"

@@ -1,3 +1,12 @@
+//
+//  OBOHomeScreenViewController.m
+//  Created by PrincetonOBO
+//
+//  UIViewController that shows the user the home screen with a button to sign in
+//
+//  Copyright (c) 2015 PrincetonOBO. All rights reserved.
+//
+
 #import "OBOHomeScreenViewController.h"
 
 @interface OBOHomeScreenViewController ()
