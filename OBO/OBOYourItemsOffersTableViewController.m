@@ -5,7 +5,6 @@
 
 @interface OBOYourItemsOffersTableViewController ()
 @property (strong, nonatomic) NSArray *offers;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

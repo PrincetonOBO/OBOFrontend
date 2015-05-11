@@ -57,6 +57,7 @@
 		8A7436FF1AF821F80054C365 /* OBOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7436FE1AF821F80054C365 /* OBOLoginViewController.m */; };
 		8A875D7C1AD1D7750033D1B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A875D7A1AD1D7750033D1B7 /* MainStoryboard.storyboard */; };
 		8A875D7F1AD1E3280033D1B7 /* OBOYourItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A875D7E1AD1E3280033D1B7 /* OBOYourItemsTableViewController.m */; };
+		8A8AD7ED1B00514100E7F162 /* offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AD7EC1B00514100E7F162 /* offers.json */; };
 		8AB844DD1AF8757A007012C0 /* OBOhomescreen_xtine1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB844DC1AF8757A007012C0 /* OBOhomescreen_xtine1.png */; };
 		8AB844E11AF87DF5007012C0 /* sold-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB844E01AF87DF5007012C0 /* sold-overlay.png */; };
 		8AB844E41AF8EB31007012C0 /* OBOHomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB844E31AF8EB31007012C0 /* OBOHomeScreenViewController.m */; };
@@ -149,6 +150,7 @@
 		8A875D7B1AD1D7750033D1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8A875D7D1AD1E3280033D1B7 /* OBOYourItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOYourItemsTableViewController.h; sourceTree = "<group>"; };
 		8A875D7E1AD1E3280033D1B7 /* OBOYourItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBOYourItemsTableViewController.m; sourceTree = "<group>"; };
+		8A8AD7EC1B00514100E7F162 /* offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = offers.json; path = ../offers.json; sourceTree = "<group>"; };
 		8AB844DC1AF8757A007012C0 /* OBOhomescreen_xtine1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OBOhomescreen_xtine1.png; sourceTree = "<group>"; };
 		8AB844E01AF87DF5007012C0 /* sold-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sold-overlay.png"; sourceTree = "<group>"; };
 		8AB844E21AF8EB31007012C0 /* OBOHomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBOHomeScreenViewController.h; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				8AC318BD1AEFFD67001291AB /* star.jpg */,
 				8A3373641AF9164A00E0C17A /* belt.jpg */,
 				8A3373661AF9164E00E0C17A /* shoes.jpg */,
+				8A8AD7EC1B00514100E7F162 /* offers.json */,
 				5311E08E1AC25915003BEF47 /* items.json */,
 				53CBC5F01AF8263D00555E77 /* OBOhomescreen.png */,
 				5328B5381AF8A37C00F97388 /* blueButton.png */,
@@ -400,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8AD7ED1B00514100E7F162 /* offers.json in Resources */,
 				53CBC5F51AF8279900555E77 /* OBOhomescreen3.png in Resources */,
 				8AB879E61AFFE12C00D01DD6 /* tag-7.png in Resources */,
 				53CBC5F11AF8263D00555E77 /* OBOhomescreen.png in Resources */,

@@ -1,0 +1,13 @@
+{
+    "offers":[
+                {
+                "name": "Red Dress",
+                "price": 15
+                },
+                {
+                "name": "Black shirt",
+                "price": 3
+                },
+                ]
+}
+

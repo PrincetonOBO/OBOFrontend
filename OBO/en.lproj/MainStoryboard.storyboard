@@ -905,8 +905,8 @@
         <!--Your Offers-->
         <scene sceneID="51e-K0-o2C">
             <objects>
-                <tableViewController id="egT-WT-pVx" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cB6-lK-XYe">
+                <tableViewController id="egT-WT-pVx" customClass="OBOYourOffersTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="cB6-lK-XYe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -960,6 +960,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Offers" id="cir-oA-LSM"/>
+                    <connections>
+                        <outlet property="tableView" destination="cB6-lK-XYe" id="RzJ-Al-cXf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ij-ve-QFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

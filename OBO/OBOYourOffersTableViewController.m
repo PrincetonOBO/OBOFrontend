@@ -123,8 +123,15 @@
     /* Make new array and populate */
     NSArray *new = [NSArray array];
     self.offers = new;
-    NSArray *offersJSON = json[@"prof"];
-    for (NSDictionary *offerJSON in offersJSON) {
+    NSDictionary *items = json[@"offers"];
+    for (NSDictionary *item in items) {
+        NSString *name = item[@"title"];
+        NSLog(@"item we're offering money for:%@", name);
+        NSLog(@"accessing offer");
+
+        NSDictionary *offerJSON = item[@"offers"];
+        NSLog(@"offers here: %@", offerJSON);
+        NSLog(@"name: %@", offerJSON[@"user"]);
         OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
         self.offers = [self.offers arrayByAddingObject:offer];
     }
