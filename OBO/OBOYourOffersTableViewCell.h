@@ -9,10 +9,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class OBOItemOfferObject;
+@class OBOYourItemOfferObject;
 
 @interface OBOYourOffersTableViewCell : UITableViewCell
 
-- (void)prepareWithItem4:(OBOItemOfferObject *)offer;
+- (void)prepareWithItem4:(OBOYourItemOfferObject *)offer;
 
 @end

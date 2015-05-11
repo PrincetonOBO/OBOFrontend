@@ -8,7 +8,7 @@
 //
 
 
-#import "OBOItemOfferObject.h"
+#import "OBOYourItemOfferObject.h"
 #import "OBOYourOffersTableViewCell.h"
 
 @interface OBOYourOffersTableViewCell()
@@ -19,7 +19,7 @@
 
 @implementation OBOYourOffersTableViewCell
 
-- (void)prepareWithItem4:(OBOItemOfferObject *)offer {
+- (void)prepareWithItem4:(OBOYourItemOfferObject *)offer {
     NSLog(@"PrepareWithItem4: %@", offer);
     self.nameLabel.text = offer.name;
     NSLog(@"Offer name: %@", offer.name);
@@ -30,6 +30,13 @@
 
 - (void)awakeFromNib {
     // Initialization code
+}
+- (IBAction)deleteOffer:(id)sender {
+    //IMPLEMENT DELETE OFFER
+    
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Delete" message:@"Are you sure you want to delete this offer? This action cannot be undone" delegate:self cancelButtonTitle:@"No, keep this offer" otherButtonTitles:@"Yes, delete this offer", nil];
+    [alertView show];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

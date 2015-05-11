@@ -7,7 +7,7 @@
 //  Copyright (c) 2015 PrincetonOBO. All rights reserved.
 //
 
-#import "OBOItemOfferObject.h"
+#import "OBOYourItemOfferObject.h"
 #import "OBOYourOffersTableViewCell.h"
 #import "OBOYourOffersTableViewController.h"
 
@@ -61,7 +61,7 @@
                                                            error:&error];
     NSArray *offersJSON = json[@"offers"];
     for (NSDictionary *offerJSON in offersJSON) {
-        OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
+        OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
         self.offers = [self.offers arrayByAddingObject:offer];
     }
     self.tableView.delegate = self;
@@ -130,10 +130,10 @@
         NSLog(@"item we're offering money for:%@", name);
         NSLog(@"accessing offer");
 
-        NSDictionary *offerJSON = item[@"offers"];
+        NSDictionary *offerJSON = item;
         NSLog(@"offers here: %@", offerJSON);
         NSLog(@"name: %@", offerJSON[@"user"]);
-        OBOItemOfferObject *offer = [[OBOItemOfferObject alloc] initWithInfo:offerJSON];
+        OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
         self.offers = [self.offers arrayByAddingObject:offer];
     }
     

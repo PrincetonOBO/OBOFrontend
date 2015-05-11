@@ -424,7 +424,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NameCell" rowHeight="100" id="lJ0-d7-vTF" customClass="OBOBuyItemsDetailTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="eRH-pZ-2ge">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -932,6 +932,9 @@
                                             <state key="normal" title="Delete">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="deleteOffer:" destination="XyD-QC-8Q8" eventType="touchUpInside" id="zsW-Ro-ZZD"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7dy-ks-U2p">
                                             <rect key="frame" x="204" y="19" width="40" height="21"/>
