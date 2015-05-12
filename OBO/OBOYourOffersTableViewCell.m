@@ -36,7 +36,7 @@
 - (IBAction)deleteOffer:(id)sender {
     
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Delete" message:@"Are you sure you want to delete this offer? This action cannot be undone" delegate:self cancelButtonTitle:@"No, keep this offer" otherButtonTitles:@"Yes, delete this offer", nil];
+                              initWithTitle:@"Deleting Offer" message:@"Your item has been successfully deleted." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alertView show];
     
     // Make RESTful URL
