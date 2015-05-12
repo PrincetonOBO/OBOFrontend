@@ -34,7 +34,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"jeans.jpg"];
+    // Make RESTful URL
+    NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@", self.object.item_id];
+    
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+
+    NSLog(@"Queried items:%@", itemResponse);
+    
+    NSArray *imageArray = jsonDict[@"images"];
+    NSString *imageId = imageArray[0];
+    NSLog(@"image id: %@", imageId);
+    
+    restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@/pic/%@", self.object.item_id, imageId];
+    restURL = [NSURL URLWithString:restCallString];
+    restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"photo response: %@", itemResponse);
+    
+    jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:jsonDict[@"image"]
+                                                      options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    UIImage *image = [UIImage imageWithData:data];
     self.itemImageView.image = image;
     
     self.itemNameTextField.text = self.object.name;
@@ -66,7 +103,9 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"size\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField, self.itemSizeTextField.text, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
+    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"size\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField.text, self.itemSizeTextField.text, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
+    
+    NSLog(@"edited item: %@", json);
     
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     

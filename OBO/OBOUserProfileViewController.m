@@ -75,6 +75,43 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    NSLog(@"view will appear");
+    // Make RESTful URL
+    NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/manage/users/%@", user_id];
+    
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    
+    NSError *error = nil;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Error parsing JSON.");
+    }
+    else {
+        self.profile = [[OBOUserProfile alloc] initWithInfo:jsonDict];
+        NSLog(@"Dictionary: %@", jsonDict);
+    }
+    
+    // Populate with results of GET request
+    //self.profile = [[OBOUserProfile alloc] initWithInfo:json];
+    self.userNameLabel.text = [jsonDict objectForKey:@"name"];
+    self.userContactInfoLabel.text = [jsonDict objectForKey:@"net_id"];
+    self.userLocationLabel.text = [jsonDict objectForKey:@"pickup_loc"];
+    // Do any additional setup after loading the view.
+
+}
 
 
 - (void)didReceiveMemoryWarning {

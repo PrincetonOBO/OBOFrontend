@@ -44,7 +44,18 @@
     NSString *size = self.itemSizeTextField.text;
     NSString *description = self.itemDescriptionTextField.text;
     NSString *price = self.itemPriceTextField.text;
-    NSString *encodedImage = [UIImageJPEGRepresentation(self.itemImageView.image, 0.8) base64EncodedStringWithOptions:0];
+    
+    
+    CGSize imageSize = CGSizeMake(484, 888);
+    
+    UIImage *img = self.itemImageView.image;
+    
+    UIGraphicsBeginImageContext( imageSize );
+    [img drawInRect:CGRectMake(0,0,imageSize.width,imageSize.height)];
+    UIImage* realfrontImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    NSString *encodedImage = [UIImageJPEGRepresentation(realfrontImage, 0.8) base64EncodedStringWithOptions:0];
 
 
 
