@@ -31,7 +31,7 @@
 - (IBAction)showDeleteAlert:(id)sender {
 
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Deleting Item" message:@"Your item has been successfully deleted." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                              initWithTitle:@"Offer Deleted" message:@"Your item has been successfully deleted. Please refresh to see the changes." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alertView show];
     
     // Make RESTful URL

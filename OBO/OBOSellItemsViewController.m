@@ -57,7 +57,12 @@
 
     NSString *encodedImage = [UIImageJPEGRepresentation(realfrontImage, 0.8) base64EncodedStringWithOptions:0];
 
-
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Item Submitted"
+                                                    message:@"Please refresh the 'items' tab to view your item."
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 
     // Make RESTful URL
     NSString *user_id = @"5539c7e817aad86cf1000006";
