@@ -20,8 +20,7 @@
 @implementation OBOUserProfileEditViewController
 
 // submit an edited profile
-- (IBAction)submit:(id)sender {
-    NSLog(@"Submit button pressed");
+- (IBAction)submit:(id)sender {    NSLog(@"Submit button pressed");
 
     NSLog(@"New name: %@", self.userNameField.text);
 
@@ -50,6 +49,7 @@
     [self.navigationController popViewControllerAnimated:TRUE];
     // Do any additional setup after loading the view.
 
+
 }
 
 // load the current user's profile before changes
@@ -60,7 +60,6 @@
     self.userLocationField.text = self.user.location;
     // Do any additional setup after loading the view.
 }
-
 
 
 
@@ -82,6 +81,7 @@
     [self.view endEditing:YES];
     return YES;
 }
+
 /*
 #pragma mark - Navigation
 

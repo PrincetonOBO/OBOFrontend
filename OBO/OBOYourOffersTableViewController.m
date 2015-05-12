@@ -122,6 +122,8 @@
         writeString = [NSString stringWithFormat:@"{ \"offers\":%@ }", itemResponse];
         NSLog(@"We have items");
     }
+    
+    NSLog(@"Wrote: %@", writeString);
     [writeString writeToFile:filePath atomically:YES];
     
     NSLog(@"Wrote refreshed file");
