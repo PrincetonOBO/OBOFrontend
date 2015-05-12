@@ -21,6 +21,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UISearchBar *itemSearchBar;
 @property (strong, nonatomic) NSArray *searchResults;
+@property (weak, nonatomic) UITableView *index;
+
 
 @end
 
@@ -276,6 +278,7 @@
 
     // Display item in the table cell
     OBOItemObject *item = nil;
+    self.index = tableView;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         item = [self.searchResults objectAtIndex:indexPath.row];
     } else {
@@ -291,7 +294,15 @@
     if ([[segue identifier] isEqualToString:@"ToItemDescription"]) {
         OBOBuyItemsDetailViewController *dest = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        dest.object = self.items[indexPath.row];
+        dest.object = nil;
+        if (self.index == self.searchDisplayController.searchResultsTableView) {
+            dest.object = [self.searchResults objectAtIndex:indexPath.row];
+            self.index = nil;
+        }
+        else {
+            dest.object = [self.items objectAtIndex:indexPath.row];
+        }
+        //dest.object = self.items[indexPath.row];
         NSLog(@"Name: %@", dest.object.name);
     }
 }

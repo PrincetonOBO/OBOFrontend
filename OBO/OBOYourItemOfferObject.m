@@ -23,8 +23,9 @@
         //NSLog(isDict2 ? @"Yes" : @"No");
         
         
-        self.name = info[@"offers"][0][@"user"][@"name"];
+        //self.name = info[@"offers"][0][@"user"][@"name"];
         //self.name = @"Walker Davis";
+        self.name = info[@"title"];
         NSLog(@"offer name: %@", self.name);
         
         
