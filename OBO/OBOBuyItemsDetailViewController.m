@@ -77,6 +77,14 @@
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
     
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    if ([itemResponse  isEqual: @"You've already made an offer."]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offer Not Made"
+                                                        message:@"Sorry, you have already made an offer on this item."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     NSLog(@"Made offer:%@", itemResponse);
 
     
