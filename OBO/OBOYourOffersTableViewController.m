@@ -61,11 +61,15 @@
                                                          options:kNilOptions
                                                            error:&error];
     NSArray *offersJSON = json[@"offers"];
-    for (NSDictionary *offerJSON in offersJSON) {
-        NSLog(@"Current offer:%@", offerJSON);
-        OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
-        self.offers = [self.offers arrayByAddingObject:offer];
+    
+    if (itemResponse == nil) {
+        for (NSDictionary *offerJSON in offersJSON) {
+            NSLog(@"Current offer:%@", offerJSON);
+            OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
+            self.offers = [self.offers arrayByAddingObject:offer];
+        }
     }
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
@@ -128,16 +132,19 @@
     NSArray *new = [NSArray array];
     self.offers = new;
     NSDictionary *items = json[@"offers"];
-    for (NSDictionary *item in items) {
-        NSString *name = item[@"title"];
-        NSLog(@"item we're offering money for:%@", name);
-        NSLog(@"accessing offer");
+    
+    if (itemResponse == nil) {
+        for (NSDictionary *item in items) {
+            NSString *name = item[@"title"];
+            NSLog(@"item we're offering money for:%@", name);
+            NSLog(@"accessing offer");
 
-        NSDictionary *offerJSON = item;
-        NSLog(@"offers here: %@", offerJSON);
-        NSLog(@"name: %@", offerJSON[@"user"]);
-        OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
-        self.offers = [self.offers arrayByAddingObject:offer];
+            NSDictionary *offerJSON = item;
+            NSLog(@"offers here: %@", offerJSON);
+            NSLog(@"name: %@", offerJSON[@"user"]);
+            OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
+            self.offers = [self.offers arrayByAddingObject:offer];
+        }
     }
     
     self.tableView.delegate = self;
