@@ -97,6 +97,14 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offer Made"
+                                                        message:@"Please refresh the 'offers' tab to view your offer."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     NSLog(@"Made offer:%@", itemResponse);
 
     

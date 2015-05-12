@@ -40,6 +40,10 @@
 
 // Submit an item to sell by sending the information to the backend
 - (IBAction)submit:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Item Submitted Successfully" message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alertView show];
+    
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
     NSString *description = self.itemDescriptionTextField.text;
@@ -57,7 +61,12 @@
 
     NSString *encodedImage = [UIImageJPEGRepresentation(realfrontImage, 0.8) base64EncodedStringWithOptions:0];
 
-
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Item Submitted"
+                                                    message:@"Please refresh the 'items' tab to view your item."
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 
     // Make RESTful URL
     //NSString *user_id = @"5539c7e817aad86cf1000006";

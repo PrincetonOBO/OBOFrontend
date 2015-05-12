@@ -69,8 +69,10 @@
                                                          options:kNilOptions
                                                            error:&error];
     NSArray *offersJSON = json[@"offers"];
-    
-    if (itemResponse == nil) {
+    NSLog(@"%@", offersJSON);
+    //if (title == (id)[NSNull null]
+    //if (array == nil || [array count] == 0) {
+    if (offersJSON != [NSNull null]) {
         for (NSDictionary *offerJSON in offersJSON) {
             NSLog(@"Current offer:%@", offerJSON);
             OBOYourItemOfferObject *offer = [[OBOYourItemOfferObject alloc] initWithInfo:offerJSON];
@@ -161,7 +163,7 @@
     self.offers = new;
     NSDictionary *items = json[@"offers"];
     
-    if (itemResponse == nil) {
+    if (itemResponse != (id) [NSNull null]) {
         for (NSDictionary *item in items) {
             NSString *name = item[@"title"];
             NSLog(@"item we're offering money for:%@", name);
