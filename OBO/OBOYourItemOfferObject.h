@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *price;
+@property (strong, nonatomic) NSString *item_id;
 
 @end

@@ -31,6 +31,8 @@
         self.price = [NSString stringWithFormat:@"%@", info[@"offers"][0][@"price"]];
         //self.price = @"ugh";
         NSLog(@"offer price: %@", self.price);
+        self.item_id = info[@"id"];
+
         
     }
     return self;
