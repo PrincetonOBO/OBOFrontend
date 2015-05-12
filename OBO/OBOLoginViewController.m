@@ -10,6 +10,7 @@
 #import "OBOLoginViewController.h"
 
 @interface OBOLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *userEmailField;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordField;
 
