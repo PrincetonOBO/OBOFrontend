@@ -40,7 +40,15 @@
     [alertView show];
     
     // Make RESTful URL
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+
     NSString *item_id = self.item_id;
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@/offer/users/%@", item_id, user_id];
     
@@ -84,10 +92,10 @@
     NSLog(@"Wrote file");
     
     //NSLog(@"response: %@", itemResponse);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"offers.json"];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"offers.json"];
     NSString *fileContent = [[NSString alloc] initWithContentsOfFile:filePath];
     
     //NSLog(@"Print from file: %@", fileContent);

@@ -33,7 +33,15 @@
 // load all of your items
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
@@ -49,10 +57,10 @@
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"User's items:%@", itemResponse);
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSError *error = nil;
     
     NSString *writeString;
@@ -95,7 +103,15 @@
     [super viewDidLoad];
     
     // Make RESTful URL
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items", user_id];
 
     NSURL *restURL = [NSURL URLWithString:restCallString];
@@ -111,10 +127,10 @@
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"User's items:%@", itemResponse);
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSError *error = nil;
 
     NSString *writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];

@@ -57,12 +57,24 @@
 - (void)networkStuff:(NSUInteger)price {
     NSLog(@"Offer price: %lu", price);
     
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+    NSString *user_name = user_dict[@"user"][@"name"];
+    NSString *user_netid = user_dict[@"user"][@"net_id"];
+    NSString *user_pickup = user_dict[@"user"][@"pickup_loc"];
+
+
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@/offer/users/%@", self.item_id, user_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"price\": %u , \"user\": {\"name\": \"Walker Davis\", \"net_id\": \"wcdavis@princeton.edu\", \"pickup_loc\": \"Witherspoon Hall\"} }", price];
+    NSString *json = [NSString stringWithFormat:@"{ \"price\": %lu , \"user\": {\"name\": \"%@\", \"net_id\": \"%@\", \"pickup_loc\": \"Witherspoon Hall\"} }", (unsigned long)price, user_name, user_netid, user_pickup];
     
     NSLog(@"offer json: %@", json);
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];

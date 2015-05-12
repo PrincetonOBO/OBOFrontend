@@ -55,7 +55,15 @@
 
 
 /* Make request for feed items and save */
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items?latitude=%f&longitude=%f&number=%d", self.latitude, self.longitude, 10];
 
 
@@ -82,9 +90,9 @@
         writeString = [NSString stringWithFormat:@"{ \"items\":%@ }", itemResponse];
         NSLog(@"We have items");
     }
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentsDirectory = [paths objectAtIndex:0];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
     [writeString writeToFile:filePath atomically:YES];
 
     NSLog(@"Write string:%@", writeString);
@@ -130,7 +138,15 @@
     // add data pull here!! //
 
     /* Make request for feed items and save */
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+
     [self.locationManager startUpdatingLocation];
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items?latitude=%f&longitude=%f&number=%d", self.latitude, self.longitude, 10];
 
@@ -148,10 +164,10 @@
 
     NSLog(@"Response: %@", response);
 
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentsDirectory = [paths objectAtIndex:0];
 
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"items.json"];
     NSString *writeString;
     if ([itemResponse isEqualToString:@"null"])
     {

@@ -42,7 +42,17 @@
     NSLog(@"Profile view did load");
     
     // Make RESTful URL
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"user data: %@", user_dict);
+    NSString *user_id = user_dict[@"user"][@"id"];
+    NSLog(@"user id: %@", user_id);
+
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/manage/users/%@", user_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
@@ -79,7 +89,16 @@
     
     NSLog(@"view will appear");
     // Make RESTful URL
-    NSString *user_id = @"5539c7e817aad86cf1000006";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"user.json"];
+    
+    NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+    NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
+    NSString *user_id = user_dict[@"user"][@"id"];
+    NSLog(@"user id: %@", user_id);
+
+    //NSString *user_id = @"5539c7e817aad86cf1000006";
     NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/manage/users/%@", user_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
