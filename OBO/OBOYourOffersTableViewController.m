@@ -107,7 +107,17 @@
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"offers.json"];
     NSError *error = nil;
     
-    NSString *writeString = [NSString stringWithFormat:@"{ \"offers\":%@ }", itemResponse];
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"offers\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"offers\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
     [writeString writeToFile:filePath atomically:YES];
     
     NSLog(@"Wrote refreshed file");

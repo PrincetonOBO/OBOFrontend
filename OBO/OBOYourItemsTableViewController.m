@@ -55,7 +55,17 @@
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"items2.json"];
     NSError *error = nil;
     
-    NSString *writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];
+    NSString *writeString;
+    if ([itemResponse isEqualToString:@"null"])
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items2\":}"];
+        NSLog(@"null items");
+    }
+    else
+    {
+        writeString = [NSString stringWithFormat:@"{ \"items2\":%@ }", itemResponse];
+        NSLog(@"We have items");
+    }
     [writeString writeToFile:filePath atomically:YES];
 
     NSData *data = [NSData dataWithContentsOfFile:filePath];
