@@ -40,6 +40,10 @@
 
 // Submit an item to sell by sending the information to the backend
 - (IBAction)submit:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Item Submitted Successfully" message:@"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alertView show];
+    
     NSString *name = self.itemNameTextField.text;
     NSString *size = self.itemSizeTextField.text;
     NSString *description = self.itemDescriptionTextField.text;
