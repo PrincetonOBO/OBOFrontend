@@ -74,7 +74,7 @@
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"price\": %lu , \"user\": {\"name\": \"%@\", \"net_id\": \"%@\", \"pickup_loc\": \"Witherspoon Hall\"} }", (unsigned long)price, user_name, user_netid, user_pickup];
+    NSString *json = [NSString stringWithFormat:@"{ \"price\": %lu , \"user\": {\"name\": \"%@\", \"net_id\": \"%@\", \"pickup_loc\": \"%@\"} }", (unsigned long)price, user_name, user_netid, user_pickup];
     
     NSLog(@"offer json: %@", json);
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];

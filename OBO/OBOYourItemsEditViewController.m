@@ -114,27 +114,63 @@
     NSData *user_data = [[NSFileManager defaultManager] contentsAtPath:filePath];
     NSDictionary *user_dict = [NSJSONSerialization JSONObjectWithData:user_data options: NSJSONReadingMutableLeaves error:nil];
     NSString *user_id = user_dict[@"user"][@"id"];
-
-    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items/%@", user_id, self.item_id];
+    
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@", self.object.item_id];
     
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
-    NSString *json = [NSString stringWithFormat:@"{ \"title\": \"%@\", \"size\": \"%@\", \"description\": \"%@\", \"price\": \"%@\"}", self.itemNameTextField.text, self.itemSizeTextField.text, self.itemDescriptionTextField.text, self.itemPriceTextField.text];
-    
-    NSLog(@"edited item: %@", json);
-    
-    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [restRequest setHTTPBody:jsonData];
-    [restRequest setHTTPMethod:@"PUT"];
+    [restRequest setHTTPMethod:@"GET"];
     [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
     NSURLResponse *resp = nil;
     NSError *err = nil;
     
     NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
-    
     NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+    
+    NSLog(@"Item: %@", jsonDict);
+    NSArray *keys = [jsonDict allKeys];
+    
+    //NSMutableDictionary *newJSON = [NSMutableDictionary alloc];
+    //[newJSON setObject:jsonDict[@"id"] forKey:@"id"];
+    
+    //NSLog(@"Edited Item: %@", newJSON);
+
+
+
+    /*
+    [jsonDict setObject:self.object.name forKey:@"title"];
+    jsonDict[keys[0]] = self.object.name;
+    jsonDict[@"price"] = [NSString stringWithFormat:@"%lu", (unsigned long)self.object.price];
+    jsonDict[@"size"] = self.object.size;
+    jsonDict[@"description"] = self.object.details;
+    */
+    
+    NSLog(@"Item: %@", jsonDict);
+
+
+
+    restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/users/%@/items/%@", user_id, self.item_id];
+    
+    restURL = [NSURL URLWithString:restCallString];
+    restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    
+    NSData *jsonData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
+
+    //NSData *jsonData = [jsonDict dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [restRequest setHTTPBody:jsonData];
+    [restRequest setHTTPMethod:@"PUT"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    resp = nil;
+    err = nil;
+    
+    response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    
+    itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"Edited item: %@", itemResponse);
     [self.navigationController popViewControllerAnimated:TRUE];
 
