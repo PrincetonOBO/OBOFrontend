@@ -26,14 +26,52 @@
 // Display details of the item user is interested in
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *image = self.object.image;
-    self.itemImageView.image = image;
+    
     self.itemNameLabel.text = self.object.name;
     self.itemPriceLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.object.price];
     self.itemSizeLabel.text = self.object.size;
     //self.itemLocationLabel.text = self.object.location;
     self.itemDescriptionLabel.text = self.object.details;
     self.item_id = self.object.item_id;
+
+    
+    NSString *restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@", self.object.item_id];
+    
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSMutableURLRequest *restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    NSString * itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+    
+    NSLog(@"Queried items:%@", itemResponse);
+    
+    NSArray *imageArray = jsonDict[@"images"];
+    NSString *imageId = imageArray[0];
+    NSLog(@"image id: %@", imageId);
+    
+    restCallString = [NSString stringWithFormat:@"http://54.187.175.240:80/items/%@/pic/%@", self.object.item_id, imageId];
+    restURL = [NSURL URLWithString:restCallString];
+    restRequest = [NSMutableURLRequest requestWithURL:restURL];
+    [restRequest setHTTPMethod:@"GET"];
+    [restRequest setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    response = [NSURLConnection sendSynchronousRequest: restRequest returningResponse: &resp error: &err];
+    itemResponse = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"photo response: %@", itemResponse);
+    
+    jsonDict = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&err];
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:jsonDict[@"image"]
+                                                      options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    UIImage *image = [UIImage imageWithData:data];
+    self.itemImageView.image = image;
     
 }
 
